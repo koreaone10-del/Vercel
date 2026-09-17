@@ -1,9 +1,9 @@
 import os
 import re
 
-# بنك الكلمات المفتاحية عالي الاستهداف والموزع على المحركات الأربعة
+# بنك الكلمات المفتاحية الاستراتيجي للمحركات الأربعة
 USE_CASES = [
-    # 1. باقة أدوات TikTok HD (سحب الفيديوهات والصوت بدون علامة مائية)
+    # 1. باقة أدوات TikTok HD
     {
         "slug": "download-tiktok-without-watermark-hd",
         "title": "Download TikTok Video Without Watermark HD",
@@ -23,7 +23,7 @@ USE_CASES = [
         "default_tab": "tiktok"
     },
 
-    # 2. باقة أدوات YouTube 4K (استخراج أغلفة الفيديوهات والشورتس)
+    # 2. باقة أدوات YouTube 4K
     {
         "slug": "youtube-thumbnail-downloader-4k",
         "title": "Download YouTube Video Thumbnails in 4K Ultra HD",
@@ -43,7 +43,7 @@ USE_CASES = [
         "default_tab": "yt"
     },
 
-    # 3. باقة أدوات توليد الفيديو Veo-3 AI Cinema
+    # 3. باقة أدوات Veo-3 AI Cinema
     {
         "slug": "free-ai-video-generator-veo-3",
         "title": "Free Veo-3 AI Video Studio (Procedural Rendering)",
@@ -63,7 +63,7 @@ USE_CASES = [
         "default_tab": "veo"
     },
 
-    # 4. باقة ضغط وتحويل الصور إلى صيغة WebP
+    # 4. باقة ضغط وتحويل WebP
     {
         "slug": "compress-shopify-images-to-webp",
         "title": "Compress Shopify Images to WebP (Boost Speed)",
@@ -87,12 +87,6 @@ USE_CASES = [
         "title": "Etsy Product Photo Optimizer (WebP)",
         "target": "Etsy Sellers & Handcrafters",
         "default_tab": "webp"
-    },
-    {
-        "slug": "compress-woocommerce-product-photos",
-        "title": "WooCommerce Image Compression Engine",
-        "target": "E-Commerce Managers",
-        "default_tab": "webp"
     }
 ]
 
@@ -101,26 +95,26 @@ TEMPLATE_FILE = "index.html"
 SITEMAP_FILE = "sitemap.xml"
 
 if not os.path.exists(TEMPLATE_FILE):
-    raise FileNotFoundError(f"Template file '{TEMPLATE_FILE}' not found in the root directory.")
+    raise FileNotFoundError(f"Template file '{TEMPLATE_FILE}' not found.")
 
 with open(TEMPLATE_FILE, "r", encoding="utf-8") as f:
     template_content = f.read()
 
 clean_urls = []
 
-# توليد صفحات الهبوط المخصصة
 for case in USE_CASES:
     slug = case["slug"]
     title = case["title"]
     target = case["target"]
     tab = case["default_tab"]
     
+    clean_url = f"{DOMAIN}/{slug}"
     filename = f"{slug}.html"
-    clean_urls.append(f"{DOMAIN}/{slug}")
+    clean_urls.append(clean_url)
     
     page = template_content
     
-    # 1. تخصيص وسوم العنوان والوصف
+    # 1. تخصيص العنوان والوصف
     page = re.sub(
         r'<title id="pageTitle">.*?</title>',
         f'<title id="pageTitle">{title} // OMEGA Ω</title>',
@@ -128,11 +122,15 @@ for case in USE_CASES:
     )
     page = re.sub(
         r'<meta name="description" id="pageDesc".*?>',
-        f'<meta name="description" id="pageDesc" content="Free instant online tool to {title.lower()}. Built specifically for {target} with zero server upload and ultra performance.">',
+        f'<meta name="description" id="pageDesc" content="Free instant online tool to {title.lower()}. Optimized for {target} with zero server upload and ultra high-speed processing.">',
         page
     )
 
-    # 2. تخصيص وسوم Open Graph و Twitter لشبكات التواصل
+    # 2. حقن وسم Canonical لحماية السيو
+    canonical_tag = f'<link rel="canonical" href="{clean_url}" />\n  <meta property="og:url" content="{clean_url}">'
+    page = re.sub(r'<meta property="og:url".*?>', canonical_tag, page)
+
+    # 3. تخصيص وسوم التواصل الاجتماعي
     page = re.sub(
         r'<meta property="og:title".*?>',
         f'<meta property="og:title" content="{title} // OMEGA Ω">',
@@ -144,7 +142,7 @@ for case in USE_CASES:
         page
     )
 
-    # 3. حقن كود تشغيل التبويب المطلوب تلقائياً عند فتح الصفحة
+    # 4. تفعيل التبويب المخصص للزائر تلقائياً
     activation_script = f"""
   <!-- Programmatic Tab Auto-Switcher -->
   <script>
@@ -159,22 +157,20 @@ for case in USE_CASES:
 
     with open(filename, "w", encoding="utf-8") as out:
         out.write(page)
-    print(f"Generated: {filename} (Default Engine: {tab})")
+    print(f"Generated Landing Page: {filename} (Tab: {tab})")
 
-# تحديث ملف sitemap.xml بالروابط النظيفة (Clean URLs) المتوافقة مع vercel.json
+# تحديث sitemap.xml بالروابط النظيفة
 if os.path.exists(SITEMAP_FILE):
     with open(SITEMAP_FILE, "r", encoding="utf-8") as sf:
         sitemap_data = sf.read()
 
-    injected_count = 0
-    for clean_url in clean_urls:
-        if clean_url not in sitemap_data:
-            entry = f"  <url>\n    <loc>{clean_url}</loc>\n    <priority>0.9</priority>\n  </url>\n</urlset>"
+    added = 0
+    for url in clean_urls:
+        if url not in sitemap_data:
+            entry = f"  <url>\n    <loc>{url}</loc>\n    <priority>0.9</priority>\n  </url>\n</urlset>"
             sitemap_data = sitemap_data.replace("</urlset>", entry)
-            injected_count += 1
+            added += 1
 
     with open(SITEMAP_FILE, "w", encoding="utf-8") as sf:
         sf.write(sitemap_data)
-    print(f"Updated {SITEMAP_FILE}: Added {injected_count} new clean URLs.")
-else:
-    print(f"Warning: '{SITEMAP_FILE}' not found. Skipping sitemap update.")
+    print(f"Sitemap updated: {added} new canonical URLs injected.")
