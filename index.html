@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محول وضّاغط الصور الذكي | WebP Ultra Converter</title>
+  <meta name="description" content="أداة مجانية وسريعة لضغط الصور وتحويلها إلى صيغة WebP بأعلى جودة وأقل حجم دون رفعها لأي سيرفر.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #0b0f19; }
+    .drop-zone { border: 2px dashed #3b82f6; transition: all 0.3s ease; }
+    .drop-zone:hover { border-color: #60a5fa; background-color: rgba(59, 130, 246, 0.05); }
+  </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col items-center justify-between p-4">
+
+  <!-- وحدة الإعلانات العلوية (ضع كود A-Ads أو Adsterra هنا) -->
+  <div class="w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-xl p-3 my-2 text-center text-xs text-slate-500">
+    <!-- إعلان البانر العلوي التلقائي -->
+    <div class="py-2">[مساحة إعلانية نشطة: يدعم الدفع بـ USDT / BEP20 تلقائياً]</div>
+  </div>
+
+  <main class="w-full max-w-2xl bg-slate-900/80 backdrop-blur border border-slate-800 rounded-2xl p-6 shadow-2xl shadow-blue-500/10 my-6">
+    <div class="text-center mb-6">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 mb-3">
+        <i class="fa-solid fa-bolt-lightning text-xl"></i>
+      </div>
+      <h1 class="text-2xl font-black text-white">محول الصور الذكي إلى صيغة WebP</h1>
+      <p class="text-slate-400 text-sm mt-1">ضغط فوري وتشفير داخلي 100% بدون استهلاك بيانات السيرفر</p>
+    </div>
+
+    <!-- منطقة رفع الملفات -->
+    <div id="dropArea" class="drop-zone rounded-xl p-8 text-center cursor-pointer mb-6">
+      <i class="fa-solid fa-cloud-arrow-up text-4xl text-blue-500 mb-3"></i>
+      <p class="text-sm font-semibold text-slate-300">اسحب وأفلت الصورة هنا، أو اضغط للاختيار</p>
+      <p class="text-xs text-slate-500 mt-1">يدعم صيغ JPG, PNG, GIF</p>
+      <input type="file" id="fileInput" accept="image/*" class="hidden">
+    </div>
+
+    <!-- خيارات الضغط -->
+    <div class="space-y-4 mb-6">
+      <div>
+        <div class="flex justify-between text-xs text-slate-400 mb-1">
+          <span>مستوى الجودة المستهدفة:</span>
+          <span id="qualityVal" class="font-bold text-blue-400">80%</span>
+        </div>
+        <input type="range" id="qualityRange" min="10" max="100" value="80" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500">
+      </div>
+    </div>
+
+    <!-- نتائج المعالجة والتحميل -->
+    <div id="resultBox" class="hidden bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-3">
+      <div class="flex justify-between items-center text-xs text-slate-400">
+        <span>الحجم الأصلي: <strong id="origSize" class="text-slate-200">0 KB</strong></span>
+        <span>الحجم الجديد: <strong id="newSize" class="text-emerald-400">0 KB</strong></span>
+        <span class="text-emerald-500 font-bold" id="savedRatio">0% توفير</span>
+      </div>
+      <a id="downloadBtn" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold text-center block transition text-sm shadow-lg shadow-blue-600/30">
+        <i class="fa-solid fa-download ml-2"></i> تحميل بصيغة WebP
+      </a>
+    </div>
+
+    <!-- دعم المحفظة السريع Binance Pay / USDT BEP20 -->
+    <div class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+      <span>تغذية البنية التحتية:</span>
+      <span class="font-mono bg-slate-800 px-2 py-1 rounded text-slate-300 select-all" title="اضغط للنسخ">USDT (BEP20): 0x422e4ed7959958b4f0fec76fd3149af49a43c768</span>
+    </div>
+  </main>
+
+  <!-- وحدة الإعلانات السفلية -->
+  <div class="w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-xl p-3 my-2 text-center text-xs text-slate-500">
+    <div class="py-2">[مساحة إعلانية نشطة: شبكة Adsterra / Native Banners]</div>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const dropArea = document.getElementById('dropArea');
+    const qualityRange = document.getElementById('qualityRange');
+    const qualityVal = document.getElementById('qualityVal');
+    const resultBox = document.getElementById('resultBox');
+    const origSize = document.getElementById('origSize');
+    const newSize = document.getElementById('newSize');
+    const savedRatio = document.getElementById('savedRatio');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    let currentFile = null;
+
+    qualityRange.addEventListener('input', (e) => {
+      qualityVal.textContent = e.target.value + '%';
+      if (currentFile) processImage(currentFile);
+    });
+
+    dropArea.addEventListener('click', () => fileInput.click());
+    dropArea.addEventListener('dragover', (e) => { e.preventDefault(); dropArea.classList.add('bg-blue-500/10'); });
+    dropArea.addEventListener('dragleave', () => dropArea.classList.remove('bg-blue-500/10'));
+    dropArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropArea.classList.remove('bg-blue-500/10');
+      if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length) handleFile(e.target.files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file.type.startsWith('image/')) return;
+      currentFile = file;
+      origSize.textContent = (file.size / 1024).toFixed(1) + ' KB';
+      processImage(file);
+    }
+
+    function processImage(file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+
+          const quality = qualityRange.value / 100;
+          canvas.toBlob((blob) => {
+            const sizeInKb = blob.size / 1024;
+            newSize.textContent = sizeInKb.toFixed(1) + ' KB';
+            const savings = Math.max(0, (((file.size - blob.size) / file.size) * 100)).toFixed(0);
+            savedRatio.textContent = savings + '% توفير';
+
+            downloadBtn.href = URL.createObjectURL(blob);
+            downloadBtn.download = file.name.replace(/\.[^/.]+$/, "") + ".webp";
+            resultBox.classList.remove('hidden');
+          }, 'image/webp', quality);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+</html>
