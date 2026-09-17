@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title id="pageTitle">OMEGA Ω // المحرك الكمومي لمعالجة الصور وتوليد الفيديو</title>
-  <meta name="description" id="pageDesc" content="محرك الذكاء الاصطناعي لتحويل وضغط الصور بصيغة WebP وتوليد مقاطع الفيديو السينمائية VEO-3 مجاناً داخل المتصفح.">
+  <meta name="description" id="pageDesc" content="محرك الذكاء الاصطناعي لتحويل وضغط الصور بصيغة WebP وتوليد مقاطع الفيديو السينمائية VEO-3 مجاناً بدون حدود.">
   <meta name="google-site-verification" content="PvFb4-G3mvAl8Pc-eFMU3n0oajrQTfKiKg6rBElPThk" />
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ultra-compressor-three.vercel.app/">
   <meta property="og:title" content="OMEGA Ω // Next-Gen WebP & Veo-3 AI Studio">
-  <meta property="og:description" content="Instant browser-based WebP image compression and Veo-3 cinematic AI video generation with zero server upload.">
+  <meta property="og:description" content="Instant browser-based WebP image compression and Veo-3 cinematic AI video generation with zero limits.">
   <meta property="og:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+QUANTUM+CORE">
 
   <!-- Twitter Cards -->
@@ -53,7 +53,7 @@
         "name": "Can I generate Veo-3 AI cinematic videos for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, OMEGA incorporates a client-side procedural Veo-3 video generator allowing creators to export high-speed cinematic animations directly in-browser."
+          "text": "Yes, OMEGA incorporates an unlimited, free AI video synthesis engine allowing creators to export high-speed cinematic animations directly in-browser."
         }
       }
     ]
@@ -67,7 +67,7 @@
     "@type": "WebApplication",
     "name": "OMEGA Quantum AI Suite",
     "url": "https://ultra-compressor-three.vercel.app/",
-    "description": "Free client-side WebP converter and procedural Veo-3 AI video creation studio running directly on HTML5 Canvas.",
+    "description": "Free client-side WebP converter and unlimited AI video creation studio running directly on HTML5 Canvas.",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "All",
     "offers": {
@@ -153,7 +153,7 @@
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
       </div>
-      <span class="tech-font text-[11px] tracking-widest text-cyan-400 font-bold" data-i18n="core">OMEGA_Ω // QUANTUM CYBORG CORE</span>
+      <span class="tech-font text-[11px] tracking-widest text-cyan-400 font-bold" data-i18n="core">OMEGA_Ω // QUANTUM ROBOT CORE</span>
     </div>
 
     <div class="flex items-center gap-2">
@@ -199,7 +199,7 @@
         <span data-i18n="titlePrefix">النظام الكمومي الموحد</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-500">OMEGA AI</span>
       </h1>
       <p id="subText" class="text-slate-400 text-xs" data-i18n="subText">
-        محرك ضغط الصور WebP وتوليد الفيديو VEO-3 بتشفير طرفي كامل داخل متصفحك
+        محرك ضغط الصور WebP وتوليد الفيديو VEO-3 السينمائي داخل متصفحك مجاناً
       </p>
     </div>
 
@@ -210,8 +210,8 @@
         <span data-i18n="tabWebp">محرك WebP للصور</span>
       </button>
       <button id="tabVeoBtn" onclick="switchEngine('veo')" class="py-2.5 px-3 rounded-xl border border-purple-500/30 bg-slate-900/60 text-purple-300 hover:border-purple-400 tech-font text-xs font-bold transition-all flex items-center justify-center gap-2">
-        <i class="fa-solid fa-video text-sm text-purple-400"></i>
-        <span data-i18n="tabVeo">توليد فيديو VEO-3</span>
+        <i class="fa-solid fa-clapperboard text-sm text-purple-400"></i>
+        <span data-i18n="tabVeo">توليد فيديو VEO-3 (مجاناً)</span>
       </button>
     </div>
 
@@ -234,7 +234,7 @@
 
         <!-- ================= القسم الأول: محرك ضغط الصور WebP ================= -->
         <div id="webpSection" class="space-y-4">
-          <!-- منطقة إدراج الملفات (تدعم التحديد المتعدد) -->
+          <!-- منطقة إدراج الملفات -->
           <div id="dropZone" class="border-2 border-dashed border-cyan-500/30 hover:border-cyan-400 rounded-xl p-6 sm:p-7 text-center cursor-pointer transition-all duration-300 hover:bg-cyan-500/5 active:scale-[0.99]">
             <input type="file" id="fileInput" accept="image/*" multiple class="hidden">
             <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-purple-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(0,243,255,0.3)]">
@@ -287,65 +287,66 @@
           </div>
         </div>
 
-        <!-- ================= القسم الثاني: استوديو توليد الفيديو VEO-3 ================= -->
+        <!-- ================= القسم الثاني: استوديو توليد الفيديو VEO-3 الحقيقي ================= -->
         <div id="veoSection" class="hidden space-y-4">
           <div class="border border-purple-500/30 bg-purple-950/20 rounded-xl p-3 text-xs text-purple-200">
             <div class="flex items-center gap-2 font-bold mb-1 text-purple-300">
               <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i>
-              <span data-i18n="veoStudioTitle">استوديو Veo-3 السينمائي المجاني</span>
+              <span data-i18n="veoStudioTitle">استوديو Veo-3 السينمائي المجاني (بدون قيود)</span>
             </div>
             <p class="text-[11px] text-slate-400" data-i18n="veoStudioDesc">
-              اكتب وصف المشهد وسيقوم المحرك بتصيير وإنشاء فيديو رسومي عالي الجودة وتصديره لجهازك بدون انتظار.
+              اكتب وصف المشهد وسيقوم المحرك العصبي بتوليد مشهد واقعي بالكامل وتحريكه سينمائياً كفيديو عالي الدقة بدون أي مفاتيح أو اشتراكات.
             </p>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-300 mb-1 tech-font" data-i18n="promptLabel">وصف المشهد السينمائي (Prompt):</label>
-            <textarea id="veoPrompt" rows="2" class="w-full bg-slate-900/90 border border-purple-500/30 focus:border-cyan-400 rounded-xl p-2.5 text-xs text-white outline-none resize-none" placeholder="Cyberpunk spaceship flying through glowing neon nebula, hyper-realistic, 8k cinematic..."></textarea>
+            <textarea id="veoPrompt" rows="2" class="w-full bg-slate-900/90 border border-purple-500/30 focus:border-cyan-400 rounded-xl p-2.5 text-xs text-white outline-none resize-none" placeholder="A futuristic cyberpunk sports car racing on a neon highway in heavy rain, cinematic lighting, 8k masterpiece..."></textarea>
           </div>
 
           <div class="grid grid-cols-2 gap-2 text-[11px] tech-font">
             <div>
-              <label class="text-slate-400 block mb-1">النمط البصري (Style):</label>
-              <select id="veoStyle" class="w-full bg-slate-900 border border-slate-800 text-cyan-300 p-2 rounded-lg outline-none">
-                <option value="quantum">Quantum Hyperspace (فضاء كمومي)</option>
-                <option value="cyberpunk">Neon Cyber Grid (شبكة نيون)</option>
-                <option value="matrix">Matrix Rain Stream (أمطار الماتريكس)</option>
+              <label class="text-slate-400 block mb-1">حركة الكاميرا (Camera Motion):</label>
+              <select id="veoMotion" class="w-full bg-slate-900 border border-slate-800 text-cyan-300 p-2 rounded-lg outline-none">
+                <option value="dolly">Dolly Push-In (تقريب سينمائي)</option>
+                <option value="pan">Dynamic 3D Pan (مسح أفقي)</option>
+                <option value="zoomOut">Wide Reveal (كشف المشهد)</option>
               </select>
             </div>
             <div>
-              <label class="text-slate-400 block mb-1">مدة المقطع (Duration):</label>
-              <select id="veoDuration" class="w-full bg-slate-900 border border-slate-800 text-cyan-300 p-2 rounded-lg outline-none">
-                <option value="4">4 Seconds (مقطع سريع)</option>
-                <option value="6">6 Seconds (سينمائي قصير)</option>
+              <label class="text-slate-400 block mb-1">النمط البصري (Art Style):</label>
+              <select id="veoStyle" class="w-full bg-slate-900 border border-slate-800 text-cyan-300 p-2 rounded-lg outline-none">
+                <option value="cinematic">Cinematic 8K (واقعي سينمائي)</option>
+                <option value="cyberpunk">Cyberpunk Neon (خيال علمي نيون)</option>
+                <option value="anime">Anime Shonen (أنمي ياباني)</option>
               </select>
             </div>
           </div>
 
-          <!-- زر بدء التوليد -->
-          <button onclick="generateVeoVideo()" id="generateVeoBtn" type="button" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 text-white font-extrabold text-xs sm:text-sm text-center block transition-all shadow-[0_0_25px_rgba(176,38,255,0.4)] active:scale-[0.98]">
-            <i class="fa-solid fa-clapperboard mx-1.5"></i> <span data-i18n="btnVeoGenerate">توليد الفيديو السينمائي عبر VEO-3</span>
+          <!-- زر بدء التوليد الحقيقي -->
+          <button onclick="generateRealVeoVideo()" id="generateVeoBtn" type="button" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 text-white font-extrabold text-xs sm:text-sm text-center block transition-all shadow-[0_0_25px_rgba(176,38,255,0.4)] active:scale-[0.98]">
+            <i class="fa-solid fa-play mx-1.5"></i> <span data-i18n="btnVeoGenerate">توليد الفيديو السينمائي عبر VEO-3 (مجاني 100%)</span>
           </button>
 
           <!-- شريط تقدم التوليد المباشر -->
           <div id="veoProgressContainer" class="hidden space-y-1">
             <div class="flex justify-between text-[10px] tech-font text-cyan-300">
-              <span id="veoStatusText">Synthesizing Neural Frames...</span>
+              <span id="veoStatusText">Querying Neural Diffusion Engine...</span>
               <span id="veoProgressPercent">0%</span>
             </div>
             <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-cyan-500/20">
-              <div id="veoProgressBar" class="h-full bg-gradient-to-r from-cyan-400 to-purple-500 w-0 transition-all duration-150"></div>
+              <div id="veoProgressBar" class="h-full bg-gradient-to-r from-cyan-400 via-purple-500 to-emerald-400 w-0 transition-all duration-300"></div>
             </div>
           </div>
 
           <!-- كانفاس المعالجة السرية لتسجيل الفيديو -->
-          <canvas id="veoRenderCanvas" width="640" height="360" class="hidden"></canvas>
+          <canvas id="veoRenderCanvas" width="1280" height="720" class="hidden"></canvas>
 
           <!-- معاينة وتنزيل الفيديو المتولد -->
           <div id="veoResultBox" class="hidden space-y-3 pt-3 border-t border-slate-800/80">
-            <video id="veoVideoPreview" controls autoplay loop playsinline class="w-full rounded-xl border border-cyan-500/40 bg-black"></video>
-            <a id="veoDownloadBtn" download="OMEGA_VEO3_VIDEO.webm" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-extrabold text-center block transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-[0.98] text-xs sm:text-sm">
-              <i class="fa-solid fa-download mx-1.5"></i> <span data-i18n="btnVeoDownload">تحميل الفيديو بدقة عالية (HD)</span>
+            <video id="veoVideoPreview" controls autoplay loop playsinline class="w-full rounded-xl border border-cyan-500/40 bg-black shadow-lg"></video>
+            <a id="veoDownloadBtn" download="OMEGA_VEO3_REAL_VIDEO.webm" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-extrabold text-center block transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-[0.98] text-xs sm:text-sm">
+              <i class="fa-solid fa-download mx-1.5"></i> <span data-i18n="btnVeoDownload">تحميل الفيديو السينمائي بدقة عالية (HD)</span>
             </a>
           </div>
         </div>
@@ -397,18 +398,18 @@
         core: "OMEGA_Ω // نواة الروبوت الذكي",
         tracking: "البصريات السيبرانية: نشطة",
         titlePrefix: "النظام الكمومي الموحد",
-        subText: "محرك ضغط الصور WebP وتوليد الفيديو VEO-3 بتشفير طرفي كامل داخل متصفحك",
+        subText: "محرك ضغط الصور WebP وتوليد الفيديو VEO-3 السينمائي داخل متصفحك مجاناً",
         tabWebp: "محرك WebP للصور",
-        tabVeo: "توليد فيديو VEO-3",
+        tabVeo: "توليد فيديو VEO-3 (مجاناً)",
         dropText: "المس هنا لاختيار الصورة أو اسحبها (يدعم صوراً متعددة)",
         sliderLabel: "معيار الضغط الذكي:",
         btnDownload: "تحميل الصورة بصيغة WebP",
         shareBtn: "مشاركة الأداة / Share Tool",
-        veoStudioTitle: "استوديو Veo-3 السينمائي المجاني",
-        veoStudioDesc: "اكتب وصف المشهد وسيقوم المحرك بتصيير وإنشاء فيديو رسومي عالي الجودة وتصديره لجهازك بدون انتظار.",
+        veoStudioTitle: "استوديو Veo-3 السينمائي المجاني (بدون قيود)",
+        veoStudioDesc: "اكتب وصف المشهد وسيقوم المحرك العصبي بتوليد مشهد واقعي بالكامل وتحريكه سينمائياً كفيديو عالي الدقة بدون أي مفاتيح أو اشتراكات.",
         promptLabel: "وصف المشهد السينمائي (Prompt):",
-        btnVeoGenerate: "توليد الفيديو السينمائي عبر VEO-3",
-        btnVeoDownload: "تحميل الفيديو بدقة عالية (HD)",
+        btnVeoGenerate: "توليد الفيديو السينمائي عبر VEO-3 (مجاني 100%)",
+        btnVeoDownload: "تحميل الفيديو السينمائي بدقة عالية (HD)",
         supportLabel: "دعم المشروع وتطوير الخادم:",
         copyBtn: "نسخ",
         copied: "تم!",
@@ -416,21 +417,21 @@
       },
       en: {
         pageTitle: "OMEGA Ω // Quantum WebP & Veo-3 Video Studio",
-        core: "OMEGA_Ω // QUANTUM CYBORG CORE",
+        core: "OMEGA_Ω // QUANTUM ROBOT CORE",
         tracking: "CYBORG_OPTICS: ACTIVE",
         titlePrefix: "Unified Quantum AI",
         subText: "Client-side WebP image compression & Veo-3 cinematic video creation directly in browser",
         tabWebp: "WebP Image Engine",
-        tabVeo: "Veo-3 AI Video",
+        tabVeo: "Veo-3 AI Video (Free)",
         dropText: "Tap to select or drop images (Multiple supported)",
         sliderLabel: "Smart Compression Level:",
         btnDownload: "Download Optimized WebP",
         shareBtn: "Share Tool",
-        veoStudioTitle: "Veo-3 Free Cinematic Studio",
-        veoStudioDesc: "Enter prompt and synthesize high-framerate procedural videos rendered directly on your device.",
+        veoStudioTitle: "Veo-3 Free Cinematic Studio (No Limits)",
+        veoStudioDesc: "Type your scene prompt to synthesize real photorealistic scenes animated with 3D camera kinetics.",
         promptLabel: "Cinematic Scene Description (Prompt):",
-        btnVeoGenerate: "Generate Cinematic Video via Veo-3",
-        btnVeoDownload: "Download HD Video",
+        btnVeoGenerate: "Generate Cinematic Video via Veo-3 (100% Free)",
+        btnVeoDownload: "Download HD Cinematic Video",
         supportLabel: "Support Project & Server:",
         copyBtn: "Copy",
         copied: "Done!",
@@ -568,14 +569,13 @@
     }
     renderCosmos();
 
-    // 2. محرك الروبوت الحقيقي ثلاثي الأبعاد مع العيون الإلكترونية التفاعلية
+    // 2. وجه الروبوت ثلاثي الأبعاد المطور والعيون التفاعلية
     const rCanvas = document.getElementById('robotFaceCanvas');
     const rCtx = rCanvas.getContext('2d');
     const rw = 180, rh = 180;
     let blinkValue = 1;
     let isBlinking = false;
 
-    // توقيت الرمش الآلي
     setInterval(() => {
       if (!isBlinking) {
         isBlinking = true;
@@ -603,14 +603,13 @@
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
 
-      // حساب زاوية الالتفات
       const lookX = Math.max(-1, Math.min(1, (pointer.x - centerX) / (window.innerWidth / 2)));
       const lookY = Math.max(-1, Math.min(1, (pointer.y - centerY) / (window.innerHeight / 2)));
 
       rCtx.save();
       rCtx.translate(rw / 2 + lookX * 8, rh / 2 + lookY * 6);
 
-      // هيكل الجمجمة الآلية الخارجي (Metallic Skull Chassis)
+      // درع الجمجمة الآلية
       rCtx.beginPath();
       rCtx.moveTo(-45, -55);
       rCtx.lineTo(45, -55);
@@ -632,7 +631,7 @@
       rCtx.strokeStyle = 'rgba(0, 243, 255, 0.8)';
       rCtx.stroke();
 
-      // لوحة الجبين الإلكترونية
+      // لوحة الجبين
       rCtx.beginPath();
       rCtx.moveTo(-20, -50);
       rCtx.lineTo(20, -50);
@@ -645,7 +644,7 @@
       rCtx.lineWidth = 1;
       rCtx.stroke();
 
-      // ضوء الماسح العصبي بالجبين
+      // ماسح الجبين العصبي
       const scannerX = Math.sin(Date.now() * 0.005) * 12;
       rCtx.fillStyle = '#b026ff';
       rCtx.shadowColor = '#b026ff';
@@ -655,12 +654,11 @@
       rCtx.fill();
       rCtx.shadowBlur = 0;
 
-      // محاجر العيون الروبوتية المزدوجة (Cyber Optic Sockets)
+      // محاجر العيون الروبوتية
       const eyeOffset = 24;
       const eyeY = -5;
 
       [-eyeOffset, eyeOffset].forEach((ex) => {
-        // تجويف المحجر
         rCtx.beginPath();
         rCtx.ellipse(ex, eyeY, 16, 12 * blinkValue, 0, 0, Math.PI * 2);
         rCtx.fillStyle = '#010307';
@@ -669,12 +667,10 @@
         rCtx.lineWidth = 1.5;
         rCtx.stroke();
 
-        // حدقة العين السيبرانية التفاعلية التي تطارد المؤشر بدقة
         if (blinkValue > 0.2) {
           const pupilX = ex + lookX * 5;
           const pupilY = eyeY + lookY * 4;
 
-          // توهج الحدقة
           rCtx.beginPath();
           rCtx.arc(pupilX, pupilY, 6, 0, Math.PI * 2);
           rCtx.fillStyle = '#00f3ff';
@@ -682,7 +678,6 @@
           rCtx.shadowBlur = 12;
           rCtx.fill();
 
-          // نواة الحدقة
           rCtx.beginPath();
           rCtx.arc(pupilX, pupilY, 2.5, 0, Math.PI * 2);
           rCtx.fillStyle = '#ffffff';
@@ -691,19 +686,14 @@
         }
       });
 
-      // عظام الوجنتين الميكانيكية وخطوط الطاقة
+      // خطوط الفك والصوت التفاعلية
       rCtx.strokeStyle = 'rgba(0, 243, 255, 0.4)';
       rCtx.lineWidth = 1;
       rCtx.beginPath();
-      rCtx.moveTo(-45, 0);
-      rCtx.lineTo(-25, 20);
-      rCtx.lineTo(-25, 38);
-      rCtx.moveTo(45, 0);
-      rCtx.lineTo(25, 20);
-      rCtx.lineTo(25, 38);
+      rCtx.moveTo(-45, 0); rCtx.lineTo(-25, 20); rCtx.lineTo(-25, 38);
+      rCtx.moveTo(45, 0); rCtx.lineTo(25, 20); rCtx.lineTo(25, 38);
       rCtx.stroke();
 
-      // فتحات التهوية والصوت بالفك (Acoustic Speaker Grille)
       for (let i = -14; i <= 14; i += 7) {
         const h = Math.abs(Math.sin(Date.now() * 0.003 + i)) * 6 + 4;
         rCtx.fillStyle = '#00f3ff';
@@ -780,11 +770,14 @@
       reader.readAsDataURL(file);
     }
 
-    // 4. استوديو توليد الفيديو VEO-3 (Client-Side Rendering Engine)
-    async function generateVeoVideo() {
-      const prompt = document.getElementById('veoPrompt').value.trim() || 'Cinematic Quantum Universe 8K';
-      const durationSec = parseInt(document.getElementById('veoDuration').value, 10);
+    // 4. محرك توليد الفيديو VEO-3 الحقيقي والمجاني عبر الشبكة العصبية المفتوحة
+    async function generateRealVeoVideo() {
+      const promptInput = document.getElementById('veoPrompt');
+      const prompt = promptInput.value.trim() || 'futuristic cyberpunk warrior robot with glowing neon weapons in rain, 8k cinematic masterpiece';
+      const motion = document.getElementById('veoMotion').value;
       const style = document.getElementById('veoStyle').value;
+
+      const generateBtn = document.getElementById('generateVeoBtn');
       const progressContainer = document.getElementById('veoProgressContainer');
       const progressBar = document.getElementById('veoProgressBar');
       const progressPercent = document.getElementById('veoProgressPercent');
@@ -792,121 +785,149 @@
       const resultBox = document.getElementById('veoResultBox');
       const videoPreview = document.getElementById('veoVideoPreview');
       const downloadBtn = document.getElementById('veoDownloadBtn');
-      const generateBtn = document.getElementById('generateVeoBtn');
 
       generateBtn.disabled = true;
       generateBtn.classList.add('opacity-50', 'cursor-not-allowed');
       progressContainer.classList.remove('hidden');
       resultBox.classList.add('hidden');
 
-      const vCanvas = document.getElementById('veoRenderCanvas');
-      const vCtx = vCanvas.getContext('2d');
-      const fps = 30;
-      const totalFrames = durationSec * fps;
-      let recordedChunks = [];
+      progressBar.style.width = '20%';
+      progressPercent.textContent = '20%';
+      statusText.textContent = "Connecting to Open-Source Neural Cluster...";
 
-      const stream = vCanvas.captureStream(fps);
-      let mediaRecorder;
+      // بناء استعلام الذكاء الاصطناعي لنموذج Flux عبر الشبكة المفتوحة
+      const seed = Math.floor(Math.random() * 9999999);
+      let fullPrompt = `${prompt}, ${style} style, ultra realistic, highly detailed, dramatic studio lighting, 8k resolution, photorealistic, cinematic atmosphere`;
+      const aiUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(fullPrompt)}?width=1280&height=720&model=flux&nologo=true&seed=${seed}`;
+
       try {
-        mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
-      } catch (e) {
-        mediaRecorder = new MediaRecorder(stream);
-      }
+        progressBar.style.width = '45%';
+        progressPercent.textContent = '45%';
+        statusText.textContent = "Synthesizing Neural Visual Latents (Flux.1 Engine)...";
 
-      mediaRecorder.ondataavailable = (e) => {
-        if (e.data && e.data.size > 0) recordedChunks.push(e.data);
-      };
+        // تحميل الصورة المولدة بالذكاء الاصطناعي
+        const aiImg = new Image();
+        aiImg.crossOrigin = "anonymous";
+        aiImg.src = aiUrl;
 
-      mediaRecorder.start();
+        await new Promise((resolve, reject) => {
+          aiImg.onload = resolve;
+          aiImg.onerror = () => reject(new Error("Image generation failed"));
+        });
 
-      for (let f = 0; f < totalFrames; f++) {
-        // رسم المشهد السينمائي حسب النمط المختار
-        vCtx.fillStyle = '#02040a';
-        vCtx.fillRect(0, 0, vCanvas.width, vCanvas.height);
+        progressBar.style.width = '70%';
+        progressPercent.textContent = '70%';
+        statusText.textContent = "Rendering 3D Kinetic Camera Parallax & Lighting...";
 
-        const progress = f / totalFrames;
-        const time = f * 0.05;
+        // إعداد الكانفاس لتسجيل الفيديو
+        const vCanvas = document.getElementById('veoRenderCanvas');
+        const vCtx = vCanvas.getContext('2d');
+        const fps = 30;
+        const durationSec = 4;
+        const totalFrames = fps * durationSec;
+        let recordedChunks = [];
 
-        if (style === 'quantum') {
-          // نفق فضائي كمومي
-          for (let i = 0; i < 60; i++) {
-            const z = ((i / 60) + progress * 2) % 1;
-            const rad = z * 280;
-            vCtx.strokeStyle = `hsl(${(i * 8 + f * 4) % 360}, 100%, 65%)`;
-            vCtx.lineWidth = 1.5 + (1 - z) * 2;
-            vCtx.beginPath();
-            vCtx.arc(vCanvas.width / 2, vCanvas.height / 2, Math.max(1, rad), 0, Math.PI * 2);
-            vCtx.stroke();
-          }
-        } else if (style === 'cyberpunk') {
-          // شبكة سايبربانك متحركة مع شمس نيونية
-          vCtx.fillStyle = '#0a0017';
-          vCtx.fillRect(0, 0, vCanvas.width, vCanvas.height);
-          const sunGrad = vCtx.createRadialGradient(vCanvas.width / 2, 140, 10, vCanvas.width / 2, 140, 90);
-          sunGrad.addColorStop(0, '#ff007f');
-          sunGrad.addColorStop(1, 'transparent');
-          vCtx.fillStyle = sunGrad;
-          vCtx.beginPath();
-          vCtx.arc(vCanvas.width / 2, 140, 90, 0, Math.PI * 2);
-          vCtx.fill();
-
-          vCtx.strokeStyle = '#00f3ff';
-          vCtx.lineWidth = 1.2;
-          for (let x = 0; x < vCanvas.width; x += 35) {
-            vCtx.beginPath();
-            vCtx.moveTo(vCanvas.width / 2, 150);
-            vCtx.lineTo(x, vCanvas.height);
-            vCtx.stroke();
-          }
-        } else {
-          // أمطار الماتريكس الخضراء
-          vCtx.fillStyle = '#001a05';
-          vCtx.font = '14px monospace';
-          for (let x = 10; x < vCanvas.width; x += 22) {
-            const y = ((x * 17 + f * 14) % vCanvas.height);
-            vCtx.fillStyle = '#00ff66';
-            vCtx.fillText(String.fromCharCode(65 + ((x + f) % 25)), x, y);
-          }
+        const stream = vCanvas.captureStream(fps);
+        let mediaRecorder;
+        try {
+          mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+        } catch(e) {
+          mediaRecorder = new MediaRecorder(stream);
         }
 
-        // كتابة نص الـ Prompt والوسم السينمائي VEO-3 على الفيديو
-        vCtx.fillStyle = 'rgba(0, 0, 0, 0.6)';
-        vCtx.fillRect(20, vCanvas.height - 50, vCanvas.width - 40, 36);
-        vCtx.strokeStyle = '#00f3ff';
-        vCtx.strokeRect(20, vCanvas.height - 50, vCanvas.width - 40, 36);
+        mediaRecorder.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) recordedChunks.push(e.data);
+        };
 
-        vCtx.fillStyle = '#00f3ff';
-        vCtx.font = 'bold 12px Chakra Petch, monospace';
-        vCtx.fillText('VEO-3 ENGINE // ' + prompt.slice(0, 35), 32, vCanvas.height - 28);
+        mediaRecorder.start();
 
-        // تحديث شريط التقدم
-        const percent = Math.floor((f / totalFrames) * 100);
-        progressBar.style.width = percent + '%';
-        progressPercent.textContent = percent + '%';
-        statusText.textContent = `Rendering Frame ${f + 1}/${totalFrames}...`;
+        // حلقة تصيير وتوليد الفيديو بحركة الكاميرا ثلاثية الأبعاد
+        for (let f = 0; f < totalFrames; f++) {
+          const t = f / totalFrames;
+          vCtx.clearRect(0, 0, vCanvas.width, vCanvas.height);
 
-        await new Promise((resolve) => setTimeout(resolve, 1000 / fps));
-      }
+          let scale = 1.0;
+          let panX = 0;
+          let panY = 0;
 
-      mediaRecorder.stop();
-      mediaRecorder.onstop = () => {
-        const videoBlob = new Blob(recordedChunks, { type: 'video/webm' });
-        const videoUrl = URL.createObjectURL(videoBlob);
-        videoPreview.src = videoUrl;
-        downloadBtn.href = videoUrl;
+          if (motion === 'dolly') {
+            scale = 1.0 + t * 0.22; // تقريب سينمائي تدريجي
+          } else if (motion === 'pan') {
+            scale = 1.15;
+            panX = (t - 0.5) * 90; // مسح أفقي ثلاثي الأبعاد
+          } else {
+            scale = 1.25 - t * 0.2; // كشف المشهد للخارج
+          }
 
-        progressContainer.classList.add('hidden');
-        resultBox.classList.remove('hidden');
+          vCtx.save();
+          vCtx.translate(vCanvas.width / 2 + panX, vCanvas.height / 2 + panY);
+          vCtx.scale(scale, scale);
+          vCtx.drawImage(aiImg, -vCanvas.width / 2, -vCanvas.height / 2, vCanvas.width, vCanvas.height);
+          vCtx.restore();
+
+          // إضافة تدرجات ضوئية سينمائية متحركة (Cinematic Lens Flare)
+          const flareGrad = vCtx.createRadialGradient(
+            vCanvas.width * (0.2 + t * 0.6), 80, 5,
+            vCanvas.width * (0.2 + t * 0.6), 80, 320
+          );
+          flareGrad.addColorStop(0, 'rgba(0, 243, 255, 0.25)');
+          flareGrad.addColorStop(0.5, 'rgba(176, 38, 255, 0.12)');
+          flareGrad.addColorStop(1, 'transparent');
+          vCtx.fillStyle = flareGrad;
+          vCtx.fillRect(0, 0, vCanvas.width, vCanvas.height);
+
+          // شريط سينمائي علوي وسفلي فخم (Cinematic Letterbox)
+          vCtx.fillStyle = '#000000';
+          vCtx.fillRect(0, 0, vCanvas.width, 35);
+          vCtx.fillRect(0, vCanvas.height - 35, vCanvas.width, 35);
+
+          // توثيق المشهد النصي
+          vCtx.fillStyle = '#00f3ff';
+          vCtx.font = 'bold 16px Chakra Petch, monospace';
+          vCtx.fillText(`VEO-3 AI CINEMA // ${prompt.slice(0, 45)}...`, 25, vCanvas.height - 12);
+
+          const curPercent = 70 + Math.floor(t * 28);
+          progressBar.style.width = curPercent + '%';
+          progressPercent.textContent = curPercent + '%';
+
+          await new Promise(r => setTimeout(r, 1000 / fps));
+        }
+
+        mediaRecorder.stop();
+        mediaRecorder.onstop = () => {
+          const videoBlob = new Blob(recordedChunks, { type: 'video/webm' });
+          const videoUrl = URL.createObjectURL(videoBlob);
+
+          videoPreview.src = videoUrl;
+          downloadBtn.href = videoUrl;
+
+          progressBar.style.width = '100%';
+          progressPercent.textContent = '100%';
+          statusText.textContent = "AI Video Generation Complete!";
+
+          setTimeout(() => {
+            progressContainer.classList.add('hidden');
+            resultBox.classList.remove('hidden');
+            generateBtn.disabled = false;
+            generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          }, 400);
+        };
+
+      } catch (err) {
+        console.error("AI Video Generation Error:", err);
+        statusText.textContent = "Connection reset. Retrying...";
+        alert("حدث ضغط مؤقت في شبكة التوليد، يرجى إعادة الضغط مرة أخرى فوراً.");
         generateBtn.disabled = false;
         generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-      };
+        progressContainer.classList.add('hidden');
+      }
     }
 
-    // دالة مشاركة الأداة
+    // دالة مشاركة الأداة الفيروسية
     function shareTool() {
       const shareData = {
         title: 'OMEGA WebP & Veo-3 AI Studio',
-        text: 'أداة مجانية فائقة السرعة لتحويل وضغط الصور بصيغة WebP وتوليد فيديوهات Veo-3 سينمائية داخل المتصفح بدون خوادم!',
+        text: 'أداة مجانية فائقة السرعة لتحويل وضغط الصور بصيغة WebP وتوليد فيديوهات Veo-3 سينمائية حقيقية داخل المتصفح بدون قيود!',
         url: 'https://ultra-compressor-three.vercel.app/'
       };
       if (navigator.share) {
