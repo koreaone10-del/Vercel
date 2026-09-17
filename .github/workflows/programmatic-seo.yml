@@ -4,7 +4,7 @@ on:
   schedule:
     # يعمل تلقائياً كل يوم أحد منتصف الليل
     - cron: '0 0 * * 0'
-  workflow_dispatch: # يتيح التشغيل اليدوي بنقرة واحدة
+  workflow_dispatch:
 
 jobs:
   generate-and-deploy:
@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: setup-python@v5
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -31,4 +31,3 @@ jobs:
           git add *.html sitemap.xml
           git commit -m "Auto-generate programmatic SEO pages and sitemap update" || exit 0
           git push
-
