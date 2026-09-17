@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title id="pageTitle">OMEGA Ω // المحرك الكمومي لمعالجة الصور</title>
-  <meta name="description" id="pageDesc" content="محرك الذكاء الاصطناعي الفائق لتحويل وضغط الصور بصيغة WebP مع واجهة تفاعلية مستقبلية.">
+  <title id="pageTitle">OMEGA Ω // المحرك الكمومي لمعالجة الصور وتوليد الفيديو</title>
+  <meta name="description" id="pageDesc" content="محرك الذكاء الاصطناعي لتحويل وضغط الصور بصيغة WebP وتوليد مقاطع الفيديو السينمائية VEO-3 مجاناً داخل المتصفح.">
   <meta name="google-site-verification" content="PvFb4-G3mvAl8Pc-eFMU3n0oajrQTfKiKg6rBElPThk" />
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,17 +14,18 @@
   <!-- Social Media & Open Graph Protocol -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ultra-compressor-three.vercel.app/">
-  <meta property="og:title" content="OMEGA Ω // Next-Gen WebP Engine">
-  <meta property="og:description" content="Instant browser-based image compression with zero server upload.">
-  <meta property="og:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+WEBP+ULTRA+ENGINE">
+  <meta property="og:title" content="OMEGA Ω // Next-Gen WebP & Veo-3 AI Studio">
+  <meta property="og:description" content="Instant browser-based WebP image compression and Veo-3 cinematic AI video generation with zero server upload.">
+  <meta property="og:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+QUANTUM+CORE">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OMEGA Ω // Next-Gen WebP Engine">
-  <meta name="twitter:description" content="Instant browser-based image compression with zero server upload.">
-  <meta name="twitter:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+WEBP+ULTRA+ENGINE">
+  <meta name="twitter:title" content="OMEGA Ω // Next-Gen WebP & AI Video Engine">
+  <meta name="twitter:description" content="Instant browser-based image compression & AI video creation with zero server upload.">
+  <meta name="twitter:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+QUANTUM+CORE">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#02040a">
+
   <!-- FAQ Schema for Google SERP Domination -->
   <script type="application/ld+json">
   {
@@ -49,38 +50,31 @@
       },
       {
         "@type": "Question",
-        "name": "How much file size can WebP save compared to PNG?",
+        "name": "Can I generate Veo-3 AI cinematic videos for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "WebP typically reduces file size by 70% to 85% compared to PNG and JPG while maintaining visual clarity, dramatically boosting web page load speeds."
+          "text": "Yes, OMEGA incorporates a client-side procedural Veo-3 video generator allowing creators to export high-speed cinematic animations directly in-browser."
         }
       }
     ]
   }
   </script>
 
-  <!-- Structured Data / JSON-LD for Google Rich Results -->
+  <!-- Structured Data / JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "OMEGA WebP Ultra Converter",
+    "name": "OMEGA Quantum AI Suite",
     "url": "https://ultra-compressor-three.vercel.app/",
-    "description": "Free, browser-based quantum image optimizer and WebP converter running entirely on client-side Canvas.",
+    "description": "Free client-side WebP converter and procedural Veo-3 AI video creation studio running directly on HTML5 Canvas.",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Client-side processing",
-      "Zero server uploads",
-      "Real-time compression telemetry",
-      "Instant WebP conversion",
-      "Multi-language support"
-    ]
+    }
   }
   </script>
 
@@ -102,7 +96,6 @@
     .tech-font {
       font-family: 'Chakra Petch', monospace;
     }
-    /* إطار نيون دوار ثلاثي الأبعاد فائق النعومة */
     .conic-border {
       position: relative;
       background: rgba(5, 10, 24, 0.85);
@@ -141,11 +134,16 @@
       50% { opacity: 0.8; }
       100% { top: 100%; opacity: 0; }
     }
+    .active-tab {
+      background: linear-gradient(135deg, rgba(0, 243, 255, 0.2), rgba(176, 38, 255, 0.3));
+      border-color: #00f3ff !important;
+      color: #00f3ff !important;
+      box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    }
   </style>
 </head>
 <body class="text-slate-100 flex flex-col justify-between items-center relative selection:bg-cyan-500 selection:text-black">
 
-  <!-- خلفية الفضاء ومحاكاة الثقب الأسود التفاعلي -->
   <canvas id="spaceCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
   <!-- شريط المراقبة العلوي HUD -->
@@ -155,7 +153,7 @@
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
       </div>
-      <span class="tech-font text-[11px] tracking-widest text-cyan-400 font-bold" data-i18n="core">OMEGA_Ω // AI CORE</span>
+      <span class="tech-font text-[11px] tracking-widest text-cyan-400 font-bold" data-i18n="core">OMEGA_Ω // QUANTUM CYBORG CORE</span>
     </div>
 
     <div class="flex items-center gap-2">
@@ -177,104 +175,183 @@
       </div>
 
       <div class="tech-font text-[10px] text-purple-400 border border-purple-500/30 bg-purple-950/40 px-2.5 py-1 rounded-full hidden sm:flex items-center gap-1.5">
-        <i class="fa-solid fa-eye text-[9px] animate-pulse"></i>
-        <span data-i18n="tracking">MOTION_TRACKING: ACTIVE</span>
+        <i class="fa-solid fa-microchip text-[9px] animate-pulse"></i>
+        <span data-i18n="tracking">CYBORG_OPTICS: ACTIVE</span>
       </div>
     </div>
   </header>
 
   <!-- جسم الأداة الرئيسي -->
-  <main class="w-full max-w-xl mx-auto px-4 py-5 z-10 flex-1 flex flex-col items-center justify-center">
+  <main class="w-full max-w-xl mx-auto px-4 py-4 z-10 flex-1 flex flex-col items-center justify-center">
 
-    <!-- وجه الذكاء الاصطناعي التفاعلي الثلاثي الأبعاد (يتبع المستخدم) -->
-    <div class="relative w-36 h-36 mb-2 flex items-center justify-center">
-      <canvas id="aiFaceCanvas" width="160" height="160" class="drop-shadow-[0_0_20px_rgba(0,243,255,0.4)]"></canvas>
-      <div class="absolute -bottom-1 text-[9px] tech-font text-cyan-400/80 bg-slate-950/80 px-2 py-0.5 rounded border border-cyan-500/20">
-        AI_WATCHER_V9
+    <!-- وجه الروبوت ثلاثي الأبعاد المطور (متحرك بملامح وعيون إلكترونية تتبع الزائر) -->
+    <div class="relative w-44 h-44 mb-1 flex items-center justify-center">
+      <canvas id="robotFaceCanvas" width="180" height="180" class="drop-shadow-[0_0_25px_rgba(0,243,255,0.45)]"></canvas>
+      <div class="absolute -bottom-1 text-[9px] tech-font text-cyan-400/90 bg-slate-950/90 px-2 py-0.5 rounded border border-cyan-500/30 flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>CYBER_SYNTH_v4.5</span>
       </div>
     </div>
 
     <!-- العنوان التكنولوجي -->
-    <div class="text-center mb-5">
-      <h1 class="text-2xl sm:text-4xl font-black text-white glow-text mb-1">
-        <span data-i18n="titlePrefix">نظام التحويل الكمومي</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">WebP</span>
+    <div class="text-center mb-4">
+      <h1 class="text-2xl sm:text-3xl font-black text-white glow-text mb-1">
+        <span data-i18n="titlePrefix">النظام الكمومي الموحد</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-500">OMEGA AI</span>
       </h1>
-      <p id="subText" class="text-slate-400 text-xs sm:text-sm" data-i18n="subText">
-        معالجة فائقة السرعة بتشفير طرفي كامل داخل متصفحك
+      <p id="subText" class="text-slate-400 text-xs" data-i18n="subText">
+        محرك ضغط الصور WebP وتوليد الفيديو VEO-3 بتشفير طرفي كامل داخل متصفحك
       </p>
     </div>
-    
-    <!-- شريط الروابط الداخلية لمحركات البحث والزوار -->
-    <div class="flex flex-wrap justify-center gap-2.5 mb-5 z-10">
-      <a href="/png-to-webp.html" class="tech-font text-xs bg-slate-900/80 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 text-cyan-300 px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
+
+    <!-- أزرار التبديل الرئيسية بين الأدوات -->
+    <div class="w-full grid grid-cols-2 gap-2 mb-4">
+      <button id="tabWebpBtn" onclick="switchEngine('webp')" class="active-tab py-2.5 px-3 rounded-xl border border-cyan-500/40 tech-font text-xs font-bold transition-all flex items-center justify-center gap-2">
+        <i class="fa-solid fa-file-zipper text-sm"></i>
+        <span data-i18n="tabWebp">محرك WebP للصور</span>
+      </button>
+      <button id="tabVeoBtn" onclick="switchEngine('veo')" class="py-2.5 px-3 rounded-xl border border-purple-500/30 bg-slate-900/60 text-purple-300 hover:border-purple-400 tech-font text-xs font-bold transition-all flex items-center justify-center gap-2">
+        <i class="fa-solid fa-video text-sm text-purple-400"></i>
+        <span data-i18n="tabVeo">توليد فيديو VEO-3</span>
+      </button>
+    </div>
+
+    <!-- شريط الروابط الداخلية السريعة لمحركات البحث -->
+    <div class="flex flex-wrap justify-center gap-2 mb-4 z-10">
+      <a href="/png-to-webp.html" class="tech-font text-[11px] bg-slate-900/80 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 text-cyan-300 px-3 py-1 rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
         <i class="fa-solid fa-file-image text-[10px]"></i>
         <span>PNG to WebP</span>
       </a>
-      <a href="/jpg-to-webp.html" class="tech-font text-xs bg-slate-900/80 hover:bg-purple-500/20 border border-purple-500/30 hover:border-purple-400 text-purple-300 px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
+      <a href="/jpg-to-webp.html" class="tech-font text-[11px] bg-slate-900/80 hover:bg-purple-500/20 border border-purple-500/30 hover:border-purple-400 text-purple-300 px-3 py-1 rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
         <i class="fa-solid fa-bolt text-[10px]"></i>
         <span>JPG to WebP</span>
       </a>
     </div>
 
-    <!-- كبسولة المعالجة الرئيسية (ثابتة ومحمية على الهواتف) -->
+    <!-- كبسولة المعالجة الرئيسية -->
     <div class="w-full conic-border p-1 glow-cyan">
-      <div class="bg-slate-950/90 rounded-[1.4rem] p-5 sm:p-7 backdrop-blur-2xl relative overflow-hidden">
+      <div class="bg-slate-950/90 rounded-[1.4rem] p-4 sm:p-6 backdrop-blur-2xl relative overflow-hidden">
         <div class="scanline pointer-events-none"></div>
 
-        <!-- منطقة إدراج الملفات -->
-        <div id="dropZone" class="border-2 border-dashed border-cyan-500/30 hover:border-cyan-400 rounded-xl p-6 sm:p-8 text-center cursor-pointer transition-all duration-300 hover:bg-cyan-500/5 active:scale-[0.99]">
-          <input type="file" id="fileInput" accept="image/*" class="hidden">
-          <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-purple-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(0,243,255,0.3)]">
-            <i class="fa-solid fa-cloud-arrow-up text-2xl animate-bounce"></i>
+        <!-- ================= القسم الأول: محرك ضغط الصور WebP ================= -->
+        <div id="webpSection" class="space-y-4">
+          <!-- منطقة إدراج الملفات (تدعم التحديد المتعدد) -->
+          <div id="dropZone" class="border-2 border-dashed border-cyan-500/30 hover:border-cyan-400 rounded-xl p-6 sm:p-7 text-center cursor-pointer transition-all duration-300 hover:bg-cyan-500/5 active:scale-[0.99]">
+            <input type="file" id="fileInput" accept="image/*" multiple class="hidden">
+            <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-purple-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(0,243,255,0.3)]">
+              <i class="fa-solid fa-cloud-arrow-up text-xl animate-bounce"></i>
+            </div>
+            <p id="dropText" class="text-sm font-bold text-white mb-1" data-i18n="dropText">المس هنا لاختيار الصورة أو اسحبها (يدعم صوراً متعددة)</p>
+            <p class="text-[10px] text-slate-400 tech-font">PNG, JPG, JPEG, WEBP // BATCH MODE READY</p>
           </div>
-          <p id="dropText" class="text-sm font-bold text-white mb-1" data-i18n="dropText">المس هنا لاختيار الصورة أو اسحبها</p>
-          <p class="text-[10px] text-slate-400 tech-font">PNG, JPG, JPEG, WEBP</p>
+
+          <!-- شريط ضبط الجودة -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between items-center text-xs tech-font font-bold">
+              <span class="text-slate-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-sliders text-cyan-400"></i> <span data-i18n="sliderLabel">معيار الضغط الذكي:</span>
+              </span>
+              <span id="qualityDisplay" class="text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-500/30">80%</span>
+            </div>
+            <input type="range" id="qualityInput" min="10" max="100" value="80" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+          </div>
+
+          <!-- لوحة العدادات والتحميل اللحظي -->
+          <div id="telemetryBox" class="hidden pt-3 border-t border-slate-800/80 space-y-3">
+            <div class="grid grid-cols-3 gap-2 text-center tech-font">
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+                <div class="text-[9px] text-slate-500 uppercase">Original</div>
+                <div id="rawSize" class="text-xs font-bold text-slate-300">0.0 KB</div>
+              </div>
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+                <div class="text-[9px] text-slate-500 uppercase">Optimized</div>
+                <div id="optSize" class="text-xs font-bold text-cyan-400">0.0 KB</div>
+              </div>
+              <div class="bg-cyan-950/40 border border-cyan-500/30 rounded-lg p-2">
+                <div class="text-[9px] text-cyan-400 uppercase">Saved</div>
+                <div id="ratio" class="text-xs font-bold text-emerald-400">0%</div>
+              </div>
+            </div>
+
+            <!-- زر التحميل -->
+            <a id="downloadTrigger" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-extrabold text-center block transition-all shadow-[0_0_25px_rgba(0,243,255,0.4)] active:scale-[0.98] text-xs sm:text-sm">
+              <i class="fa-solid fa-bolt mx-1.5"></i> <span data-i18n="btnDownload">تحميل الصورة بصيغة WebP</span>
+            </a>
+
+            <!-- زر المشاركة الفيروسي الذكي -->
+            <div class="pt-1 flex justify-center">
+              <button onclick="shareTool()" type="button" class="tech-font text-[11px] text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-500/40 px-3 py-1.5 rounded-xl transition-all flex items-center gap-2 shadow-sm active:scale-95">
+                <i class="fa-solid fa-share-nodes text-cyan-400"></i>
+                <span data-i18n="shareBtn">مشاركة الأداة / Share Tool</span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- شريط ضبط الجودة -->
-        <div class="mt-5 space-y-2">
-          <div class="flex justify-between items-center text-xs tech-font font-bold">
-            <span class="text-slate-400 flex items-center gap-1.5">
-              <i class="fa-solid fa-sliders text-cyan-400"></i> <span data-i18n="sliderLabel">معيار الضغط الذكي:</span>
-            </span>
-            <span id="qualityDisplay" class="text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-500/30">80%</span>
-          </div>
-          <input type="range" id="qualityInput" min="10" max="100" value="80" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
-        </div>
-
-        <!-- لوحة العدادات والتحميل اللحظي -->
-        <div id="telemetryBox" class="hidden mt-5 pt-4 border-t border-slate-800/80 space-y-3">
-          <div class="grid grid-cols-3 gap-2 text-center tech-font">
-            <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
-              <div class="text-[9px] text-slate-500 uppercase">Original</div>
-              <div id="rawSize" class="text-xs font-bold text-slate-300">0.0 KB</div>
+        <!-- ================= القسم الثاني: استوديو توليد الفيديو VEO-3 ================= -->
+        <div id="veoSection" class="hidden space-y-4">
+          <div class="border border-purple-500/30 bg-purple-950/20 rounded-xl p-3 text-xs text-purple-200">
+            <div class="flex items-center gap-2 font-bold mb-1 text-purple-300">
+              <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i>
+              <span data-i18n="veoStudioTitle">استوديو Veo-3 السينمائي المجاني</span>
             </div>
-            <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
-              <div class="text-[9px] text-slate-500 uppercase">Optimized</div>
-              <div id="optSize" class="text-xs font-bold text-cyan-400">0.0 KB</div>
-            </div>
-            <div class="bg-cyan-950/40 border border-cyan-500/30 rounded-lg p-2">
-              <div class="text-[9px] text-cyan-400 uppercase">Saved</div>
-              <div id="ratio" class="text-xs font-bold text-emerald-400">0%</div>
-            </div>
+            <p class="text-[11px] text-slate-400" data-i18n="veoStudioDesc">
+              اكتب وصف المشهد وسيقوم المحرك بتصيير وإنشاء فيديو رسومي عالي الجودة وتصديره لجهازك بدون انتظار.
+            </p>
           </div>
 
-          <!-- زر التحميل -->
-          <a id="downloadTrigger" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-extrabold text-center block transition-all shadow-[0_0_25px_rgba(0,243,255,0.4)] active:scale-[0.98] text-sm">
-            <i class="fa-solid fa-bolt mx-1.5"></i> <span data-i18n="btnDownload">تحميل الصورة بصيغة WebP</span>
-          </a>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1 tech-font" data-i18n="promptLabel">وصف المشهد السينمائي (Prompt):</label>
+            <textarea id="veoPrompt" rows="2" class="w-full bg-slate-900/90 border border-purple-500/30 focus:border-cyan-400 rounded-xl p-2.5 text-xs text-white outline-none resize-none" placeholder="Cyberpunk spaceship flying through glowing neon nebula, hyper-realistic, 8k cinematic..."></textarea>
+          </div>
 
-          <!-- زر المشاركة الفيروسي الذكي -->
-          <div class="pt-2 flex justify-center">
-            <button onclick="shareTool()" type="button" class="tech-font text-xs text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-500/40 px-4 py-2 rounded-xl transition-all flex items-center gap-2 shadow-sm active:scale-95">
-              <i class="fa-solid fa-share-nodes text-cyan-400"></i>
-              <span>مشاركة الأداة / Share Tool</span>
-            </button>
+          <div class="grid grid-cols-2 gap-2 text-[11px] tech-font">
+            <div>
+              <label class="text-slate-400 block mb-1">النمط البصري (Style):</label>
+              <select id="veoStyle" class="w-full bg-slate-900 border border-slate-800 text-cyan-300 p-2 rounded-lg outline-none">
+                <option value="quantum">Quantum Hyperspace (فضاء كمومي)</option>
+                <option value="cyberpunk">Neon Cyber Grid (شبكة نيون)</option>
+                <option value="matrix">Matrix Rain Stream (أمطار الماتريكس)</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-slate-400 block mb-1">مدة المقطع (Duration):</label>
+              <select id="veoDuration" class="w-full bg-slate-900 border border-slate-800 text-cyan-300 p-2 rounded-lg outline-none">
+                <option value="4">4 Seconds (مقطع سريع)</option>
+                <option value="6">6 Seconds (سينمائي قصير)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- زر بدء التوليد -->
+          <button onclick="generateVeoVideo()" id="generateVeoBtn" type="button" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 text-white font-extrabold text-xs sm:text-sm text-center block transition-all shadow-[0_0_25px_rgba(176,38,255,0.4)] active:scale-[0.98]">
+            <i class="fa-solid fa-clapperboard mx-1.5"></i> <span data-i18n="btnVeoGenerate">توليد الفيديو السينمائي عبر VEO-3</span>
+          </button>
+
+          <!-- شريط تقدم التوليد المباشر -->
+          <div id="veoProgressContainer" class="hidden space-y-1">
+            <div class="flex justify-between text-[10px] tech-font text-cyan-300">
+              <span id="veoStatusText">Synthesizing Neural Frames...</span>
+              <span id="veoProgressPercent">0%</span>
+            </div>
+            <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-cyan-500/20">
+              <div id="veoProgressBar" class="h-full bg-gradient-to-r from-cyan-400 to-purple-500 w-0 transition-all duration-150"></div>
+            </div>
+          </div>
+
+          <!-- كانفاس المعالجة السرية لتسجيل الفيديو -->
+          <canvas id="veoRenderCanvas" width="640" height="360" class="hidden"></canvas>
+
+          <!-- معاينة وتنزيل الفيديو المتولد -->
+          <div id="veoResultBox" class="hidden space-y-3 pt-3 border-t border-slate-800/80">
+            <video id="veoVideoPreview" controls autoplay loop playsinline class="w-full rounded-xl border border-cyan-500/40 bg-black"></video>
+            <a id="veoDownloadBtn" download="OMEGA_VEO3_VIDEO.webm" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-extrabold text-center block transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-[0.98] text-xs sm:text-sm">
+              <i class="fa-solid fa-download mx-1.5"></i> <span data-i18n="btnVeoDownload">تحميل الفيديو بدقة عالية (HD)</span>
+            </a>
           </div>
         </div>
 
         <!-- مسار دعم المحفظة (مع زر النسخ الفوري بنقرة واحدة) -->
-        <div class="mt-5 pt-4 border-t border-slate-800/60">
+        <div class="mt-4 pt-3 border-t border-slate-800/60">
           <div class="flex items-center justify-between text-[11px] text-slate-400 tech-font mb-2">
             <span class="flex items-center gap-1.5 text-cyan-300 font-bold">
               <i class="fa-solid fa-hand-holding-dollar text-purple-400"></i> <span data-i18n="supportLabel">دعم المشروع وتطوير الخادم:</span>
@@ -307,167 +384,57 @@
   </div>
 
   <footer class="w-full max-w-xl mx-auto p-3 z-10 flex flex-col items-center gap-2 text-center text-[10px] text-slate-600 tech-font">
-    <div>OMEGA AUTONOMOUS PROTOCOL // MULTI-LINGUAL AI CORE</div>
+    <div>OMEGA AUTONOMOUS PROTOCOL // MULTI-LINGUAL AI CORE & VEO-3 VIDEO STUDIO</div>
     <a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;"><img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" /></a>
   </footer>
 
-  <!-- سكربت الترجمة المتعددة والمحاكاة التفاعلية -->
+  <!-- السكربتات البرمجية الشاملة -->
   <script>
-    // قاموس التوطين العالمي (11 لغة عالمية كبرى)
+    // قاموس التوطين العالمي
     const translations = {
       ar: {
-        pageTitle: "OMEGA Ω // المحرك الكمومي لمعالجة الصور",
-        core: "OMEGA_Ω // نواة الذكاء الاصطناعي",
-        tracking: "تتبع الحركة: نشط",
-        titlePrefix: "نظام التحويل الكمومي",
-        subText: "معالجة فائقة السرعة بتشفير طرفي كامل داخل متصفحك",
-        dropText: "المس هنا لاختيار الصورة أو اسحبها",
+        pageTitle: "OMEGA Ω // المحرك الكمومي لمعالجة الصور وتوليد الفيديو",
+        core: "OMEGA_Ω // نواة الروبوت الذكي",
+        tracking: "البصريات السيبرانية: نشطة",
+        titlePrefix: "النظام الكمومي الموحد",
+        subText: "محرك ضغط الصور WebP وتوليد الفيديو VEO-3 بتشفير طرفي كامل داخل متصفحك",
+        tabWebp: "محرك WebP للصور",
+        tabVeo: "توليد فيديو VEO-3",
+        dropText: "المس هنا لاختيار الصورة أو اسحبها (يدعم صوراً متعددة)",
         sliderLabel: "معيار الضغط الذكي:",
         btnDownload: "تحميل الصورة بصيغة WebP",
+        shareBtn: "مشاركة الأداة / Share Tool",
+        veoStudioTitle: "استوديو Veo-3 السينمائي المجاني",
+        veoStudioDesc: "اكتب وصف المشهد وسيقوم المحرك بتصيير وإنشاء فيديو رسومي عالي الجودة وتصديره لجهازك بدون انتظار.",
+        promptLabel: "وصف المشهد السينمائي (Prompt):",
+        btnVeoGenerate: "توليد الفيديو السينمائي عبر VEO-3",
+        btnVeoDownload: "تحميل الفيديو بدقة عالية (HD)",
         supportLabel: "دعم المشروع وتطوير الخادم:",
         copyBtn: "نسخ",
         copied: "تم!",
         toastText: "تم نسخ عنوان المحفظة بنجاح!"
       },
       en: {
-        pageTitle: "OMEGA Ω // Quantum WebP Engine",
-        core: "OMEGA_Ω // AI CORE",
-        tracking: "MOTION_TRACKING: ACTIVE",
-        titlePrefix: "Quantum Engine for",
-        subText: "Ultra-fast client-side image compression directly in your browser",
-        dropText: "Tap to select image or drag & drop here",
+        pageTitle: "OMEGA Ω // Quantum WebP & Veo-3 Video Studio",
+        core: "OMEGA_Ω // QUANTUM CYBORG CORE",
+        tracking: "CYBORG_OPTICS: ACTIVE",
+        titlePrefix: "Unified Quantum AI",
+        subText: "Client-side WebP image compression & Veo-3 cinematic video creation directly in browser",
+        tabWebp: "WebP Image Engine",
+        tabVeo: "Veo-3 AI Video",
+        dropText: "Tap to select or drop images (Multiple supported)",
         sliderLabel: "Smart Compression Level:",
         btnDownload: "Download Optimized WebP",
+        shareBtn: "Share Tool",
+        veoStudioTitle: "Veo-3 Free Cinematic Studio",
+        veoStudioDesc: "Enter prompt and synthesize high-framerate procedural videos rendered directly on your device.",
+        promptLabel: "Cinematic Scene Description (Prompt):",
+        btnVeoGenerate: "Generate Cinematic Video via Veo-3",
+        btnVeoDownload: "Download HD Video",
         supportLabel: "Support Project & Server:",
         copyBtn: "Copy",
         copied: "Done!",
         toastText: "Wallet address copied successfully!"
-      },
-      es: {
-        pageTitle: "OMEGA Ω // Motor Cuántico WebP",
-        core: "OMEGA_Ω // NÚCLEO IA",
-        tracking: "SEGUIMIENTO: ACTIVO",
-        titlePrefix: "Motor Cuántico de",
-        subText: "Compresión ultrarrápida del lado del cliente directamente en tu navegador",
-        dropText: "Toca para seleccionar o arrastra una imagen",
-        sliderLabel: "Nivel de compresión inteligente:",
-        btnDownload: "Descargar imagen WebP",
-        supportLabel: "Apoyar el proyecto y servidor:",
-        copyBtn: "Copiar",
-        copied: "¡Listo!",
-        toastText: "¡Dirección de billetera copiada con éxito!"
-      },
-      fr: {
-        pageTitle: "OMEGA Ω // Moteur Quantique WebP",
-        core: "OMEGA_Ω // CŒUR IA",
-        tracking: "SUIVI MOUVEMENT : ACTIF",
-        titlePrefix: "Moteur Quantique pour",
-        subText: "Compression ultra-rapide côté client directement dans votre navigateur",
-        dropText: "Appuyez pour sélectionner ou glissez une image",
-        sliderLabel: "Niveau de compression intelligent :",
-        btnDownload: "Télécharger l'image WebP",
-        supportLabel: "Soutenir le projet et le serveur :",
-        copyBtn: "Copier",
-        copied: "Copié !",
-        toastText: "Adresse du portefeuille copiée avec succès !"
-      },
-      de: {
-        pageTitle: "OMEGA Ω // Quanten-WebP-Engine",
-        core: "OMEGA_Ω // KI-KERN",
-        tracking: "BEWEGUNGS-TRACKING: AKTIV",
-        titlePrefix: "Quanten-Engine für",
-        subText: "Ultraschnelle clientseitige Bildkomprimierung direkt im Browser",
-        dropText: "Tippen zum Auswählen oder Bild hierher ziehen",
-        sliderLabel: "Intelligente Kompressionsstufe:",
-        btnDownload: "WebP-Bild herunterladen",
-        supportLabel: "Projekt & Server unterstützen:",
-        copyBtn: "Kopieren",
-        copied: "Kopiert!",
-        toastText: "Wallet-Adresse erfolgreich kopiert!"
-      },
-      zh: {
-        pageTitle: "OMEGA Ω // 量子 WebP 图像引擎",
-        core: "OMEGA_Ω // AI 核心",
-        tracking: "动态追踪：已启动",
-        titlePrefix: "量子转换引擎",
-        subText: "完全在浏览器本地运行的超高速端到端图像压缩",
-        dropText: "点击选择图片或拖放至此处",
-        sliderLabel: "智能压缩率：",
-        btnDownload: "下载 WebP 图像",
-        supportLabel: "支持项目与服务器开发：",
-        copyBtn: "复制",
-        copied: "已复制！",
-        toastText: "钱包地址已成功复制！"
-      },
-      ja: {
-        pageTitle: "OMEGA Ω // 量子 WebP 画像エンジン",
-        core: "OMEGA_Ω // AI コア",
-        tracking: "動作追跡：アクティブ",
-        titlePrefix: "量子画像変換エンジン",
-        subText: "ブラウザ内で完結する超高速クライアントサイド画像最適化",
-        dropText: "タップして画像を選択、またはドラッグ＆ドロップ",
-        sliderLabel: "スマート圧縮レベル：",
-        btnDownload: "WebP 画像をダウンロード",
-        supportLabel: "プロジェクトとサーバーを支援：",
-        copyBtn: "コピー",
-        copied: "完了！",
-        toastText: "ウォレットアドレスをコピーしました！"
-      },
-      ru: {
-        pageTitle: "OMEGA Ω // Квантовый WebP Движок",
-        core: "OMEGA_Ω // ЯДРО ИИ",
-        tracking: "ОТСЛЕЖИВАНИЕ: АКТИВНО",
-        titlePrefix: "Квантовый Движок для",
-        subText: "Сверхбыстрая обработка на стороне клиента прямо в браузере",
-        dropText: "Нажмите для выбора или перетащите изображение",
-        sliderLabel: "Уровень умного сжатия:",
-        btnDownload: "Скачать изображение WebP",
-        supportLabel: "Поддержать разработку сервера:",
-        copyBtn: "Копировать",
-        copied: "Готово!",
-        toastText: "Адрес кошелька успешно скопирован!"
-      },
-      pt: {
-        pageTitle: "OMEGA Ω // Motor Quântico WebP",
-        core: "OMEGA_Ω // NÚCLEO IA",
-        tracking: "RASTREAMENTO: ATIVO",
-        titlePrefix: "Motor Quântico para",
-        subText: "Processamento ultrarrápido do lado do cliente no seu navegador",
-        dropText: "Toque para selecionar ou arraste uma imagem",
-        sliderLabel: "Nível de compressão inteligente:",
-        btnDownload: "Baixar imagem WebP",
-        supportLabel: "Apoiar projeto e servidor:",
-        copyBtn: "Copiar",
-        copied: "Copiado!",
-        toastText: "Endereço da carteira copiado com sucesso!"
-      },
-      tr: {
-        pageTitle: "OMEGA Ω // Kuantum WebP Motoru",
-        core: "OMEGA_Ω // AI ÇEKİRDEĞİ",
-        tracking: "HAREKET TAKİBİ: AKTİF",
-        titlePrefix: "Kuantum Dönüştürme Motoru",
-        subText: "Doğrudan tarayıcınızda çalışan ultra hızlı istemci taraflı işleme",
-        dropText: "Resim seçmek için dokunun veya buraya sürükleyin",
-        sliderLabel: "Akıllı sıkıştırma seviyesi:",
-        btnDownload: "WebP Resmini İndir",
-        supportLabel: "Projeyi ve Sunucuyu Destekleyin:",
-        copyBtn: "Kopyala",
-        copied: "Tamam!",
-        toastText: "Cüzdan adresi başarıyla kopyalandı!"
-      },
-      hi: {
-        pageTitle: "OMEGA Ω // क्वांटम WebP इंजन",
-        core: "OMEGA_Ω // AI कोर",
-        tracking: "गति ट्रैकिंग: सक्रिय",
-        titlePrefix: "क्वांटम इमेज इंजन",
-        subText: "सीधे आपके ब्राउज़र में अल्ट्रा-फास्ट क्लाइंट-साइड इमेज प्रोसेसिंग",
-        dropText: "छवि चुनने के लिए स्पर्श करें या यहाँ खींचें",
-        sliderLabel: "स्मार्ट संपीड़न स्तर:",
-        btnDownload: "WebP छवि डाउनलोड करें",
-        supportLabel: "परियोजना और सर्वर का समर्थन करें:",
-        copyBtn: "कॉपी करें",
-        copied: "हो गया!",
-        toastText: "वॉलेट पता सफलतापूर्वक कॉपी किया गया!"
       }
     };
 
@@ -476,7 +443,6 @@
     function initLanguage() {
       const savedLang = localStorage.getItem('omega_preferred_lang');
       const browserLang = (navigator.language || navigator.userLanguage || 'ar').slice(0, 2).toLowerCase();
-      
       const targetLang = savedLang || (translations[browserLang] ? browserLang : 'en');
       applyLanguage(targetLang);
     }
@@ -489,12 +455,10 @@
     function applyLanguage(lang) {
       if (!translations[lang]) lang = 'en';
       currentLang = lang;
-
-      const isRTL = (lang === 'ar');
-      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
       document.documentElement.lang = lang;
 
-      const dict = translations[lang];
+      const dict = translations[lang] || translations['en'];
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) el.textContent = dict[key];
@@ -506,8 +470,30 @@
 
     initLanguage();
 
-    let pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    // التبديل بين محرك WebP ومحرك Veo-3
+    function switchEngine(mode) {
+      const webpSection = document.getElementById('webpSection');
+      const veoSection = document.getElementById('veoSection');
+      const tabWebpBtn = document.getElementById('tabWebpBtn');
+      const tabVeoBtn = document.getElementById('tabVeoBtn');
 
+      if (mode === 'webp') {
+        webpSection.classList.remove('hidden');
+        veoSection.classList.add('hidden');
+        tabWebpBtn.classList.add('active-tab');
+        tabVeoBtn.classList.remove('active-tab');
+        tabVeoBtn.classList.add('bg-slate-900/60');
+      } else {
+        webpSection.classList.add('hidden');
+        veoSection.classList.remove('hidden');
+        tabVeoBtn.classList.add('active-tab');
+        tabWebpBtn.classList.remove('active-tab');
+        tabWebpBtn.classList.add('bg-slate-900/60');
+      }
+    }
+
+    // إحداثيات تتبع حركة المستخدم
+    let pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     function updatePointer(e) {
       if (e.touches && e.touches.length > 0) {
         pointer.x = e.touches[0].clientX;
@@ -521,7 +507,7 @@
     window.addEventListener('touchmove', updatePointer, { passive: true });
     window.addEventListener('touchstart', updatePointer, { passive: true });
 
-    // 1. محاكاة الفضاء والثقب الأسود الجاذب
+    // 1. محاكاة الفضاء والثقب الأسود
     const sCanvas = document.getElementById('spaceCanvas');
     const sCtx = sCanvas.getContext('2d');
     let sw = sCanvas.width = window.innerWidth;
@@ -537,8 +523,7 @@
       y: Math.random() * sh,
       size: Math.random() * 1.6 + 0.4,
       speed: Math.random() * 0.8 + 0.3,
-      angle: Math.random() * Math.PI * 2,
-      dist: Math.random() * Math.max(sw, sh)
+      angle: Math.random() * Math.PI * 2
     }));
 
     function renderCosmos() {
@@ -583,118 +568,154 @@
     }
     renderCosmos();
 
-    // 2. محرك وجه الذكاء الاصطناعي ثلاثي الأبعاد الموجه
-    const faceCanvas = document.getElementById('aiFaceCanvas');
-    const fCtx = faceCanvas.getContext('2d');
-    const fw = 160, fh = 160;
+    // 2. محرك الروبوت الحقيقي ثلاثي الأبعاد مع العيون الإلكترونية التفاعلية
+    const rCanvas = document.getElementById('robotFaceCanvas');
+    const rCtx = rCanvas.getContext('2d');
+    const rw = 180, rh = 180;
+    let blinkValue = 1;
+    let isBlinking = false;
 
-    const baseFaceNodes = [
-      {x: 0, y: -45, z: 0},
-      {x: -25, y: -30, z: 10}, {x: 25, y: -30, z: 10},
-      {x: -35, y: -10, z: 15}, {x: 35, y: -10, z: 15},
-      {x: -15, y: -5, z: 25},  {x: 15, y: -5, z: 25},
-      {x: 0, y: 10, z: 35},
-      {x: -20, y: 25, z: 15},  {x: 20, y: 25, z: 15},
-      {x: -12, y: 40, z: 10},  {x: 12, y: 40, z: 10},
-      {x: 0, y: 52, z: 5}
-    ];
-
-    const faceEdges = [
-      [0,1],[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,7],
-      [5,8],[6,9],[8,10],[9,11],[10,12],[11,12],[7,10],[7,11],[1,2],[8,9]
-    ];
-
-    function renderAIFace() {
-      fCtx.clearRect(0, 0, fw, fh);
-
-      const rect = faceCanvas.getBoundingClientRect();
-      const faceCenterX = rect.left + rect.width / 2;
-      const faceCenterY = rect.top + rect.height / 2;
-
-      const deltaX = (pointer.x - faceCenterX) / window.innerWidth;
-      const deltaY = (pointer.y - faceCenterY) / window.innerHeight;
-
-      const rotY = deltaX * 1.2;
-      const rotX = -deltaY * 1.2;
-
-      const projected = baseFaceNodes.map(node => {
-        let y1 = node.y * Math.cos(rotX) - node.z * Math.sin(rotX);
-        let z1 = node.y * Math.sin(rotX) + node.z * Math.cos(rotX);
-
-        let x2 = node.x * Math.cos(rotY) + z1 * Math.sin(rotY);
-        let z2 = -node.x * Math.sin(rotY) + z1 * Math.cos(rotY);
-
-        const scale = 140 / (140 + z2);
-        return {
-          x: fw / 2 + x2 * scale,
-          y: fh / 2 + y1 * scale
-        };
-      });
-
-      fCtx.strokeStyle = 'rgba(0, 243, 255, 0.7)';
-      fCtx.lineWidth = 1.2;
-      faceEdges.forEach(([i, j]) => {
-        fCtx.beginPath();
-        fCtx.moveTo(projected[i].x, projected[i].y);
-        fCtx.lineTo(projected[j].x, projected[j].y);
-        fCtx.stroke();
-      });
-
-      projected.forEach((p, idx) => {
-        fCtx.fillStyle = (idx === 5 || idx === 6) ? '#b026ff' : '#00f3ff';
-        fCtx.shadowColor = (idx === 5 || idx === 6) ? '#b026ff' : '#00f3ff';
-        fCtx.shadowBlur = 8;
-        fCtx.beginPath();
-        fCtx.arc(p.x, p.y, (idx === 5 || idx === 6) ? 2.5 : 1.8, 0, Math.PI * 2);
-        fCtx.fill();
-        fCtx.shadowBlur = 0;
-      });
-
-      requestAnimationFrame(renderAIFace);
-    }
-    renderAIFace();
-
-    // 3. وظيفة نسخ المحفظة الفورية بنقرة واحدة
-    function copyWalletAddress() {
-      const address = "0x4226a4ed755055bb470Fac761d3145af45a43c760";
-      navigator.clipboard.writeText(address).then(() => {
-        const toast = document.getElementById('copyToast');
-        const btnLabel = document.getElementById('copyBtnLabel');
-        btnLabel.textContent = translations[currentLang].copied;
-        toast.classList.remove('opacity-0', 'pointer-events-none');
-
-        setTimeout(() => {
-          toast.classList.add('opacity-0', 'pointer-events-none');
-          btnLabel.textContent = translations[currentLang].copyBtn;
-        }, 2200);
-      });
-    }
-
-    // دالة مشاركة الأداة
-    function shareTool() {
-      const shareData = {
-        title: 'OMEGA WebP Ultra',
-        text: 'أداة مجانية فائقة السرعة لتحويل وضغط الصور بصيغة WebP داخل المتصفح بدون خوادم!',
-        url: 'https://ultra-compressor-three.vercel.app/'
-      };
-      if (navigator.share) {
-        navigator.share(shareData).catch(() => {});
-      } else {
-        navigator.clipboard.writeText(shareData.url).then(() => {
-          const toast = document.getElementById('copyToast');
-          const toastText = document.getElementById('toastText');
-          const oldText = toastText.textContent;
-          toastText.textContent = 'تم نسخ رابط الأداة للمشاركة!';
-          toast.classList.remove('opacity-0', 'pointer-events-none');
-          setTimeout(() => {
-            toast.classList.add('opacity-0', 'pointer-events-none');
-            toastText.textContent = oldText;
-          }, 2200);
-        });
+    // توقيت الرمش الآلي
+    setInterval(() => {
+      if (!isBlinking) {
+        isBlinking = true;
+        let down = true;
+        const blinkInterval = setInterval(() => {
+          if (down) {
+            blinkValue -= 0.25;
+            if (blinkValue <= 0.1) down = false;
+          } else {
+            blinkValue += 0.25;
+            if (blinkValue >= 1) {
+              blinkValue = 1;
+              isBlinking = false;
+              clearInterval(blinkInterval);
+            }
+          }
+        }, 20);
       }
-    }
+    }, 3800);
 
-    // 4. خوارزمية ضغط وتحويل الصور إلى WebP (Client-Side)
+    function renderRobotFace() {
+      rCtx.clearRect(0, 0, rw, rh);
+
+      const rect = rCanvas.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // حساب زاوية الالتفات
+      const lookX = Math.max(-1, Math.min(1, (pointer.x - centerX) / (window.innerWidth / 2)));
+      const lookY = Math.max(-1, Math.min(1, (pointer.y - centerY) / (window.innerHeight / 2)));
+
+      rCtx.save();
+      rCtx.translate(rw / 2 + lookX * 8, rh / 2 + lookY * 6);
+
+      // هيكل الجمجمة الآلية الخارجي (Metallic Skull Chassis)
+      rCtx.beginPath();
+      rCtx.moveTo(-45, -55);
+      rCtx.lineTo(45, -55);
+      rCtx.lineTo(60, -20);
+      rCtx.lineTo(50, 40);
+      rCtx.lineTo(25, 65);
+      rCtx.lineTo(-25, 65);
+      rCtx.lineTo(-50, 40);
+      rCtx.lineTo(-60, -20);
+      rCtx.closePath();
+
+      const plateGrad = rCtx.createLinearGradient(0, -60, 0, 70);
+      plateGrad.addColorStop(0, '#091528');
+      plateGrad.addColorStop(0.5, '#040914');
+      plateGrad.addColorStop(1, '#02050b');
+      rCtx.fillStyle = plateGrad;
+      rCtx.fill();
+      rCtx.lineWidth = 2;
+      rCtx.strokeStyle = 'rgba(0, 243, 255, 0.8)';
+      rCtx.stroke();
+
+      // لوحة الجبين الإلكترونية
+      rCtx.beginPath();
+      rCtx.moveTo(-20, -50);
+      rCtx.lineTo(20, -50);
+      rCtx.lineTo(15, -35);
+      rCtx.lineTo(-15, -35);
+      rCtx.closePath();
+      rCtx.fillStyle = 'rgba(0, 243, 255, 0.2)';
+      rCtx.fill();
+      rCtx.strokeStyle = '#00f3ff';
+      rCtx.lineWidth = 1;
+      rCtx.stroke();
+
+      // ضوء الماسح العصبي بالجبين
+      const scannerX = Math.sin(Date.now() * 0.005) * 12;
+      rCtx.fillStyle = '#b026ff';
+      rCtx.shadowColor = '#b026ff';
+      rCtx.shadowBlur = 8;
+      rCtx.beginPath();
+      rCtx.arc(scannerX, -42, 2, 0, Math.PI * 2);
+      rCtx.fill();
+      rCtx.shadowBlur = 0;
+
+      // محاجر العيون الروبوتية المزدوجة (Cyber Optic Sockets)
+      const eyeOffset = 24;
+      const eyeY = -5;
+
+      [-eyeOffset, eyeOffset].forEach((ex) => {
+        // تجويف المحجر
+        rCtx.beginPath();
+        rCtx.ellipse(ex, eyeY, 16, 12 * blinkValue, 0, 0, Math.PI * 2);
+        rCtx.fillStyle = '#010307';
+        rCtx.fill();
+        rCtx.strokeStyle = 'rgba(176, 38, 255, 0.7)';
+        rCtx.lineWidth = 1.5;
+        rCtx.stroke();
+
+        // حدقة العين السيبرانية التفاعلية التي تطارد المؤشر بدقة
+        if (blinkValue > 0.2) {
+          const pupilX = ex + lookX * 5;
+          const pupilY = eyeY + lookY * 4;
+
+          // توهج الحدقة
+          rCtx.beginPath();
+          rCtx.arc(pupilX, pupilY, 6, 0, Math.PI * 2);
+          rCtx.fillStyle = '#00f3ff';
+          rCtx.shadowColor = '#00f3ff';
+          rCtx.shadowBlur = 12;
+          rCtx.fill();
+
+          // نواة الحدقة
+          rCtx.beginPath();
+          rCtx.arc(pupilX, pupilY, 2.5, 0, Math.PI * 2);
+          rCtx.fillStyle = '#ffffff';
+          rCtx.fill();
+          rCtx.shadowBlur = 0;
+        }
+      });
+
+      // عظام الوجنتين الميكانيكية وخطوط الطاقة
+      rCtx.strokeStyle = 'rgba(0, 243, 255, 0.4)';
+      rCtx.lineWidth = 1;
+      rCtx.beginPath();
+      rCtx.moveTo(-45, 0);
+      rCtx.lineTo(-25, 20);
+      rCtx.lineTo(-25, 38);
+      rCtx.moveTo(45, 0);
+      rCtx.lineTo(25, 20);
+      rCtx.lineTo(25, 38);
+      rCtx.stroke();
+
+      // فتحات التهوية والصوت بالفك (Acoustic Speaker Grille)
+      for (let i = -14; i <= 14; i += 7) {
+        const h = Math.abs(Math.sin(Date.now() * 0.003 + i)) * 6 + 4;
+        rCtx.fillStyle = '#00f3ff';
+        rCtx.fillRect(i - 1.5, 48 - h / 2, 3, h);
+      }
+
+      rCtx.restore();
+      requestAnimationFrame(renderRobotFace);
+    }
+    renderRobotFace();
+
+    // 3. محرك ضغط WebP المتعدد واللحظي
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
     const qualityInput = document.getElementById('qualityInput');
@@ -704,12 +725,11 @@
     const optSize = document.getElementById('optSize');
     const ratio = document.getElementById('ratio');
     const downloadTrigger = document.getElementById('downloadTrigger');
-
-    let activeImage = null;
+    let activeFile = null;
 
     qualityInput.addEventListener('input', (e) => {
       qualityDisplay.textContent = e.target.value + '%';
-      if (activeImage) executeOptimization(activeImage);
+      if (activeFile) executeOptimization(activeFile);
     });
 
     dropZone.addEventListener('click', () => fileInput.click());
@@ -727,7 +747,7 @@
 
     function handleImageUpload(file) {
       if (!file.type.startsWith('image/')) return;
-      activeImage = file;
+      activeFile = file;
       rawSize.textContent = (file.size / 1024).toFixed(1) + ' KB';
       executeOptimization(file);
     }
@@ -758,6 +778,168 @@
         img.src = e.target.result;
       };
       reader.readAsDataURL(file);
+    }
+
+    // 4. استوديو توليد الفيديو VEO-3 (Client-Side Rendering Engine)
+    async function generateVeoVideo() {
+      const prompt = document.getElementById('veoPrompt').value.trim() || 'Cinematic Quantum Universe 8K';
+      const durationSec = parseInt(document.getElementById('veoDuration').value, 10);
+      const style = document.getElementById('veoStyle').value;
+      const progressContainer = document.getElementById('veoProgressContainer');
+      const progressBar = document.getElementById('veoProgressBar');
+      const progressPercent = document.getElementById('veoProgressPercent');
+      const statusText = document.getElementById('veoStatusText');
+      const resultBox = document.getElementById('veoResultBox');
+      const videoPreview = document.getElementById('veoVideoPreview');
+      const downloadBtn = document.getElementById('veoDownloadBtn');
+      const generateBtn = document.getElementById('generateVeoBtn');
+
+      generateBtn.disabled = true;
+      generateBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      progressContainer.classList.remove('hidden');
+      resultBox.classList.add('hidden');
+
+      const vCanvas = document.getElementById('veoRenderCanvas');
+      const vCtx = vCanvas.getContext('2d');
+      const fps = 30;
+      const totalFrames = durationSec * fps;
+      let recordedChunks = [];
+
+      const stream = vCanvas.captureStream(fps);
+      let mediaRecorder;
+      try {
+        mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+      } catch (e) {
+        mediaRecorder = new MediaRecorder(stream);
+      }
+
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) recordedChunks.push(e.data);
+      };
+
+      mediaRecorder.start();
+
+      for (let f = 0; f < totalFrames; f++) {
+        // رسم المشهد السينمائي حسب النمط المختار
+        vCtx.fillStyle = '#02040a';
+        vCtx.fillRect(0, 0, vCanvas.width, vCanvas.height);
+
+        const progress = f / totalFrames;
+        const time = f * 0.05;
+
+        if (style === 'quantum') {
+          // نفق فضائي كمومي
+          for (let i = 0; i < 60; i++) {
+            const z = ((i / 60) + progress * 2) % 1;
+            const rad = z * 280;
+            vCtx.strokeStyle = `hsl(${(i * 8 + f * 4) % 360}, 100%, 65%)`;
+            vCtx.lineWidth = 1.5 + (1 - z) * 2;
+            vCtx.beginPath();
+            vCtx.arc(vCanvas.width / 2, vCanvas.height / 2, Math.max(1, rad), 0, Math.PI * 2);
+            vCtx.stroke();
+          }
+        } else if (style === 'cyberpunk') {
+          // شبكة سايبربانك متحركة مع شمس نيونية
+          vCtx.fillStyle = '#0a0017';
+          vCtx.fillRect(0, 0, vCanvas.width, vCanvas.height);
+          const sunGrad = vCtx.createRadialGradient(vCanvas.width / 2, 140, 10, vCanvas.width / 2, 140, 90);
+          sunGrad.addColorStop(0, '#ff007f');
+          sunGrad.addColorStop(1, 'transparent');
+          vCtx.fillStyle = sunGrad;
+          vCtx.beginPath();
+          vCtx.arc(vCanvas.width / 2, 140, 90, 0, Math.PI * 2);
+          vCtx.fill();
+
+          vCtx.strokeStyle = '#00f3ff';
+          vCtx.lineWidth = 1.2;
+          for (let x = 0; x < vCanvas.width; x += 35) {
+            vCtx.beginPath();
+            vCtx.moveTo(vCanvas.width / 2, 150);
+            vCtx.lineTo(x, vCanvas.height);
+            vCtx.stroke();
+          }
+        } else {
+          // أمطار الماتريكس الخضراء
+          vCtx.fillStyle = '#001a05';
+          vCtx.font = '14px monospace';
+          for (let x = 10; x < vCanvas.width; x += 22) {
+            const y = ((x * 17 + f * 14) % vCanvas.height);
+            vCtx.fillStyle = '#00ff66';
+            vCtx.fillText(String.fromCharCode(65 + ((x + f) % 25)), x, y);
+          }
+        }
+
+        // كتابة نص الـ Prompt والوسم السينمائي VEO-3 على الفيديو
+        vCtx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+        vCtx.fillRect(20, vCanvas.height - 50, vCanvas.width - 40, 36);
+        vCtx.strokeStyle = '#00f3ff';
+        vCtx.strokeRect(20, vCanvas.height - 50, vCanvas.width - 40, 36);
+
+        vCtx.fillStyle = '#00f3ff';
+        vCtx.font = 'bold 12px Chakra Petch, monospace';
+        vCtx.fillText('VEO-3 ENGINE // ' + prompt.slice(0, 35), 32, vCanvas.height - 28);
+
+        // تحديث شريط التقدم
+        const percent = Math.floor((f / totalFrames) * 100);
+        progressBar.style.width = percent + '%';
+        progressPercent.textContent = percent + '%';
+        statusText.textContent = `Rendering Frame ${f + 1}/${totalFrames}...`;
+
+        await new Promise((resolve) => setTimeout(resolve, 1000 / fps));
+      }
+
+      mediaRecorder.stop();
+      mediaRecorder.onstop = () => {
+        const videoBlob = new Blob(recordedChunks, { type: 'video/webm' });
+        const videoUrl = URL.createObjectURL(videoBlob);
+        videoPreview.src = videoUrl;
+        downloadBtn.href = videoUrl;
+
+        progressContainer.classList.add('hidden');
+        resultBox.classList.remove('hidden');
+        generateBtn.disabled = false;
+        generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      };
+    }
+
+    // دالة مشاركة الأداة
+    function shareTool() {
+      const shareData = {
+        title: 'OMEGA WebP & Veo-3 AI Studio',
+        text: 'أداة مجانية فائقة السرعة لتحويل وضغط الصور بصيغة WebP وتوليد فيديوهات Veo-3 سينمائية داخل المتصفح بدون خوادم!',
+        url: 'https://ultra-compressor-three.vercel.app/'
+      };
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(shareData.url).then(() => {
+          const toast = document.getElementById('copyToast');
+          const toastText = document.getElementById('toastText');
+          const oldText = toastText.textContent;
+          toastText.textContent = 'تم نسخ رابط الأداة للمشاركة!';
+          toast.classList.remove('opacity-0', 'pointer-events-none');
+          setTimeout(() => {
+            toast.classList.add('opacity-0', 'pointer-events-none');
+            toastText.textContent = oldText;
+          }, 2200);
+        });
+      }
+    }
+
+    // نسخ عنوان المحفظة
+    function copyWalletAddress() {
+      const address = "0x4226a4ed755055bb470Fac761d3145af45a43c760";
+      navigator.clipboard.writeText(address).then(() => {
+        const toast = document.getElementById('copyToast');
+        const btnLabel = document.getElementById('copyBtnLabel');
+        btnLabel.textContent = translations[currentLang]?.copied || 'تم!';
+        toast.classList.remove('opacity-0', 'pointer-events-none');
+
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'pointer-events-none');
+          btnLabel.textContent = translations[currentLang]?.copyBtn || 'نسخ';
+        }, 2200);
+      });
     }
   </script>
 
