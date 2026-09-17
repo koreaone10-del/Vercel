@@ -184,7 +184,7 @@
   <!-- جسم الأداة الرئيسي -->
   <main class="w-full max-w-xl mx-auto px-4 py-4 z-10 flex-1 flex flex-col items-center justify-center">
 
-    <!-- وجه الروبوت ثلاثي الأبعاد المطور (متحرك بملامح وعيون إلكترونية تتبع الزائر) -->
+    <!-- وجه الروبوت ثلاثي الأبعاد المطور -->
     <div class="relative w-44 h-44 mb-1 flex items-center justify-center">
       <canvas id="robotFaceCanvas" width="180" height="180" class="drop-shadow-[0_0_25px_rgba(0,243,255,0.45)]"></canvas>
       <div class="absolute -bottom-1 text-[9px] tech-font text-cyan-400/90 bg-slate-950/90 px-2 py-0.5 rounded border border-cyan-500/30 flex items-center gap-1.5">
@@ -194,7 +194,7 @@
     </div>
 
     <!-- العنوان التكنولوجي -->
-    <div class="text-center mb-4">
+    <div class="text-center mb-3">
       <h1 class="text-2xl sm:text-3xl font-black text-white glow-text mb-1">
         <span data-i18n="titlePrefix">النظام الكمومي الموحد</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-500">OMEGA AI</span>
       </h1>
@@ -204,7 +204,7 @@
     </div>
 
     <!-- أزرار التبديل الرئيسية بين الأدوات -->
-    <div class="w-full grid grid-cols-2 gap-2 mb-4">
+    <div class="w-full grid grid-cols-2 gap-2 mb-3">
       <button id="tabWebpBtn" onclick="switchEngine('webp')" class="active-tab py-2.5 px-3 rounded-xl border border-cyan-500/40 tech-font text-xs font-bold transition-all flex items-center justify-center gap-2">
         <i class="fa-solid fa-file-zipper text-sm"></i>
         <span data-i18n="tabWebp">محرك WebP للصور</span>
@@ -216,7 +216,7 @@
     </div>
 
     <!-- شريط الروابط الداخلية السريعة لمحركات البحث -->
-    <div class="flex flex-wrap justify-center gap-2 mb-4 z-10">
+    <div class="flex flex-wrap justify-center gap-2 mb-2 z-10">
       <a href="/png-to-webp.html" class="tech-font text-[11px] bg-slate-900/80 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 text-cyan-300 px-3 py-1 rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
         <i class="fa-solid fa-file-image text-[10px]"></i>
         <span>PNG to WebP</span>
@@ -225,6 +225,17 @@
         <i class="fa-solid fa-bolt text-[10px]"></i>
         <span>JPG to WebP</span>
       </a>
+    </div>
+
+    <!-- شبكة الاستهداف التلقائي لمحركات البحث (Programmatic SEO Grid) -->
+    <div class="flex flex-wrap justify-center gap-1.5 mb-4 max-w-lg mx-auto z-10">
+      <a href="/compress-shopify-images-to-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#Shopify Speed</a>
+      <a href="/convert-discord-stickers-to-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#Discord WebP</a>
+      <a href="/optimize-wordpress-images-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#WordPress SEO</a>
+      <a href="/etsy-product-photo-compressor.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#Etsy Photos</a>
+      <a href="/compress-woocommerce-product-photos.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#WooCommerce</a>
+      <a href="/convert-png-banner-to-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#PNG Banners</a>
+      <a href="/shrink-blog-images-lossless-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#Blog Optimizer</a>
     </div>
 
     <!-- كبسولة المعالجة الرئيسية -->
@@ -770,7 +781,7 @@
       reader.readAsDataURL(file);
     }
 
-    // 4. محرك توليد الفيديو VEO-3 الحقيقي والمجاني عبر الشبكة العصبية المفتوحة
+    // 4. محرك توليد الفيديو VEO-3 الحقيقي والمجاني
     async function generateRealVeoVideo() {
       const promptInput = document.getElementById('veoPrompt');
       const prompt = promptInput.value.trim() || 'futuristic cyberpunk warrior robot with glowing neon weapons in rain, 8k cinematic masterpiece';
@@ -795,7 +806,6 @@
       progressPercent.textContent = '20%';
       statusText.textContent = "Connecting to Open-Source Neural Cluster...";
 
-      // بناء استعلام الذكاء الاصطناعي لنموذج Flux عبر الشبكة المفتوحة
       const seed = Math.floor(Math.random() * 9999999);
       let fullPrompt = `${prompt}, ${style} style, ultra realistic, highly detailed, dramatic studio lighting, 8k resolution, photorealistic, cinematic atmosphere`;
       const aiUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(fullPrompt)}?width=1280&height=720&model=flux&nologo=true&seed=${seed}`;
@@ -805,7 +815,6 @@
         progressPercent.textContent = '45%';
         statusText.textContent = "Synthesizing Neural Visual Latents (Flux.1 Engine)...";
 
-        // تحميل الصورة المولدة بالذكاء الاصطناعي
         const aiImg = new Image();
         aiImg.crossOrigin = "anonymous";
         aiImg.src = aiUrl;
@@ -819,7 +828,6 @@
         progressPercent.textContent = '70%';
         statusText.textContent = "Rendering 3D Kinetic Camera Parallax & Lighting...";
 
-        // إعداد الكانفاس لتسجيل الفيديو
         const vCanvas = document.getElementById('veoRenderCanvas');
         const vCtx = vCanvas.getContext('2d');
         const fps = 30;
@@ -841,7 +849,6 @@
 
         mediaRecorder.start();
 
-        // حلقة تصيير وتوليد الفيديو بحركة الكاميرا ثلاثية الأبعاد
         for (let f = 0; f < totalFrames; f++) {
           const t = f / totalFrames;
           vCtx.clearRect(0, 0, vCanvas.width, vCanvas.height);
@@ -851,12 +858,12 @@
           let panY = 0;
 
           if (motion === 'dolly') {
-            scale = 1.0 + t * 0.22; // تقريب سينمائي تدريجي
+            scale = 1.0 + t * 0.22;
           } else if (motion === 'pan') {
             scale = 1.15;
-            panX = (t - 0.5) * 90; // مسح أفقي ثلاثي الأبعاد
+            panX = (t - 0.5) * 90;
           } else {
-            scale = 1.25 - t * 0.2; // كشف المشهد للخارج
+            scale = 1.25 - t * 0.2;
           }
 
           vCtx.save();
@@ -865,7 +872,6 @@
           vCtx.drawImage(aiImg, -vCanvas.width / 2, -vCanvas.height / 2, vCanvas.width, vCanvas.height);
           vCtx.restore();
 
-          // إضافة تدرجات ضوئية سينمائية متحركة (Cinematic Lens Flare)
           const flareGrad = vCtx.createRadialGradient(
             vCanvas.width * (0.2 + t * 0.6), 80, 5,
             vCanvas.width * (0.2 + t * 0.6), 80, 320
@@ -876,12 +882,10 @@
           vCtx.fillStyle = flareGrad;
           vCtx.fillRect(0, 0, vCanvas.width, vCanvas.height);
 
-          // شريط سينمائي علوي وسفلي فخم (Cinematic Letterbox)
           vCtx.fillStyle = '#000000';
           vCtx.fillRect(0, 0, vCanvas.width, 35);
           vCtx.fillRect(0, vCanvas.height - 35, vCanvas.width, 35);
 
-          // توثيق المشهد النصي
           vCtx.fillStyle = '#00f3ff';
           vCtx.font = 'bold 16px Chakra Petch, monospace';
           vCtx.fillText(`VEO-3 AI CINEMA // ${prompt.slice(0, 45)}...`, 25, vCanvas.height - 12);
@@ -923,7 +927,7 @@
       }
     }
 
-    // دالة مشاركة الأداة الفيروسية
+    // دالة مشاركة الأداة
     function shareTool() {
       const shareData = {
         title: 'OMEGA WebP & Veo-3 AI Studio',
