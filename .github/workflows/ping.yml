@@ -1,0 +1,24 @@
+name: Auto-Ping & Search Engines Indexer
+
+on:
+  schedule:
+    # يعمل تلقائياً كل 24 ساعة في منتصف الليل
+    - cron: '0 0 * * *'
+  workflow_dispatch: # يتيح لك تشغيله يدوياً في أي وقت بضغطة زر
+
+jobs:
+  ping-engines:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Google & IndexNow Networks
+        run: |
+          echo "Sending automated indexing signals..."
+          # إرسال إشعار فوري لـ Google لفحص ملف السايت ماب
+          curl -s "https://www.google.com/ping?sitemap=https://ultra-compressor-three.vercel.app/sitemap.xml" || true
+          
+          # إرسال إشعار لمحرك Bing والشبكات المتوافقة
+          curl -s "https://www.bing.com/ping?sitemap=https://ultra-compressor-three.vercel.app/sitemap.xml" || true
+
+          # فحص استجابة الرابط المباشر للتأكد من سرعة الخادم
+          HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}" https://ultra-compressor-three.vercel.app/)
+          echo "Site Status Code: $HTTP_STATUS"
