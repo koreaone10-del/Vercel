@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>OMEGA Ω // المحرك الكمومي لمعالجة الصور</title>
-  <meta name="description" content="محرك الذكاء الاصطناعي الفائق لتحويل وضغط الصور بصيغة WebP مع واجهة تفاعلية مستقبلية.">
+  <title id="pageTitle">OMEGA Ω // المحرك الكمومي لمعالجة الصور</title>
+  <meta name="description" id="pageDesc" content="محرك الذكاء الاصطناعي الفائق لتحويل وضغط الصور بصيغة WebP مع واجهة تفاعلية مستقبلية.">
   <meta name="google-site-verification" content="PvFb4-G3mvAl8Pc-eFMU3n0oajrQTfKiKg6rBElPThk" />
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Tajawal:wght@400;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <!-- Social Media & Open Graph Protocol -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ultra-compressor-three.vercel.app/">
-  <meta property="og:title" content="OMEGA Ω // المحرك الكمومي لمعالجة وضغط الصور">
-  <meta property="og:description" content="أداة مجانية فائقة السرعة لتحويل وضغط الصور بصيغة WebP داخل المتصفح مع واجهة تفاعلية ثلاثية الأبعاد.">
+  <meta property="og:title" content="OMEGA Ω // Next-Gen WebP Engine">
+  <meta property="og:description" content="Instant browser-based image compression with zero server upload.">
   <meta property="og:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+WEBP+ULTRA+ENGINE">
 
   <!-- Twitter Cards -->
@@ -21,6 +23,7 @@
   <meta name="twitter:title" content="OMEGA Ω // Next-Gen WebP Engine">
   <meta name="twitter:description" content="Instant browser-based image compression with zero server upload.">
   <meta name="twitter:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+WEBP+ULTRA+ENGINE">
+
   <!-- Structured Data / JSON-LD for Google Rich Results -->
   <script type="application/ld+json">
   {
@@ -40,7 +43,8 @@
       "Client-side processing",
       "Zero server uploads",
       "Real-time compression telemetry",
-      "Instant WebP conversion"
+      "Instant WebP conversion",
+      "Multi-language support"
     ]
   }
   </script>
@@ -54,14 +58,14 @@
       -webkit-tap-highlight-color: transparent;
     }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Tajawal', 'Inter', sans-serif;
       background-color: #02040a;
       overflow-x: hidden;
       width: 100%;
       min-height: 100vh;
     }
     .tech-font {
-      font-family: 'Chakra Petch', sans-serif;
+      font-family: 'Chakra Petch', monospace;
     }
     /* إطار نيون دوار ثلاثي الأبعاد فائق النعومة */
     .conic-border {
@@ -83,14 +87,12 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    /* توهجات ضوئية نيونية */
     .glow-cyan {
       box-shadow: 0 0 35px rgba(0, 243, 255, 0.25);
     }
     .glow-text {
       text-shadow: 0 0 12px rgba(0, 243, 255, 0.8);
     }
-    /* خط رادار المسح الضوئي */
     .scanline {
       width: 100%;
       height: 2px;
@@ -118,11 +120,31 @@
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
       </div>
-      <span class="tech-font text-[11px] tracking-widest text-cyan-400 font-bold">OMEGA_Ω // AI CORE</span>
+      <span class="tech-font text-[11px] tracking-widest text-cyan-400 font-bold" data-i18n="core">OMEGA_Ω // AI CORE</span>
     </div>
-    <div class="tech-font text-[10px] text-purple-400 border border-purple-500/30 bg-purple-950/40 px-2.5 py-0.5 rounded-full flex items-center gap-1.5">
-      <i class="fa-solid fa-eye text-[9px] animate-pulse"></i>
-      <span>MOTION_TRACKING: ACTIVE</span>
+
+    <div class="flex items-center gap-2">
+      <!-- محدد اللغات التفاعلي -->
+      <div class="relative">
+        <select id="languageSelect" onchange="changeLanguage(this.value)" class="bg-slate-950/80 border border-cyan-500/40 text-cyan-300 text-[10px] tech-font rounded-lg px-2 py-1 outline-none cursor-pointer hover:border-cyan-400">
+          <option value="ar">العربية (AR)</option>
+          <option value="en">English (EN)</option>
+          <option value="es">Español (ES)</option>
+          <option value="fr">Français (FR)</option>
+          <option value="de">Deutsch (DE)</option>
+          <option value="zh">中文 (ZH)</option>
+          <option value="ja">日本語 (JA)</option>
+          <option value="ru">Русский (RU)</option>
+          <option value="pt">Português (PT)</option>
+          <option value="tr">Türkçe (TR)</option>
+          <option value="hi">हिन्दी (HI)</option>
+        </select>
+      </div>
+
+      <div class="tech-font text-[10px] text-purple-400 border border-purple-500/30 bg-purple-950/40 px-2.5 py-1 rounded-full hidden sm:flex items-center gap-1.5">
+        <i class="fa-solid fa-eye text-[9px] animate-pulse"></i>
+        <span data-i18n="tracking">MOTION_TRACKING: ACTIVE</span>
+      </div>
     </div>
   </header>
 
@@ -140,9 +162,9 @@
     <!-- العنوان التكنولوجي -->
     <div class="text-center mb-5">
       <h1 class="text-2xl sm:text-4xl font-black text-white glow-text mb-1">
-        نظام التحويل الكمومي <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">WebP</span>
+        <span data-i18n="titlePrefix">نظام التحويل الكمومي</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">WebP</span>
       </h1>
-      <p class="text-slate-400 text-xs sm:text-sm">
+      <p id="subText" class="text-slate-400 text-xs sm:text-sm" data-i18n="subText">
         معالجة فائقة السرعة بتشفير طرفي كامل داخل متصفحك
       </p>
     </div>
@@ -158,7 +180,7 @@
           <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-purple-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(0,243,255,0.3)]">
             <i class="fa-solid fa-cloud-arrow-up text-2xl animate-bounce"></i>
           </div>
-          <p class="text-sm font-bold text-white mb-1">المس هنا لاختيار الصورة أو اسحبها</p>
+          <p id="dropText" class="text-sm font-bold text-white mb-1" data-i18n="dropText">المس هنا لاختيار الصورة أو اسحبها</p>
           <p class="text-[10px] text-slate-400 tech-font">PNG, JPG, JPEG, WEBP</p>
         </div>
 
@@ -166,7 +188,7 @@
         <div class="mt-5 space-y-2">
           <div class="flex justify-between items-center text-xs tech-font font-bold">
             <span class="text-slate-400 flex items-center gap-1.5">
-              <i class="fa-solid fa-sliders text-cyan-400"></i> معيار الضغط الذكي:
+              <i class="fa-solid fa-sliders text-cyan-400"></i> <span data-i18n="sliderLabel">معيار الضغط الذكي:</span>
             </span>
             <span id="qualityDisplay" class="text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-500/30">80%</span>
           </div>
@@ -191,7 +213,7 @@
           </div>
 
           <a id="downloadTrigger" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-extrabold text-center block transition-all shadow-[0_0_25px_rgba(0,243,255,0.4)] active:scale-[0.98] text-sm">
-            <i class="fa-solid fa-bolt ml-1.5"></i> تحميل الصورة بصيغة WebP
+            <i class="fa-solid fa-bolt mx-1.5"></i> <span data-i18n="btnDownload">تحميل الصورة بصيغة WebP</span>
           </a>
         </div>
 
@@ -199,7 +221,7 @@
         <div class="mt-5 pt-4 border-t border-slate-800/60">
           <div class="flex items-center justify-between text-[11px] text-slate-400 tech-font mb-2">
             <span class="flex items-center gap-1.5 text-cyan-300 font-bold">
-              <i class="fa-solid fa-hand-holding-dollar text-purple-400"></i> دعم المشروع وتطوير الخادم:
+              <i class="fa-solid fa-hand-holding-dollar text-purple-400"></i> <span data-i18n="supportLabel">دعم المشروع وتطوير الخادم:</span>
             </span>
             <span class="text-[9px] bg-cyan-950 text-cyan-300 px-1.5 py-0.5 rounded border border-cyan-500/20">USDT (BEP20)</span>
           </div>
@@ -213,7 +235,7 @@
             </div>
             <button class="bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs px-3 py-1.5 rounded-lg transition-all flex items-center gap-1 flex-shrink-0">
               <i class="fa-regular fa-copy"></i>
-              <span id="copyBtnLabel">نسخ</span>
+              <span id="copyBtnLabel" data-i18n="copyBtn">نسخ</span>
             </button>
           </div>
         </div>
@@ -225,16 +247,213 @@
   <!-- إشعار نجاح النسخ اللحظي -->
   <div id="copyToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-cyan-500 text-black font-black text-xs px-4 py-2 rounded-full shadow-[0_0_20px_rgba(0,243,255,0.7)] transition-all duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2">
     <i class="fa-solid fa-circle-check"></i>
-    <span>تم نسخ عنوان المحفظة بنجاح!</span>
+    <span id="toastText" data-i18n="toastText">تم نسخ عنوان المحفظة بنجاح!</span>
   </div>
 
-  <footer class="w-full max-w-xl mx-auto p-3 z-10 text-center text-[10px] text-slate-600 tech-font">
-    OMEGA AUTONOMOUS PROTOCOL // MOBILE STABILIZED v4.2
+  <footer class="w-full max-w-xl mx-auto p-3 z-10 flex flex-col items-center gap-2 text-center text-[10px] text-slate-600 tech-font">
+    <div>OMEGA AUTONOMOUS PROTOCOL // MULTI-LINGUAL AI CORE</div>
     <a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;"><img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" /></a>
   </footer>
 
-  <!-- سكربت المحاكاة الفضائية والذكاء الاصطناعي والتفاعل -->
+  <!-- سكربت الترجمة المتعددة والمحاكاة التفاعلية -->
   <script>
+    // قاموس التوطين العالمي (11 لغة عالمية كبرى)
+    const translations = {
+      ar: {
+        pageTitle: "OMEGA Ω // المحرك الكمومي لمعالجة الصور",
+        core: "OMEGA_Ω // نواة الذكاء الاصطناعي",
+        tracking: "تتبع الحركة: نشط",
+        titlePrefix: "نظام التحويل الكمومي",
+        subText: "معالجة فائقة السرعة بتشفير طرفي كامل داخل متصفحك",
+        dropText: "المس هنا لاختيار الصورة أو اسحبها",
+        sliderLabel: "معيار الضغط الذكي:",
+        btnDownload: "تحميل الصورة بصيغة WebP",
+        supportLabel: "دعم المشروع وتطوير الخادم:",
+        copyBtn: "نسخ",
+        copied: "تم!",
+        toastText: "تم نسخ عنوان المحفظة بنجاح!"
+      },
+      en: {
+        pageTitle: "OMEGA Ω // Quantum WebP Engine",
+        core: "OMEGA_Ω // AI CORE",
+        tracking: "MOTION_TRACKING: ACTIVE",
+        titlePrefix: "Quantum Engine for",
+        subText: "Ultra-fast client-side image compression directly in your browser",
+        dropText: "Tap to select image or drag & drop here",
+        sliderLabel: "Smart Compression Level:",
+        btnDownload: "Download Optimized WebP",
+        supportLabel: "Support Project & Server:",
+        copyBtn: "Copy",
+        copied: "Done!",
+        toastText: "Wallet address copied successfully!"
+      },
+      es: {
+        pageTitle: "OMEGA Ω // Motor Cuántico WebP",
+        core: "OMEGA_Ω // NÚCLEO IA",
+        tracking: "SEGUIMIENTO: ACTIVO",
+        titlePrefix: "Motor Cuántico de",
+        subText: "Compresión ultrarrápida del lado del cliente directamente en tu navegador",
+        dropText: "Toca para seleccionar o arrastra una imagen",
+        sliderLabel: "Nivel de compresión inteligente:",
+        btnDownload: "Descargar imagen WebP",
+        supportLabel: "Apoyar el proyecto y servidor:",
+        copyBtn: "Copiar",
+        copied: "¡Listo!",
+        toastText: "¡Dirección de billetera copiada con éxito!"
+      },
+      fr: {
+        pageTitle: "OMEGA Ω // Moteur Quantique WebP",
+        core: "OMEGA_Ω // CŒUR IA",
+        tracking: "SUIVI MOUVEMENT : ACTIF",
+        titlePrefix: "Moteur Quantique pour",
+        subText: "Compression ultra-rapide côté client directement dans votre navigateur",
+        dropText: "Appuyez pour sélectionner ou glissez une image",
+        sliderLabel: "Niveau de compression intelligent :",
+        btnDownload: "Télécharger l'image WebP",
+        supportLabel: "Soutenir le projet et le serveur :",
+        copyBtn: "Copier",
+        copied: "Copié !",
+        toastText: "Adresse du portefeuille copiée avec succès !"
+      },
+      de: {
+        pageTitle: "OMEGA Ω // Quanten-WebP-Engine",
+        core: "OMEGA_Ω // KI-KERN",
+        tracking: "BEWEGUNGS-TRACKING: AKTIV",
+        titlePrefix: "Quanten-Engine für",
+        subText: "Ultraschnelle clientseitige Bildkomprimierung direkt im Browser",
+        dropText: "Tippen zum Auswählen oder Bild hierher ziehen",
+        sliderLabel: "Intelligente Kompressionsstufe:",
+        btnDownload: "WebP-Bild herunterladen",
+        supportLabel: "Projekt & Server unterstützen:",
+        copyBtn: "Kopieren",
+        copied: "Kopiert!",
+        toastText: "Wallet-Adresse erfolgreich kopiert!"
+      },
+      zh: {
+        pageTitle: "OMEGA Ω // 量子 WebP 图像引擎",
+        core: "OMEGA_Ω // AI 核心",
+        tracking: "动态追踪：已启动",
+        titlePrefix: "量子转换引擎",
+        subText: "完全在浏览器本地运行的超高速端到端图像压缩",
+        dropText: "点击选择图片或拖放至此处",
+        sliderLabel: "智能压缩率：",
+        btnDownload: "下载 WebP 图像",
+        supportLabel: "支持项目与服务器开发：",
+        copyBtn: "复制",
+        copied: "已复制！",
+        toastText: "钱包地址已成功复制！"
+      },
+      ja: {
+        pageTitle: "OMEGA Ω // 量子 WebP 画像エンジン",
+        core: "OMEGA_Ω // AI コア",
+        tracking: "動作追跡：アクティブ",
+        titlePrefix: "量子画像変換エンジン",
+        subText: "ブラウザ内で完結する超高速クライアントサイド画像最適化",
+        dropText: "タップして画像を選択、またはドラッグ＆ドロップ",
+        sliderLabel: "スマート圧縮レベル：",
+        btnDownload: "WebP 画像をダウンロード",
+        supportLabel: "プロジェクトとサーバーを支援：",
+        copyBtn: "コピー",
+        copied: "完了！",
+        toastText: "ウォレットアドレスをコピーしました！"
+      },
+      ru: {
+        pageTitle: "OMEGA Ω // Квантовый WebP Движок",
+        core: "OMEGA_Ω // ЯДРО ИИ",
+        tracking: "ОТСЛЕЖИВАНИЕ: АКТИВНО",
+        titlePrefix: "Квантовый Движок для",
+        subText: "Сверхбыстрая обработка на стороне клиента прямо в браузере",
+        dropText: "Нажмите для выбора или перетащите изображение",
+        sliderLabel: "Уровень умного сжатия:",
+        btnDownload: "Скачать изображение WebP",
+        supportLabel: "Поддержать разработку сервера:",
+        copyBtn: "Копировать",
+        copied: "Готово!",
+        toastText: "Адрес кошелька успешно скопирован!"
+      },
+      pt: {
+        pageTitle: "OMEGA Ω // Motor Quântico WebP",
+        core: "OMEGA_Ω // NÚCLEO IA",
+        tracking: "RASTREAMENTO: ATIVO",
+        titlePrefix: "Motor Quântico para",
+        subText: "Processamento ultrarrápido do lado do cliente no seu navegador",
+        dropText: "Toque para selecionar ou arraste uma imagem",
+        sliderLabel: "Nível de compressão inteligente:",
+        btnDownload: "Baixar imagem WebP",
+        supportLabel: "Apoiar projeto e servidor:",
+        copyBtn: "Copiar",
+        copied: "Copiado!",
+        toastText: "Endereço da carteira copiado com sucesso!"
+      },
+      tr: {
+        pageTitle: "OMEGA Ω // Kuantum WebP Motoru",
+        core: "OMEGA_Ω // AI ÇEKİRDEĞİ",
+        tracking: "HAREKET TAKİBİ: AKTİF",
+        titlePrefix: "Kuantum Dönüştürme Motoru",
+        subText: "Doğrudan tarayıcınızda çalışan ultra hızlı istemci taraflı işleme",
+        dropText: "Resim seçmek için dokunun veya buraya sürükleyin",
+        sliderLabel: "Akıllı sıkıştırma seviyesi:",
+        btnDownload: "WebP Resmini İndir",
+        supportLabel: "Projeyi ve Sunucuyu Destekleyin:",
+        copyBtn: "Kopyala",
+        copied: "Tamam!",
+        toastText: "Cüzdan adresi başarıyla kopyalandı!"
+      },
+      hi: {
+        pageTitle: "OMEGA Ω // क्वांटम WebP इंजन",
+        core: "OMEGA_Ω // AI कोर",
+        tracking: "गति ट्रैकिंग: सक्रिय",
+        titlePrefix: "क्वांटम इमेज इंजन",
+        subText: "सीधे आपके ब्राउज़र में अल्ट्रा-फास्ट क्लाइंट-साइड इमेज प्रोसेसिंग",
+        dropText: "छवि चुनने के लिए स्पर्श करें या यहाँ खींचें",
+        sliderLabel: "स्मार्ट संपीड़न स्तर:",
+        btnDownload: "WebP छवि डाउनलोड करें",
+        supportLabel: "परियोजना और सर्वर का समर्थन करें:",
+        copyBtn: "कॉपी करें",
+        copied: "हो गया!",
+        toastText: "वॉलेट पता सफलतापूर्वक कॉपी किया गया!"
+      }
+    };
+
+    let currentLang = 'ar';
+
+    function initLanguage() {
+      // قراءة اللغة المحفوظة أو لغة متصفح الزائر تلقائياً
+      const savedLang = localStorage.getItem('omega_preferred_lang');
+      const browserLang = (navigator.language || navigator.userLanguage || 'ar').slice(0, 2).toLowerCase();
+      
+      const targetLang = savedLang || (translations[browserLang] ? browserLang : 'en');
+      applyLanguage(targetLang);
+    }
+
+    function changeLanguage(lang) {
+      localStorage.setItem('omega_preferred_lang', lang);
+      applyLanguage(lang);
+    }
+
+    function applyLanguage(lang) {
+      if (!translations[lang]) lang = 'en';
+      currentLang = lang;
+
+      // ضبط اتجاه الصفحة واللغة
+      const isRTL = (lang === 'ar');
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+
+      // تحديث النصوص
+      const dict = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      document.getElementById('pageTitle').textContent = dict.pageTitle;
+      document.getElementById('languageSelect').value = lang;
+    }
+
+    // تشغيل نظام اللغات فور تحميل الصفحة
+    initLanguage();
+
     // إحداثيات تتبع حركة المستخدم الموحدة (هاتف وحاسوب)
     let pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
@@ -278,7 +497,6 @@
       const bhX = pointer.x;
       const bhY = pointer.y;
 
-      // أفق حدث الثقب الأسود الصغير المتوهج تحت المؤشر
       const grad = sCtx.createRadialGradient(bhX, bhY, 2, bhX, bhY, 55);
       grad.addColorStop(0, 'rgba(0, 0, 0, 0.95)');
       grad.addColorStop(0.3, 'rgba(176, 38, 255, 0.25)');
@@ -289,7 +507,6 @@
       sCtx.arc(bhX, bhY, 55, 0, Math.PI * 2);
       sCtx.fill();
 
-      // ابتلاع الجزيئات وسحبها إلى الثقب الأسود
       particles.forEach(p => {
         const dx = bhX - p.x;
         const dy = bhY - p.y;
@@ -299,7 +516,6 @@
           p.x = Math.random() * sw;
           p.y = Math.random() * sh;
         } else {
-          // حركة دورانية وحلزونية باتجاه النواة
           const force = 30 / (dist + 50);
           p.x += (dx / dist) * force * 2.5 + Math.cos(p.angle) * p.speed;
           p.y += (dy / dist) * force * 2.5 + Math.sin(p.angle) * p.speed;
@@ -321,16 +537,15 @@
     const fCtx = faceCanvas.getContext('2d');
     const fw = 160, fh = 160;
 
-    // نقاط الوجه ثلاثية الأبعاد (X, Y, Z)
     const baseFaceNodes = [
-      {x: 0, y: -45, z: 0},   // تاج الرأس
-      {x: -25, y: -30, z: 10}, {x: 25, y: -30, z: 10}, // الجبهة
-      {x: -35, y: -10, z: 15}, {x: 35, y: -10, z: 15}, // الصدغين
-      {x: -15, y: -5, z: 25},  {x: 15, y: -5, z: 25},  // العيون
-      {x: 0, y: 10, z: 35},   // قمة الأنف
-      {x: -20, y: 25, z: 15},  {x: 20, y: 25, z: 15},  // الوجنتين
-      {x: -12, y: 40, z: 10},  {x: 12, y: 40, z: 10},  // الفم/الفك العلوي
-      {x: 0, y: 52, z: 5}     // أسفل الذقن
+      {x: 0, y: -45, z: 0},
+      {x: -25, y: -30, z: 10}, {x: 25, y: -30, z: 10},
+      {x: -35, y: -10, z: 15}, {x: 35, y: -10, z: 15},
+      {x: -15, y: -5, z: 25},  {x: 15, y: -5, z: 25},
+      {x: 0, y: 10, z: 35},
+      {x: -20, y: 25, z: 15},  {x: 20, y: 25, z: 15},
+      {x: -12, y: 40, z: 10},  {x: 12, y: 40, z: 10},
+      {x: 0, y: 52, z: 5}
     ];
 
     const faceEdges = [
@@ -341,7 +556,6 @@
     function renderAIFace() {
       fCtx.clearRect(0, 0, fw, fh);
 
-      // حساب زاوية دوران الرأس تماشياً مع موقع المستخدم
       const rect = faceCanvas.getBoundingClientRect();
       const faceCenterX = rect.left + rect.width / 2;
       const faceCenterY = rect.top + rect.height / 2;
@@ -349,20 +563,16 @@
       const deltaX = (pointer.x - faceCenterX) / window.innerWidth;
       const deltaY = (pointer.y - faceCenterY) / window.innerHeight;
 
-      const rotY = deltaX * 1.2; // دوران أفقي
-      const rotX = -deltaY * 1.2; // دوران عمودي
+      const rotY = deltaX * 1.2;
+      const rotX = -deltaY * 1.2;
 
-      // تحويل الإحداثيات وتطبيق الدوران الثلاثي الأبعاد
       const projected = baseFaceNodes.map(node => {
-        // دوران حول محور X
         let y1 = node.y * Math.cos(rotX) - node.z * Math.sin(rotX);
         let z1 = node.y * Math.sin(rotX) + node.z * Math.cos(rotX);
 
-        // دوران حول محور Y
         let x2 = node.x * Math.cos(rotY) + z1 * Math.sin(rotY);
         let z2 = -node.x * Math.sin(rotY) + z1 * Math.cos(rotY);
 
-        // إسقاط منظوري (Perspective)
         const scale = 140 / (140 + z2);
         return {
           x: fw / 2 + x2 * scale,
@@ -370,7 +580,6 @@
         };
       });
 
-      // رسم خطوط الوجه النيونية
       fCtx.strokeStyle = 'rgba(0, 243, 255, 0.7)';
       fCtx.lineWidth = 1.2;
       faceEdges.forEach(([i, j]) => {
@@ -380,7 +589,6 @@
         fCtx.stroke();
       });
 
-      // رسم نقاط الشبكة العصبية والعيون
       projected.forEach((p, idx) => {
         fCtx.fillStyle = (idx === 5 || idx === 6) ? '#b026ff' : '#00f3ff';
         fCtx.shadowColor = (idx === 5 || idx === 6) ? '#b026ff' : '#00f3ff';
@@ -401,12 +609,12 @@
       navigator.clipboard.writeText(address).then(() => {
         const toast = document.getElementById('copyToast');
         const btnLabel = document.getElementById('copyBtnLabel');
-        btnLabel.textContent = 'تم!';
+        btnLabel.textContent = translations[currentLang].copied;
         toast.classList.remove('opacity-0', 'pointer-events-none');
 
         setTimeout(() => {
           toast.classList.add('opacity-0', 'pointer-events-none');
-          btnLabel.textContent = 'نسخ';
+          btnLabel.textContent = translations[currentLang].copyBtn;
         }, 2200);
       });
     }
