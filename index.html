@@ -2,66 +2,60 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEURAL WEBP // المحرك الكمومي لمعالجة الصور</title>
-  <meta name="description" content="محرك الذكاء الاصطناعي الفائق لتحويل وضغط الصور بصيغة WebP داخل المتصفح بدون سيرفر.">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>OMEGA Ω // المحرك الكمومي لمعالجة الصور</title>
+  <meta name="description" content="محرك الذكاء الاصطناعي الفائق لتحويل وضغط الصور بصيغة WebP مع واجهة تفاعلية مستقبلية.">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
   <!-- إعلان Adsterra Popunder -->
   <script src="https://pl31380433.profitableratecpmnetwork.com/ff/5f/83/ff5f8391dca0db6a910d6256c4e3ae4c.js"></script>
 
   <style>
-    :root {
-      --neon-cyan: #00f3ff;
-      --neon-purple: #b026ff;
-      --cyber-bg: #030712;
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
     body {
       font-family: 'Tajawal', sans-serif;
-      background-color: var(--cyber-bg);
+      background-color: #02040a;
       overflow-x: hidden;
+      width: 100%;
+      min-height: 100vh;
     }
     .tech-font {
       font-family: 'Chakra Petch', sans-serif;
     }
-    .cyber-grid {
-      background-size: 40px 40px;
-      background-image: 
-        linear-gradient(to right, rgba(0, 243, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 243, 255, 0.04) 1px, transparent 1px);
-    }
-    .glow-cyan {
-      box-shadow: 0 0 35px rgba(0, 243, 255, 0.25);
-    }
-    .glow-text-cyan {
-      text-shadow: 0 0 15px rgba(0, 243, 255, 0.8);
-    }
-    .glow-text-purple {
-      text-shadow: 0 0 15px rgba(176, 38, 255, 0.8);
-    }
-    /* إطار نيون دوار ثلاثي الأبعاد */
+    /* إطار نيون دوار ثلاثي الأبعاد فائق النعومة */
     .conic-border {
       position: relative;
-      background: rgba(10, 15, 29, 0.85);
+      background: rgba(5, 10, 24, 0.85);
       border-radius: 1.5rem;
       z-index: 1;
     }
     .conic-border::before {
       content: '';
       position: absolute;
-      inset: -2px;
+      inset: -1.5px;
       border-radius: 1.55rem;
       background: conic-gradient(from 0deg, #00f3ff, #b026ff, transparent, #00f3ff);
       z-index: -1;
-      animation: rotateBorder 6s linear infinite;
+      animation: rotateBorder 5s linear infinite;
     }
     @keyframes rotateBorder {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    /* توهجات ضوئية نيونية */
+    .glow-cyan {
+      box-shadow: 0 0 35px rgba(0, 243, 255, 0.25);
+    }
+    .glow-text {
+      text-shadow: 0 0 12px rgba(0, 243, 255, 0.8);
+    }
+    /* خط رادار المسح الضوئي */
     .scanline {
       width: 100%;
       height: 2px;
@@ -72,109 +66,120 @@
     }
     @keyframes scan {
       0% { top: 0%; opacity: 0; }
-      50% { opacity: 1; }
+      50% { opacity: 0.8; }
       100% { top: 100%; opacity: 0; }
     }
   </style>
 </head>
-<body class="text-slate-200 min-h-screen flex flex-col justify-between cyber-grid relative selection:bg-cyan-500 selection:text-black">
+<body class="text-slate-100 flex flex-col justify-between items-center relative selection:bg-cyan-500 selection:text-black">
 
-  <!-- خلفية الجزيئات التفاعلية التلقائية -->
-  <canvas id="cyberCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+  <!-- خلفية الفضاء ومحاكاة الثقب الأسود التفاعلي -->
+  <canvas id="spaceCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
-  <!-- شريط علوي مستقبلي HUD -->
-  <header class="w-full max-w-6xl mx-auto p-4 z-10 flex justify-between items-center border-b border-cyan-950/60 backdrop-blur-md">
-    <div class="flex items-center gap-3">
-      <div class="relative flex h-3 w-3">
+  <!-- شريط المراقبة العلوي HUD -->
+  <header class="w-full max-w-3xl mx-auto px-4 py-3 z-10 flex justify-between items-center border-b border-cyan-950/70 backdrop-blur-md">
+    <div class="flex items-center gap-2">
+      <div class="relative flex h-2.5 w-2.5">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
       </div>
-      <span class="tech-font text-xs tracking-widest text-cyan-400 font-bold">OMEGA_ENGINE // v4.0.9</span>
+      <span class="tech-font text-[11px] tracking-widest text-cyan-400 font-bold">OMEGA_Ω // AI CORE</span>
     </div>
-    <div class="flex items-center gap-4 text-xs tech-font text-slate-400">
-      <span class="hidden sm:inline-block"><i class="fa-solid fa-microchip text-purple-400 mr-1"></i> ZERO-LATENCY</span>
-      <span class="bg-cyan-950/60 border border-cyan-500/30 px-3 py-1 rounded-full text-cyan-300">
-        <i class="fa-solid fa-shield-halved text-xs mr-1"></i> CLIENT-SIDE ENCRYPTED
-      </span>
+    <div class="tech-font text-[10px] text-purple-400 border border-purple-500/30 bg-purple-950/40 px-2.5 py-0.5 rounded-full flex items-center gap-1.5">
+      <i class="fa-solid fa-eye text-[9px] animate-pulse"></i>
+      <span>MOTION_TRACKING: ACTIVE</span>
     </div>
   </header>
 
   <!-- جسم الأداة الرئيسي -->
-  <main class="w-full max-w-3xl mx-auto px-4 py-8 z-10 flex-1 flex flex-col justify-center">
-    
-    <!-- العنوان الرئيسي المستقبلي -->
-    <div class="text-center mb-8">
-      <div class="inline-block mb-3 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-transparent border border-cyan-500/30 text-cyan-400 text-xs font-bold tech-font tracking-widest uppercase">
-        ⚡ Next-Gen WebP Compression
+  <main class="w-full max-w-xl mx-auto px-4 py-5 z-10 flex-1 flex flex-col items-center justify-center">
+
+    <!-- وجه الذكاء الاصطناعي التفاعلي الثلاثي الأبعاد (يتبع المستخدم) -->
+    <div class="relative w-36 h-36 mb-2 flex items-center justify-center">
+      <canvas id="aiFaceCanvas" width="160" height="160" class="drop-shadow-[0_0_20px_rgba(0,243,255,0.4)]"></canvas>
+      <div class="absolute -bottom-1 text-[9px] tech-font text-cyan-400/80 bg-slate-950/80 px-2 py-0.5 rounded border border-cyan-500/20">
+        AI_WATCHER_V9
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white mb-3">
-        نظام التحويل الكمومي <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 glow-text-cyan">WebP Ultra</span>
+    </div>
+
+    <!-- العنوان التكنولوجي -->
+    <div class="text-center mb-5">
+      <h1 class="text-2xl sm:text-4xl font-black text-white glow-text mb-1">
+        نظام التحويل الكمومي <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">WebP</span>
       </h1>
-      <p class="text-slate-400 text-sm max-w-lg mx-auto">
-        خوارزمية تسريع وضغط فورية تعمل داخل المتصفح بأقصى كفاءة بصرية دون مشاركة بياناتك مع أي سيرفر خارجي.
+      <p class="text-slate-400 text-xs sm:text-sm">
+        معالجة فائقة السرعة بتشفير طرفي كامل داخل متصفحك
       </p>
     </div>
 
-    <!-- صندوق المعالجة الرئيسي -->
-    <div class="conic-border p-1 glow-cyan">
-      <div class="bg-slate-950/90 rounded-[1.4rem] p-6 sm:p-8 backdrop-blur-2xl relative overflow-hidden">
+    <!-- كبسولة المعالجة الرئيسية (ثابتة ومحمية على الهواتف) -->
+    <div class="w-full conic-border p-1 glow-cyan">
+      <div class="bg-slate-950/90 rounded-[1.4rem] p-5 sm:p-7 backdrop-blur-2xl relative overflow-hidden">
         <div class="scanline pointer-events-none"></div>
 
-        <!-- منطقة الرفع المتقدمة -->
-        <div id="dropZone" class="relative group border-2 border-dashed border-cyan-500/30 hover:border-cyan-400 rounded-2xl p-8 sm:p-12 text-center cursor-pointer transition-all duration-300 hover:bg-cyan-500/5">
+        <!-- منطقة إدراج الملفات -->
+        <div id="dropZone" class="border-2 border-dashed border-cyan-500/30 hover:border-cyan-400 rounded-xl p-6 sm:p-8 text-center cursor-pointer transition-all duration-300 hover:bg-cyan-500/5 active:scale-[0.99]">
           <input type="file" id="fileInput" accept="image/*" class="hidden">
-          
-          <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-purple-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] transition-all">
-            <i class="fa-solid fa-cloud-bolt text-2xl sm:text-3xl animate-pulse"></i>
+          <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-purple-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(0,243,255,0.3)]">
+            <i class="fa-solid fa-cloud-arrow-up text-2xl animate-bounce"></i>
           </div>
-          <p class="text-base font-bold text-white mb-1 group-hover:text-cyan-300 transition">اسحب صورتك إلى هنا أو انقر للإدراج الفوري</p>
-          <p class="text-xs text-slate-500 tech-font">PNG, JPG, BMP, WEBP (MAX 50MB)</p>
+          <p class="text-sm font-bold text-white mb-1">المس هنا لاختيار الصورة أو اسحبها</p>
+          <p class="text-[10px] text-slate-400 tech-font">PNG, JPG, JPEG, WEBP</p>
         </div>
 
-        <!-- شريط التحكم بالجودة البصرية -->
-        <div class="mt-6 space-y-2">
-          <div class="flex justify-between items-center text-xs font-bold tech-font">
-            <span class="text-slate-400 flex items-center gap-2">
-              <i class="fa-solid fa-sliders text-cyan-400"></i> خوارزمية استهداف الجودة:
+        <!-- شريط ضبط الجودة -->
+        <div class="mt-5 space-y-2">
+          <div class="flex justify-between items-center text-xs tech-font font-bold">
+            <span class="text-slate-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-sliders text-cyan-400"></i> معيار الضغط الذكي:
             </span>
-            <span id="qualityDisplay" class="text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded-md border border-cyan-500/30">80%</span>
+            <span id="qualityDisplay" class="text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-500/30">80%</span>
           </div>
           <input type="range" id="qualityInput" min="10" max="100" value="80" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
         </div>
 
-        <!-- لوحة القياس والتحميل (تظهر فور رفع الصورة) -->
-        <div id="telemetryBox" class="hidden mt-6 pt-6 border-t border-slate-800/80 space-y-4">
-          <div class="grid grid-cols-3 gap-3 text-center tech-font">
-            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
-              <div class="text-[10px] text-slate-500 uppercase">Original</div>
-              <div id="rawSize" class="text-sm font-bold text-slate-300">0.0 KB</div>
+        <!-- لوحة العدادات والتحميل اللحظي -->
+        <div id="telemetryBox" class="hidden mt-5 pt-4 border-t border-slate-800/80 space-y-3">
+          <div class="grid grid-cols-3 gap-2 text-center tech-font">
+            <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+              <div class="text-[9px] text-slate-500 uppercase">Original</div>
+              <div id="rawSize" class="text-xs font-bold text-slate-300">0.0 KB</div>
             </div>
-            <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
-              <div class="text-[10px] text-slate-500 uppercase">Optimized</div>
-              <div id="optSize" class="text-sm font-bold text-cyan-400">0.0 KB</div>
+            <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+              <div class="text-[9px] text-slate-500 uppercase">Optimized</div>
+              <div id="optSize" class="text-xs font-bold text-cyan-400">0.0 KB</div>
             </div>
-            <div class="bg-cyan-950/40 border border-cyan-500/30 rounded-xl p-3">
-              <div class="text-[10px] text-cyan-400 uppercase">Saved</div>
-              <div id="ratio" class="text-sm font-bold text-emerald-400">0%</div>
+            <div class="bg-cyan-950/40 border border-cyan-500/30 rounded-lg p-2">
+              <div class="text-[9px] text-cyan-400 uppercase">Saved</div>
+              <div id="ratio" class="text-xs font-bold text-emerald-400">0%</div>
             </div>
           </div>
 
-          <a id="downloadTrigger" class="relative group overflow-hidden w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-black font-extrabold text-center block transition-all shadow-[0_0_30px_rgba(0,243,255,0.3)] hover:shadow-[0_0_40px_rgba(0,243,255,0.6)] cursor-pointer">
-            <span class="relative z-10 flex items-center justify-center gap-2 text-sm tracking-wider text-white">
-              <i class="fa-solid fa-bolt"></i> تحميل بصيغة WebP الفائقة
-            </span>
+          <a id="downloadTrigger" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-extrabold text-center block transition-all shadow-[0_0_25px_rgba(0,243,255,0.4)] active:scale-[0.98] text-sm">
+            <i class="fa-solid fa-bolt ml-1.5"></i> تحميل الصورة بصيغة WebP
           </a>
         </div>
 
-        <!-- مسار الإيداع الذاتي Binance BEP20 -->
-        <div class="mt-6 pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400 tech-font">
-          <div class="flex items-center gap-2">
-            <i class="fa-brands fa-ethereum text-purple-400"></i>
-            <span>NETWORK NODE DEPOSIT:</span>
+        <!-- مسار دعم المحفظة (مع زر النسخ الفوري بنقرة واحدة) -->
+        <div class="mt-5 pt-4 border-t border-slate-800/60">
+          <div class="flex items-center justify-between text-[11px] text-slate-400 tech-font mb-2">
+            <span class="flex items-center gap-1.5 text-cyan-300 font-bold">
+              <i class="fa-solid fa-hand-holding-dollar text-purple-400"></i> دعم المشروع وتطوير الخادم:
+            </span>
+            <span class="text-[9px] bg-cyan-950 text-cyan-300 px-1.5 py-0.5 rounded border border-cyan-500/20">USDT (BEP20)</span>
           </div>
-          <div class="w-full sm:w-auto bg-slate-900 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg flex items-center justify-between gap-2 text-cyan-400">
-            <span class="truncate max-w-[220px] select-all">0x4226a4ed755055bb470Fac761d3145af45a43c760</span>
-            <span class="text-[9px] bg-cyan-950 text-cyan-300 px-1.5 py-0.5 rounded border border-cyan-500/20">BEP20</span>
+
+          <div onclick="copyWalletAddress()" class="group relative flex items-center justify-between gap-2 bg-slate-900/90 border border-cyan-500/30 hover:border-cyan-400 rounded-xl p-2.5 cursor-pointer transition-all active:scale-[0.98]">
+            <div class="flex items-center gap-2 overflow-hidden">
+              <div class="w-7 h-7 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 flex-shrink-0">
+                <i class="fa-brands fa-ethereum text-sm"></i>
+              </div>
+              <span id="walletText" class="font-mono text-[11px] text-slate-300 truncate">0x4226a4ed755055bb470Fac761d3145af45a43c760</span>
+            </div>
+            <button class="bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs px-3 py-1.5 rounded-lg transition-all flex items-center gap-1 flex-shrink-0">
+              <i class="fa-regular fa-copy"></i>
+              <span id="copyBtnLabel">نسخ</span>
+            </button>
           </div>
         </div>
 
@@ -182,65 +187,195 @@
     </div>
   </main>
 
-  <!-- شريط سفلي متناسق -->
-  <footer class="w-full max-w-6xl mx-auto p-4 z-10 border-t border-slate-900 text-center text-xs text-slate-600 tech-font">
-    NEURAL CORE AUTOMATION // DEPLOYED ON VERCEL HIGH-SPEED EDGE
+  <!-- إشعار نجاح النسخ اللحظي -->
+  <div id="copyToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-cyan-500 text-black font-black text-xs px-4 py-2 rounded-full shadow-[0_0_20px_rgba(0,243,255,0.7)] transition-all duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>تم نسخ عنوان المحفظة بنجاح!</span>
+  </div>
+
+  <footer class="w-full max-w-xl mx-auto p-3 z-10 text-center text-[10px] text-slate-600 tech-font">
+    OMEGA AUTONOMOUS PROTOCOL // MOBILE STABILIZED v4.2
   </footer>
 
-  <!-- محرك المعالجة التفاعلي + الجزيئات ثلاثية الأبعاد -->
+  <!-- سكربت المحاكاة الفضائية والذكاء الاصطناعي والتفاعل -->
   <script>
-    // نظام تفاعل الجزيئات الكمومية
-    const canvas = document.getElementById('cyberCanvas');
-    const ctx = canvas.getContext('2d');
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
+    // إحداثيات تتبع حركة المستخدم الموحدة (هاتف وحاسوب)
+    let pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+    function updatePointer(e) {
+      if (e.touches && e.touches.length > 0) {
+        pointer.x = e.touches[0].clientX;
+        pointer.y = e.touches[0].clientY;
+      } else {
+        pointer.x = e.clientX;
+        pointer.y = e.clientY;
+      }
+    }
+    window.addEventListener('mousemove', updatePointer, { passive: true });
+    window.addEventListener('touchmove', updatePointer, { passive: true });
+    window.addEventListener('touchstart', updatePointer, { passive: true });
+
+    // 1. محاكاة الفضاء والثقب الأسود الجاذب
+    const sCanvas = document.getElementById('spaceCanvas');
+    const sCtx = sCanvas.getContext('2d');
+    let sw = sCanvas.width = window.innerWidth;
+    let sh = sCanvas.height = window.innerHeight;
 
     window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      sw = sCanvas.width = window.innerWidth;
+      sh = sCanvas.height = window.innerHeight;
     });
 
-    const particles = Array.from({ length: 45 }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      radius: Math.random() * 1.5 + 0.5
+    const particles = Array.from({ length: 90 }, () => ({
+      x: Math.random() * sw,
+      y: Math.random() * sh,
+      size: Math.random() * 1.6 + 0.4,
+      speed: Math.random() * 0.8 + 0.3,
+      angle: Math.random() * Math.PI * 2,
+      dist: Math.random() * Math.max(sw, sh)
     }));
 
-    function renderParticles() {
-      ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = 'rgba(0, 243, 255, 0.3)';
-      ctx.strokeStyle = 'rgba(0, 243, 255, 0.05)';
+    function renderCosmos() {
+      sCtx.fillStyle = 'rgba(2, 4, 10, 0.25)';
+      sCtx.fillRect(0, 0, sw, sh);
 
-      for (let i = 0; i < particles.length; i++) {
-        let p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
+      const bhX = pointer.x;
+      const bhY = pointer.y;
 
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
+      // أفق حدث الثقب الأسود الصغير المتوهج تحت المؤشر
+      const grad = sCtx.createRadialGradient(bhX, bhY, 2, bhX, bhY, 55);
+      grad.addColorStop(0, 'rgba(0, 0, 0, 0.95)');
+      grad.addColorStop(0.3, 'rgba(176, 38, 255, 0.25)');
+      grad.addColorStop(0.6, 'rgba(0, 243, 255, 0.15)');
+      grad.addColorStop(1, 'transparent');
+      sCtx.fillStyle = grad;
+      sCtx.beginPath();
+      sCtx.arc(bhX, bhY, 55, 0, Math.PI * 2);
+      sCtx.fill();
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
+      // ابتلاع الجزيئات وسحبها إلى الثقب الأسود
+      particles.forEach(p => {
+        const dx = bhX - p.x;
+        const dy = bhY - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
 
-        for (let j = i + 1; j < particles.length; j++) {
-          let p2 = particles[j];
-          let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-          if (dist < 130) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.stroke();
-          }
+        if (dist < 25) {
+          p.x = Math.random() * sw;
+          p.y = Math.random() * sh;
+        } else {
+          // حركة دورانية وحلزونية باتجاه النواة
+          const force = 30 / (dist + 50);
+          p.x += (dx / dist) * force * 2.5 + Math.cos(p.angle) * p.speed;
+          p.y += (dy / dist) * force * 2.5 + Math.sin(p.angle) * p.speed;
+          p.angle += 0.02;
         }
-      }
-      requestAnimationFrame(renderParticles);
-    }
-    renderParticles();
 
-    // خوارزمية معالجة الصور الداخلية
+        sCtx.fillStyle = dist < 120 ? '#00f3ff' : 'rgba(255, 255, 255, 0.5)';
+        sCtx.beginPath();
+        sCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        sCtx.fill();
+      });
+
+      requestAnimationFrame(renderCosmos);
+    }
+    renderCosmos();
+
+    // 2. محرك وجه الذكاء الاصطناعي ثلاثي الأبعاد الموجه
+    const faceCanvas = document.getElementById('aiFaceCanvas');
+    const fCtx = faceCanvas.getContext('2d');
+    const fw = 160, fh = 160;
+
+    // نقاط الوجه ثلاثية الأبعاد (X, Y, Z)
+    const baseFaceNodes = [
+      {x: 0, y: -45, z: 0},   // تاج الرأس
+      {x: -25, y: -30, z: 10}, {x: 25, y: -30, z: 10}, // الجبهة
+      {x: -35, y: -10, z: 15}, {x: 35, y: -10, z: 15}, // الصدغين
+      {x: -15, y: -5, z: 25},  {x: 15, y: -5, z: 25},  // العيون
+      {x: 0, y: 10, z: 35},   // قمة الأنف
+      {x: -20, y: 25, z: 15},  {x: 20, y: 25, z: 15},  // الوجنتين
+      {x: -12, y: 40, z: 10},  {x: 12, y: 40, z: 10},  // الفم/الفك العلوي
+      {x: 0, y: 52, z: 5}     // أسفل الذقن
+    ];
+
+    const faceEdges = [
+      [0,1],[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,7],
+      [5,8],[6,9],[8,10],[9,11],[10,12],[11,12],[7,10],[7,11],[1,2],[8,9]
+    ];
+
+    function renderAIFace() {
+      fCtx.clearRect(0, 0, fw, fh);
+
+      // حساب زاوية دوران الرأس تماشياً مع موقع المستخدم
+      const rect = faceCanvas.getBoundingClientRect();
+      const faceCenterX = rect.left + rect.width / 2;
+      const faceCenterY = rect.top + rect.height / 2;
+
+      const deltaX = (pointer.x - faceCenterX) / window.innerWidth;
+      const deltaY = (pointer.y - faceCenterY) / window.innerHeight;
+
+      const rotY = deltaX * 1.2; // دوران أفقي
+      const rotX = -deltaY * 1.2; // دوران عمودي
+
+      // تحويل الإحداثيات وتطبيق الدوران الثلاثي الأبعاد
+      const projected = baseFaceNodes.map(node => {
+        // دوران حول محور X
+        let y1 = node.y * Math.cos(rotX) - node.z * Math.sin(rotX);
+        let z1 = node.y * Math.sin(rotX) + node.z * Math.cos(rotX);
+
+        // دوران حول محور Y
+        let x2 = node.x * Math.cos(rotY) + z1 * Math.sin(rotY);
+        let z2 = -node.x * Math.sin(rotY) + z1 * Math.cos(rotY);
+
+        // إسقاط منظوري (Perspective)
+        const scale = 140 / (140 + z2);
+        return {
+          x: fw / 2 + x2 * scale,
+          y: fh / 2 + y1 * scale
+        };
+      });
+
+      // رسم خطوط الوجه النيونية
+      fCtx.strokeStyle = 'rgba(0, 243, 255, 0.7)';
+      fCtx.lineWidth = 1.2;
+      faceEdges.forEach(([i, j]) => {
+        fCtx.beginPath();
+        fCtx.moveTo(projected[i].x, projected[i].y);
+        fCtx.lineTo(projected[j].x, projected[j].y);
+        fCtx.stroke();
+      });
+
+      // رسم نقاط الشبكة العصبية والعيون
+      projected.forEach((p, idx) => {
+        fCtx.fillStyle = (idx === 5 || idx === 6) ? '#b026ff' : '#00f3ff';
+        fCtx.shadowColor = (idx === 5 || idx === 6) ? '#b026ff' : '#00f3ff';
+        fCtx.shadowBlur = 8;
+        fCtx.beginPath();
+        fCtx.arc(p.x, p.y, (idx === 5 || idx === 6) ? 2.5 : 1.8, 0, Math.PI * 2);
+        fCtx.fill();
+        fCtx.shadowBlur = 0;
+      });
+
+      requestAnimationFrame(renderAIFace);
+    }
+    renderAIFace();
+
+    // 3. وظيفة نسخ المحفظة الفورية بنقرة واحدة
+    function copyWalletAddress() {
+      const address = "0x4226a4ed755055bb470Fac761d3145af45a43c760";
+      navigator.clipboard.writeText(address).then(() => {
+        const toast = document.getElementById('copyToast');
+        const btnLabel = document.getElementById('copyBtnLabel');
+        btnLabel.textContent = 'تم!';
+        toast.classList.remove('opacity-0', 'pointer-events-none');
+
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'pointer-events-none');
+          btnLabel.textContent = 'نسخ';
+        }, 2200);
+      });
+    }
+
+    // 4. خوارزمية ضغط وتحويل الصور إلى WebP (Client-Side)
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
     const qualityInput = document.getElementById('qualityInput');
@@ -259,11 +394,11 @@
     });
 
     dropZone.addEventListener('click', () => fileInput.click());
-    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-cyan-400', 'bg-cyan-500/10'); });
-    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-cyan-400', 'bg-cyan-500/10'));
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-cyan-400'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-cyan-400'));
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
-      dropZone.classList.remove('border-cyan-400', 'bg-cyan-500/10');
+      dropZone.classList.remove('border-cyan-400');
       if (e.dataTransfer.files.length) handleImageUpload(e.dataTransfer.files[0]);
     });
 
