@@ -1,33 +1,24 @@
-name: Programmatic SEO Engine
+name: SEO Quality Gate
 
 on:
-  schedule:
-    # يعمل تلقائياً كل يوم أحد منتصف الليل
-    - cron: '0 0 * * 0'
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  generate-and-deploy:
+  validate-seo:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Run Programmatic SEO Generator
+      - name: Validate SEO metadata and canonical URLs
         run: python generate_pages.py
-
-      - name: Commit and Push New Pages
-        run: |
-          git config --global user.name "Omega-SEO-Bot"
-          git config --global user.email "bot@omega.ai"
-          git add *.html sitemap.xml
-          git commit -m "Auto-generate programmatic SEO pages and sitemap update" || exit 0
-          git push

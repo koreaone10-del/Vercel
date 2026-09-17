@@ -1,139 +1,69 @@
-<div align="center">
+# OMEGA Ω — Browser Media Tools
 
-# ⚡ OMEGA Ω // QUANTUM MULTIMEDIA PROTOCOL
-### Next-Generation Client-Side Engine • Veo-3 AI Cinema • TikTok HD • Autonomous Programmatic SEO
+OMEGA is a static browser-based media toolkit deployed at:
 
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-00f3ff?style=for-the-badge&logo=vercel&logoColor=white&labelColor=02040a)](https://ultra-compressor-three.vercel.app/)
-[![Lighthouse Score](https://img.shields.io/badge/Lighthouse-100%2F100-00ff88?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=02040a)](https://ultra-compressor-three.vercel.app/)
-[![GitHub Actions CI](https://img.shields.io/badge/Automated_SEO-Active-b026ff?style=for-the-badge&logo=githubactions&logoColor=white&labelColor=02040a)](https://github.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-ff007f?style=for-the-badge&labelColor=02040a)](LICENSE)
+**https://x-five-kappa-98.vercel.app/**
 
-<br/>
+The repository contains local WebP conversion and PDF compression tools, a procedural Canvas/MediaRecorder video workflow, YouTube thumbnail resolution, and optional public TikTok URL processing through external providers.
 
-<img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" width="100%" alt="OMEGA Core Banner" style="border-radius: 18px; border: 1px solid #00f3ff;" />
+## Important implementation notes
 
-<br/>
-<br/>
+- WebP conversion and PDF processing run in the browser. Files are not uploaded to an OMEGA server for those workflows.
+- The video workflow requests a still image from an external image service, applies procedural Canvas motion, and records a WebM file with `MediaRecorder`. It is not a native Veo-3 rendering API.
+- TikTok URL processing depends on third-party providers. Private, removed, restricted, or unsupported URLs may fail.
+- YouTube functions resolve thumbnail images only; they do not download YouTube videos.
+- Users are responsible for copyright, creator permission, platform terms, and lawful use of downloaded or generated media.
+- Monetization scripts from the repository are intentionally retained. On the main page, the real download href remains active and the Smartlink opens separately after the user clicks a completed download action.
 
-**[🌐 Launch Live Platform](https://ultra-compressor-three.vercel.app/)** • **[🚀 Report Optimization Bug](https://github.com)** • **[⚡ Explore Workflows](https://github.com)**
+## SEO build policy
 
-</div>
+The repository does not automatically manufacture keyword pages by changing only a title or description. Each indexable landing page must have a reviewed purpose, unique explanatory content, accurate metadata, a self-referencing canonical URL, and a matching sitemap entry.
 
----
-
-> [!IMPORTANT]
-> **OMEGA Ω** is an ultra-fast, zero-server-overhead progressive web application designed to dominate search engine result pages (SERPs) while providing high-utility client-side image compression, cinematic AI video generation, and lossless TikTok stream retrieval.
-
----
-
-## 🛰️ System Architecture & Visual HUD
-
-┌────────────────────────────────────────────────┐
-│          OMEGA Ω QUANTUM RUNTIME               │
-└───────────────────────┬────────────────────────┘
-│
-┌───────────────────────┼────────────────────────┐
-▼                       ▼                        ▼
-┌─────────────────┐    ┌──────────────────┐     ┌──────────────────┐
-│  WebP Converter │    │  Veo-3 AI Studio │     │  TikTok HD Engine│
-│  (HTML5 Canvas) │    │  (Flux.1 Kinetic)│     │  (TikWM Pipeline)│
-└────────┬────────┘    └────────┬─────────┘     └────────┬─────────┘
-│                       │                       │
-└───────────────────────┼───────────────────────┘
-▼
-┌────────────────────────────────────────────────┐
-│     CYBORG OPTICS 3D TELEMETRY & GAZE TRACK    │
-└────────────────────────────────────────────────┘
----
-
-## 💎 Primary Feature Clusters
-
-| Module | Core Technology | Latency | Storage Footprint |
-| :--- | :--- | :--- | :--- |
-| **Quantum WebP Engine** | HTML5 Canvas Client-Side Pipeline | `< 12ms` | 0 KB (Direct in-memory Blob) |
-| **Veo-3 Cinematic Video** | Flux.1 Diffusion Cluster + Kinetic 3D | Instant Synthesized | Browser MediaRecorder (WebM/VP9) |
-| **TikTok HD Stream Grabber** | Direct Zero-Auth TikWM CDN Tunnel | `< 800ms` | Direct Stream Passthrough |
-| **Cyborg Optics 3D HUD** | Vector Gaze Mathematics + Raycasting | 60 FPS Real-time | GPU Hardware Accelerated |
-| **Autonomous SEO Engine** | GitHub Actions + Headless Python Cron | Scheduled Weekly | Static JSON-LD & Sitemap Index |
-
----
-
-## ⚡ Core Functionality Breakdown
-
-### 1. Quantum Client-Side WebP Optimizer
-* **Zero Cloud Latency:** Files are manipulated entirely inside user RAM using the hardware-accelerated Canvas API.
-* **Lossless/Lossy Calibration:** Real-time percentage compression slider with live byte-count telemetry and delta calculation.
-* **Batch Multi-Upload:** Drag-and-drop batch queuing with immediate parallel export.
-
-### 2. Veo-3 Procedural AI Video Studio
-* **Neural Visual Latents:** Direct interface with high-parameter open-source diffusion models (Flux.1 neural weights).
-* **Kinetic Camera Motions:** Multi-axis procedural kinematics including Dolly-Zoom, Dynamic 3D Panning, and Wide Reveals.
-* **In-Browser Video Encoding:** Zero external rendering queues; streams are recorded directly via the `MediaRecorder` API at 30 FPS.
-
-### 3. TikTok HD Zero-Watermark Tunnel
-* **Bypass Complex Filters:** One-click extraction of pure raw MP4 streams without watermarks.
-* **Lossless Audio Demuxing:** Instant separation and extraction of the original soundtrack into an MP3 package.
-
-### 4. Interactive Cyborg Optics (HUD Telemetry)
-* **Vector Gaze Tracking:** Follows cursor/touch coordinates with realistic eye-socket rotation, dynamic blinking, and facial energy telemetry.
-* **Ambient Cosmos Reactor:** Interactive black hole canvas simulation calculating gravitational particle pull based on pointer trajectory.
-
----
-
-## 📈 Automated SEO & Autonomous Traffic Workflows
-┌──────────────────────┐        ┌──────────────────────┐        ┌──────────────────────┐
-│  generate_pages.py   │ ─────► │   sitemap.xml Auto   │ ─────► │   IndexNow Ping to   │
-│  (7+ Niche Targets)  │        │   Cluster Injection  │        │   Google & Bing CDN  │
-└──────────────────────┘        └──────────────────────┘        └──────────────────────┘
-
-> [!TIP]
-> The platform runs headless automated GitHub Action crons to continuously manufacture rank-ready programmatic landing pages targeting high-intent long-tail keywords (e.g., `#ShopifySpeed`, `#DiscordWebP`, `#WordPressSEO`).
-
-### Included GitHub Actions Automations:
-* **`programmatic-seo.yml`:** Synthesizes dedicated e-commerce landing pages, registers them inside `sitemap.xml`, and pushes directly to Vercel production.
-* **`seo-crawler.yml`:** Automated daily pinging protocol dispatching updates to Bing IndexNow and Google's crawl queues to maintain high indexing priority.
-
----
-
-## 🛠️ Technology Stack
-
-<div align="left">
-
-* **Core Runtime:** Vanilla ECMAScript 2026 (Zero frameworks, zero bloatware)
-* **Styling Layer:** Tailwind CSS Engine + Custom Conic Dynamic Glassmorphism
-* **Typography:** Chakra Petch & Google Tajawal Typography Cluster
-* **Iconography:** FontAwesome 6 Pro CDN
-* **Deployment & Edge Infrastructure:** Vercel Edge Global Network
-* **Monetization Layer:** Adsterra High-Yield CPM Engine (Popunder + SocialBar Integration)
-
-</div>
-
----
-
-## 🚀 Deployment & Local Orchestration
-
-### Deploy Instantly to Vercel
-Clone the repository and deploy to Vercel Edge with zero configurations:
+Run the local quality gate with:
 
 ```bash
-# 1. Clone the repository
-git clone [https://github.com/koreaone10-del/Vercel.git](https://github.com/koreaone10-del/Vercel.git)
+python3 generate_pages.py
+```
 
-# 2. Navigate to project root
-cd Vercel
+The quality gate checks that HTML pages contain titles, descriptions, canonicals, the official domain, and consistent robots and sitemap files.
 
-# 3. Serve locally with any lightweight server
-npx serve .
-☕ Support Protocol (Decentralized Sponsorship)
-​If OMEGA accelerates your design, development, or indexing pipelines, support server scaling and continuous neural feature deployment:
+The one-time repair and normalization script is:
 
-Tether USDT (BEP-20 / BSC Network):
-0x4226a4ed755055bb470Fac761d3145af45a43c760
+```bash
+python3 apply_fixes.py
+```
 
-<div align="center">
-<br />
-<sub>Crafted for extreme performance, autonomous indexing, and decentralized web speed.</sub>
-<br />
-<b>OMEGA Ω // SYSTEM OPERATIONAL</b>
-</div>
+Review the generated diff before committing. Do not run it against a different production domain without changing `SITE_URL` in both scripts and updating the deployment smoke tests.
 
+## Deployment
+
+The current canonical origin is the Vercel URL above. If you later move to a custom domain, update all of these together:
+
+- `SITE_URL` in `apply_fixes.py` and `generate_pages.py`.
+- `robots.txt`.
+- `sitemap.xml`.
+- HTML `canonical`, `og:url`, and structured-data URLs.
+- `.github/workflows/ping.yml`, `programmatic-seo.yml`, and `seo-crawler.yml`.
+- The Vercel project domain and any redirect from the old origin.
+
+Deploy the repository as a static Vercel project. After deployment, verify:
+
+```bash
+curl -I https://x-five-kappa-98.vercel.app/
+curl -I https://x-five-kappa-98.vercel.app/robots.txt
+curl -I https://x-five-kappa-98.vercel.app/sitemap.xml
+```
+
+Then inspect the official origin in Google Search Console and submit the sitemap there. Search Console is the source of truth for indexing and Core Web Vitals; GitHub Actions only performs consistency and availability checks.
+
+## Directory overview
+
+- `index.html`: main multi-tool interface.
+- `*-to-webp.html`: focused WebP landing pages.
+- `*youtube*.html`: focused YouTube thumbnail pages.
+- `*tiktok*.html`: public TikTok URL processing pages.
+- `*veo*` and `*cinematic*`: transparent procedural video pages.
+- `apply_fixes.py`: metadata, canonical, structured-data, content, robots, and sitemap normalizer.
+- `generate_pages.py`: SEO quality gate; it intentionally does not auto-generate thin pages.
+- `vercel.json`: caching and security headers.
+- `sw.js`: same-origin static-asset cache only; HTML is always fetched from the network.

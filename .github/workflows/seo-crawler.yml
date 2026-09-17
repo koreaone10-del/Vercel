@@ -1,24 +1,25 @@
-name: Autonomous Search Engine Pinger
+name: Published SEO Smoke Test
 
 on:
-  schedule:
-    # يعمل تلقائياً كل يوم في منتصف الليل بتوقيت UTC
-    - cron: '0 0 * * *'
   workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * 1'
+
+permissions:
+  contents: read
 
 jobs:
-  ping-search-engines:
+  smoke-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Bing & Yahoo via IndexNow
+      - name: Check official site
         run: |
-          curl -s -o /dev/null -w "%{http_code}" "https://www.bing.com/indexnow?url=https://ultra-compressor-three.vercel.app/&key=omega-indexnow"
-          curl -s -o /dev/null -w "%{http_code}" "https://www.bing.com/indexnow?url=https://ultra-compressor-three.vercel.app/png-to-webp.html&key=omega-indexnow"
-          curl -s -o /dev/null -w "%{http_code}" "https://www.bing.com/indexnow?url=https://ultra-compressor-three.vercel.app/jpg-to-webp.html&key=omega-indexnow"
-          echo "IndexNow Pings Sent Successfully!"
-
-      - name: Ping Google Sitemap Crawler
-        run: |
-          curl -s -o /dev/null -w "%{http_code}" "https://www.google.com/ping?sitemap=https://ultra-compressor-three.vercel.app/sitemap.xml"
-          echo "Google Ping Complete!"
-
+          set -euo pipefail
+          for url in \
+            https://x-five-kappa-98.vercel.app/ \
+            https://x-five-kappa-98.vercel.app/robots.txt \
+            https://x-five-kappa-98.vercel.app/sitemap.xml; do
+            status=$(curl -L -sS -o /dev/null -w '%{http_code}' --max-time 20 "$url")
+            test "$status" = "200"
+            echo "$status $url"
+          done

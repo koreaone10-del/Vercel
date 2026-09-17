@@ -1,49 +1,33 @@
-const CACHE_NAME = 'omega-quantum-cache-v2';
+const CACHE_NAME = 'omega-static-v3';
+const STATIC_ASSETS = ['/manifest.json', '/sw.js'];
 
-self.addEventListener('install', (e) => {
+self.addEventListener('install', (event) => {
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS)));
   self.skipWaiting();
 });
 
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      );
-    }).then(() => self.clients.claim())
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => Promise.all(
+      keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+    )).then(() => self.clients.claim())
   );
 });
 
-self.addEventListener('fetch', (e) => {
-  // جلب النسخة الأحدث دائماً لصفحات HTML من السيرفر
-  if (e.request.mode === 'navigate' || e.request.destination === 'document') {
-    e.respondWith(
-      fetch(e.request)
-        .then((response) => {
-          const resClone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(e.request, resClone));
-          return response;
-        })
-        .catch(() => caches.match(e.request))
-    );
-    return;
-  }
+self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  const url = new URL(request.url);
 
-  // كاش الملحقات الأخرى
-  e.respondWith(
-    caches.match(e.request).then((cached) => {
-      const networked = fetch(e.request)
-        .then((response) => {
-          const resClone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(e.request, resClone));
-          return response;
-        })
-        .catch(() => cached);
-      return cached || networked;
-    })
+  if (request.method !== 'GET' || url.origin !== self.location.origin) return;
+  if (request.mode === 'navigate' || request.destination === 'document') return;
+
+  event.respondWith(
+    caches.match(request).then((cached) => cached || fetch(request).then((response) => {
+      if (response.ok && ['style', 'script', 'image', 'font'].includes(request.destination)) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+      }
+      return response;
+    }))
   );
 });
