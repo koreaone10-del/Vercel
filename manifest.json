@@ -1,15 +1,17 @@
 {
-  "name": "OMEGA WebP Ultra",
-  "short_name": "OMEGA WebP",
+  "name": "OMEGA Ω // Quantum AI Suite",
+  "short_name": "OMEGA",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#02040a",
-  "theme_color": "#00f3ff",
+  "theme_color": "#02040a",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "https://placehold.co/192x192/030712/00f3ff.png?text=OMEGA",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "https://placehold.co/512x512/030712/00f3ff.png?text=OMEGA",
@@ -18,4 +20,3 @@
     }
   ]
 }
-
