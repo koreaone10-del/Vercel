@@ -164,6 +164,13 @@
     </div>
 
     <div class="flex items-center gap-2">
+      <!-- زر تثبيت تطبيق OMEGA على الهاتف (PWA) -->
+      <button id="pwaInstallBtn" type="button" class="hidden tech-font text-[10px] text-black bg-cyan-400 hover:bg-cyan-300 font-extrabold px-2.5 py-1 rounded-lg transition-all shadow-[0_0_12px_rgba(0,243,255,0.6)] flex items-center gap-1.5 active:scale-95">
+        <i class="fa-solid fa-download text-[9px]"></i>
+        <span data-i18n="installApp">INSTALL APP</span>
+      </button>
+
+      <!-- محدد اللغات -->
       <div class="relative">
         <select id="languageSelect" onchange="changeLanguage(this.value)" class="bg-slate-950/80 border border-cyan-500/40 text-cyan-300 text-[10px] tech-font rounded-lg px-2 py-1 outline-none cursor-pointer hover:border-cyan-400">
           <option value="ar">العربية (AR)</option>
@@ -507,6 +514,7 @@
         pageTitle: "OMEGA Ω // المنظومة الكمومية الشاملة: WebP - Veo-3 - TikTok HD - YouTube 4K",
         core: "OMEGA_Ω // نواة الروبوت الشاملة",
         tracking: "البصريات السيبرانية: نشطة",
+        installApp: "تثبيت التطبيق",
         titlePrefix: "المنظومة الكمومية الموحدة",
         subText: "أدوات معالجة وسائط مجانية بدون قيود: ضغط WebP، سينما Veo-3، تنزيل TikTok، وأغلفة YouTube 4K",
         tabWebp: "محرك WebP",
@@ -538,6 +546,7 @@
         pageTitle: "OMEGA Ω // Unified AI Suite: WebP - Veo-3 - TikTok HD - YouTube 4K",
         core: "OMEGA_Ω // QUANTUM AI HUB",
         tracking: "CYBORG_OPTICS: ACTIVE",
+        installApp: "INSTALL APP",
         titlePrefix: "Unified Quantum AI",
         subText: "Next-gen zero-limit suite: WebP Optimizer, Veo-3 AI Cinema, TikTok HD Grabber, and YouTube 4K Thumbnails",
         tabWebp: "WebP Engine",
@@ -1129,7 +1138,6 @@
         const downloadBtn = document.getElementById('ytDownloadBtn');
         const resultBox = document.getElementById('ytResultBox');
 
-        // Test if maxresdefault exists; fallback to hqdefault if YouTube returns placeholder
         const testImg = new Image();
         testImg.onload = function() {
           if (testImg.naturalWidth === 120) {
@@ -1191,7 +1199,33 @@
       });
     }
 
-    // Service Worker Registration for PWA
+    // 8. Service Worker & PWA Install Engine
+    let deferredPrompt;
+    const installBtn = document.getElementById('pwaInstallBtn');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (installBtn) installBtn.classList.remove('hidden');
+    });
+
+    if (installBtn) {
+      installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          if (outcome === 'accepted') {
+            installBtn.classList.add('hidden');
+          }
+          deferredPrompt = null;
+        }
+      });
+    }
+
+    window.addEventListener('appinstalled', () => {
+      if (installBtn) installBtn.classList.add('hidden');
+    });
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
