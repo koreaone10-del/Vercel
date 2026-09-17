@@ -9,7 +9,10 @@ USE_CASES = [
     {"slug": "etsy-product-photo-compressor", "title": "Etsy Product Photo Optimizer (WebP)", "target": "Etsy Sellers"},
     {"slug": "compress-woocommerce-product-photos", "title": "WooCommerce Image Compression Engine", "target": "E-Commerce Managers"},
     {"slug": "convert-png-banner-to-webp", "title": "Convert High-Res PNG Banners to WebP", "target": "Graphic Designers"},
-    {"slug": "shrink-blog-images-lossless-webp", "title": "Lossless WebP Compression for Blogs", "target": "Content Creators"}
+    {"slug": "shrink-blog-images-lossless-webp", "title": "Lossless WebP Compression for Blogs", "target": "Content Creators"},
+    {"slug": "midjourney-png-to-webp-converter", "title": "Compress Midjourney AI Images to WebP", "target": "AI Artists & Prompt Engineers"},
+    {"slug": "youtube-thumbnail-webp-optimizer", "title": "Optimize YouTube Thumbnails to WebP", "target": "YouTubers & Video Editors"},
+    {"slug": "veo-3-ai-video-prompt-generator", "title": "Veo-3 AI Video Studio & Cinematic Renderer", "target": "Shorts & TikTok Creators"}
 ]
 
 DOMAIN = "https://ultra-compressor-three.vercel.app"
