@@ -635,6 +635,29 @@
         }, 2200);
       });
     }
+    // دالة مشاركة الأداة
+    function shareTool() {
+      const shareData = {
+        title: 'OMEGA WebP Ultra',
+        text: 'أداة مجانية فائقة السرعة لتحويل وضغط الصور بصيغة WebP داخل المتصفح بدون خوادم!',
+        url: 'https://ultra-compressor-three.vercel.app/'
+      };
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(shareData.url).then(() => {
+          const toast = document.getElementById('copyToast');
+          const toastText = document.getElementById('toastText');
+          const oldText = toastText.textContent;
+          toastText.textContent = 'تم نسخ رابط الأداة للمشاركة!';
+          toast.classList.remove('opacity-0', 'pointer-events-none');
+          setTimeout(() => {
+            toast.classList.add('opacity-0', 'pointer-events-none');
+            toastText.textContent = oldText;
+          }, 2200);
+        });
+      }
+    }
 
     // 4. خوارزمية ضغط وتحويل الصور إلى WebP (Client-Side)
     const dropZone = document.getElementById('dropZone');
