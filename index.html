@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title id="pageTitle">OMEGA Ω // المنظومة الكمومية الشاملة: WebP - Veo-3 - TikTok HD - YouTube 4K</title>
-  <meta name="description" id="pageDesc" content="محطة متكاملة لمعالجة الوسائط بالذكاء الاصطناعي: ضغط WebP، توليد فيديو Veo-3 سينمائي، تحميل فيديوهات TikTok بدون علامة مائية، ومستخرج أغلفة YouTube بدقة 4K.">
+  <title id="pageTitle">OMEGA Ω // المنظومة الكمومية الشاملة: WebP - Veo-3 - TikTok HD - YouTube 4K - PDF Shrink</title>
+  <meta name="description" id="pageDesc" content="محطة متكاملة لمعالجة الوسائط بالذكاء الاصطناعي: ضغط WebP، توليد فيديو Veo-3 سينمائي، تحميل فيديوهات TikTok بدون علامة مائية، أغلفة YouTube 4K، وضغط ملفات PDF محلياً.">
   <meta name="google-site-verification" content="PvFb4-G3mvAl8Pc-eFMU3n0oajrQTfKiKg6rBElPThk" />
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Tajawal:wght@400;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+  <!-- PDF Processing Libraries (100% Client-Side) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <!-- Social Media & Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ultra-compressor-three.vercel.app/">
-  <meta property="og:title" content="OMEGA Ω // Next-Gen Multimedia AI Engine">
-  <meta property="og:description" content="All-in-one browser tool: WebP Optimizer, Veo-3 AI Cinema, TikTok HD Grabber, and YouTube 4K Thumbnail Extractor.">
-  <meta property="og:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+ALL-IN-ONE+QUANTUM+CORE">
+  <meta property="og:title" content="OMEGA Ω // Next-Gen Multimedia AI Suite">
+  <meta property="og:description" content="All-in-one browser tool: WebP Optimizer, Veo-3 AI Cinema, TikTok HD Grabber, YouTube 4K Thumbnails, and PDF Shrinker.">
+  <meta property="og:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+QUANTUM+CORE">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OMEGA Ω // Next-Gen Multimedia AI Engine">
-  <meta name="twitter:description" content="All-in-one browser tool: WebP Optimizer, Veo-3 AI Cinema, TikTok HD Grabber, and YouTube 4K Thumbnail Extractor.">
-  <meta name="twitter:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+ALL-IN-ONE+QUANTUM+CORE">
+  <meta name="twitter:title" content="OMEGA Ω // Next-Gen Multimedia AI Suite">
+  <meta name="twitter:description" content="All-in-one browser tool: WebP Optimizer, Veo-3 AI Cinema, TikTok HD Grabber, YouTube 4K Thumbnails, and PDF Shrinker.">
+  <meta name="twitter:image" content="https://placehold.co/1200x630/030712/00f3ff.png?text=OMEGA+QUANTUM+CORE">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#02040a">
 
@@ -49,18 +53,18 @@
       },
       {
         "@type": "Question",
-        "name": "How to extract YouTube thumbnails in 4K resolution?",
+        "name": "How to compress PDF files securely in browser?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Paste any YouTube video or Shorts link into the YouTube 4K tab to instantly fetch and download the raw maximum-resolution thumbnail."
+          "text": "Upload your PDF to the PDF Shrink engine. Everything is downsampled and packed directly in browser memory without sending data to any external server."
         }
       },
       {
         "@type": "Question",
-        "name": "How to generate Veo-3 AI videos in browser?",
+        "name": "How to extract YouTube thumbnails in 4K resolution?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use the Veo-3 tab, type your cinematic scene description, and the neural engine synthesizes high-definition video clips instantly on your device."
+          "text": "Paste any YouTube video or Shorts link into the YouTube 4K tab to instantly fetch and download the raw maximum-resolution thumbnail."
         }
       }
     ]
@@ -74,7 +78,7 @@
     "@type": "WebApplication",
     "name": "OMEGA Quantum AI Suite",
     "url": "https://ultra-compressor-three.vercel.app/",
-    "description": "Multi-tool web suite offering client-side WebP compression, Veo-3 procedural AI video synthesis, watermark-free TikTok HD extraction, and YouTube 4K thumbnail grabber.",
+    "description": "Multi-tool web suite offering client-side WebP compression, Veo-3 procedural AI video synthesis, watermark-free TikTok HD extraction, YouTube 4K thumbnail grabber, and PDF Shrinker.",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "All",
     "offers": {
@@ -114,7 +118,7 @@
       position: absolute;
       inset: -1.5px;
       border-radius: 1.55rem;
-      background: conic-gradient(from 0deg, #00f3ff, #b026ff, #ff007f, #ef4444, #00f3ff);
+      background: conic-gradient(from 0deg, #00f3ff, #b026ff, #ff007f, #ef4444, #10b981, #00f3ff);
       z-index: -1;
       animation: rotateBorder 6s linear infinite;
     }
@@ -164,13 +168,13 @@
     </div>
 
     <div class="flex items-center gap-2">
-      <!-- زر تثبيت تطبيق OMEGA على الهاتف (PWA) -->
+      <!-- PWA Install Button -->
       <button id="pwaInstallBtn" type="button" class="hidden tech-font text-[10px] text-black bg-cyan-400 hover:bg-cyan-300 font-extrabold px-2.5 py-1 rounded-lg transition-all shadow-[0_0_12px_rgba(0,243,255,0.6)] flex items-center gap-1.5 active:scale-95">
         <i class="fa-solid fa-download text-[9px]"></i>
         <span data-i18n="installApp">INSTALL APP</span>
       </button>
 
-      <!-- محدد اللغات -->
+      <!-- Language Switcher -->
       <div class="relative">
         <select id="languageSelect" onchange="changeLanguage(this.value)" class="bg-slate-950/80 border border-cyan-500/40 text-cyan-300 text-[10px] tech-font rounded-lg px-2 py-1 outline-none cursor-pointer hover:border-cyan-400">
           <option value="ar">العربية (AR)</option>
@@ -194,14 +198,14 @@
     </div>
   </header>
 
-  <!-- Global Social Proof Activity Bar -->
+  <!-- Live Social Proof Activity Bar -->
   <div class="w-full max-w-xl mx-auto px-4 mt-2 z-10 flex items-center justify-between tech-font text-[10px] text-slate-400 bg-slate-900/50 border border-cyan-500/20 rounded-lg py-1 px-3 backdrop-blur-sm">
     <div class="flex items-center gap-1.5">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span class="text-slate-300">NODE_LATENCY: <strong class="text-cyan-400">9ms</strong></span>
+      <span class="text-slate-300">NODE_LATENCY: <strong class="text-cyan-400">8ms</strong></span>
     </div>
     <div>
-      <span>PROCESSED_FILES: <strong id="dynamicCounter" class="text-purple-400 font-bold">142,890</strong></span>
+      <span>PROCESSED_FILES: <strong id="dynamicCounter" class="text-purple-400 font-bold">142,945</strong></span>
     </div>
   </div>
 
@@ -213,7 +217,7 @@
       <canvas id="robotFaceCanvas" width="180" height="180" class="drop-shadow-[0_0_25px_rgba(0,243,255,0.45)]"></canvas>
       <div class="absolute -bottom-1 text-[9px] tech-font text-cyan-400/90 bg-slate-950/90 px-2 py-0.5 rounded border border-cyan-500/30 flex items-center gap-1.5">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-        <span>CYBER_SYNTH_v5.5</span>
+        <span>CYBER_SYNTH_v6.0</span>
       </div>
     </div>
 
@@ -223,27 +227,31 @@
         <span data-i18n="titlePrefix">المنظومة الكمومية الموحدة</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-500">OMEGA AI</span>
       </h1>
       <p id="subText" class="text-slate-400 text-xs" data-i18n="subText">
-        أدوات معالجة وسائط مجانية بدون قيود: ضغط WebP، سينما Veo-3، تنزيل TikTok، وأغلفة YouTube 4K
+        أدوات متقدمة فائقة السرعة بدون قيود: معالجة WebP، سينما Veo-3، تنزيل TikTok، أغلفة 4K، وضغط PDF
       </p>
     </div>
 
-    <!-- 4-Way Engine Grid Switcher -->
-    <div class="w-full grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-3">
-      <button id="tabWebpBtn" onclick="switchEngine('webp')" class="active-tab py-2 px-2 rounded-xl border border-cyan-500/40 tech-font text-[11px] font-bold transition-all flex items-center justify-center gap-1.5">
+    <!-- 5-Way Engine Matrix Grid Switcher -->
+    <div class="w-full grid grid-cols-3 sm:grid-cols-5 gap-1.5 mb-3">
+      <button id="tabWebpBtn" onclick="switchEngine('webp')" class="active-tab py-2 px-1.5 rounded-xl border border-cyan-500/40 tech-font text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center gap-1">
         <i class="fa-solid fa-file-zipper text-xs"></i>
-        <span data-i18n="tabWebp">محرك WebP</span>
+        <span data-i18n="tabWebp">WebP</span>
       </button>
-      <button id="tabVeoBtn" onclick="switchEngine('veo')" class="py-2 px-2 rounded-xl border border-purple-500/30 bg-slate-900/60 text-purple-300 hover:border-purple-400 tech-font text-[11px] font-bold transition-all flex items-center justify-center gap-1.5">
+      <button id="tabVeoBtn" onclick="switchEngine('veo')" class="py-2 px-1.5 rounded-xl border border-purple-500/30 bg-slate-900/60 text-purple-300 hover:border-purple-400 tech-font text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center gap-1">
         <i class="fa-solid fa-clapperboard text-xs text-purple-400"></i>
-        <span data-i18n="tabVeo">فيديو Veo-3</span>
+        <span data-i18n="tabVeo">Veo-3</span>
       </button>
-      <button id="tabTikTokBtn" onclick="switchEngine('tiktok')" class="py-2 px-2 rounded-xl border border-pink-500/30 bg-slate-900/60 text-pink-300 hover:border-pink-400 tech-font text-[11px] font-bold transition-all flex items-center justify-center gap-1.5">
+      <button id="tabTikTokBtn" onclick="switchEngine('tiktok')" class="py-2 px-1.5 rounded-xl border border-pink-500/30 bg-slate-900/60 text-pink-300 hover:border-pink-400 tech-font text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center gap-1">
         <i class="fa-brands fa-tiktok text-xs text-pink-400"></i>
-        <span data-i18n="tabTikTok">تحميل TikTok</span>
+        <span data-i18n="tabTikTok">TikTok HD</span>
       </button>
-      <button id="tabYtBtn" onclick="switchEngine('yt')" class="py-2 px-2 rounded-xl border border-red-500/30 bg-slate-900/60 text-red-300 hover:border-red-400 tech-font text-[11px] font-bold transition-all flex items-center justify-center gap-1.5">
+      <button id="tabYtBtn" onclick="switchEngine('yt')" class="py-2 px-1.5 rounded-xl border border-red-500/30 bg-slate-900/60 text-red-300 hover:border-red-400 tech-font text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center gap-1">
         <i class="fa-brands fa-youtube text-xs text-red-500"></i>
-        <span data-i18n="tabYt">أغلفة 4K</span>
+        <span data-i18n="tabYt">YouTube 4K</span>
+      </button>
+      <button id="tabPdfBtn" onclick="switchEngine('pdf')" class="py-2 px-1.5 rounded-xl border border-emerald-500/30 bg-slate-900/60 text-emerald-300 hover:border-emerald-400 tech-font text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center gap-1 col-span-2 sm:col-span-1">
+        <i class="fa-solid fa-file-pdf text-xs text-emerald-400"></i>
+        <span data-i18n="tabPdf">PDF Shrink</span>
       </button>
     </div>
 
@@ -262,12 +270,11 @@
     <!-- Programmatic SEO Cluster Badges -->
     <div class="flex flex-wrap justify-center gap-1.5 mb-4 max-w-lg mx-auto z-10">
       <a href="/compress-shopify-images-to-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#Shopify Speed</a>
+      <a href="/download-tiktok-without-watermark-hd.html" class="tech-font text-[10px] text-slate-400 hover:text-pink-300 bg-slate-900/60 border border-slate-800 hover:border-pink-500/40 px-2 py-0.5 rounded transition-all">#TikTok HD</a>
+      <a href="/youtube-thumbnail-downloader-4k.html" class="tech-font text-[10px] text-slate-400 hover:text-red-300 bg-slate-900/60 border border-slate-800 hover:border-red-500/40 px-2 py-0.5 rounded transition-all">#YouTube 4K</a>
       <a href="/convert-discord-stickers-to-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#Discord WebP</a>
       <a href="/optimize-wordpress-images-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#WordPress SEO</a>
       <a href="/etsy-product-photo-compressor.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#Etsy Photos</a>
-      <a href="/compress-woocommerce-product-photos.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#WooCommerce</a>
-      <a href="/convert-png-banner-to-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#PNG Banners</a>
-      <a href="/shrink-blog-images-lossless-webp.html" class="tech-font text-[10px] text-slate-400 hover:text-cyan-300 bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 px-2 py-0.5 rounded transition-all">#Blog Optimizer</a>
     </div>
 
     <!-- Main Processing Capsule -->
@@ -312,7 +319,7 @@
               </div>
             </div>
 
-            <a id="downloadTrigger" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-extrabold text-center block transition-all shadow-[0_0_25px_rgba(0,243,255,0.4)] active:scale-[0.98] text-xs sm:text-sm cursor-pointer">
+            <a id="downloadTrigger" onclick="triggerSmartlinkMonetization()" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-extrabold text-center block transition-all shadow-[0_0_25px_rgba(0,243,255,0.4)] active:scale-[0.98] text-xs sm:text-sm cursor-pointer">
               <i class="fa-solid fa-bolt mx-1.5"></i> <span data-i18n="btnDownload">تحميل الصورة بصيغة WebP</span>
             </a>
           </div>
@@ -372,13 +379,13 @@
 
           <div id="veoResultBox" class="hidden space-y-3 pt-3 border-t border-slate-800/80">
             <video id="veoVideoPreview" controls autoplay loop playsinline class="w-full rounded-xl border border-cyan-500/40 bg-black shadow-lg"></video>
-            <a id="veoDownloadBtn" download="OMEGA_VEO3_VIDEO.webm" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-extrabold text-center block transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-[0.98] text-xs sm:text-sm cursor-pointer">
+            <a id="veoDownloadBtn" onclick="triggerSmartlinkMonetization()" download="OMEGA_VEO3_VIDEO.webm" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-extrabold text-center block transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-[0.98] text-xs sm:text-sm cursor-pointer">
               <i class="fa-solid fa-download mx-1.5"></i> <span data-i18n="btnVeoDownload">تحميل الفيديو السينمائي بدقة عالية (HD)</span>
             </a>
           </div>
         </div>
 
-        <!-- ================= TOOL 3: TikTok HD No-Watermark Downloader ================= -->
+        <!-- ================= TOOL 3: TikTok HD Dual-Engine Downloader ================= -->
         <div id="tiktokSection" class="hidden space-y-4">
           <div class="border border-pink-500/30 bg-pink-950/20 rounded-xl p-3 text-xs text-pink-200">
             <div class="flex items-center gap-2 font-bold mb-1 text-pink-300">
@@ -386,7 +393,7 @@
               <span data-i18n="tiktokTitle">سحب وتنزيل فيديوهات TikTok بدقة HD بدون علامة مائية</span>
             </div>
             <p class="text-[11px] text-slate-400" data-i18n="tiktokDesc">
-              الصق رابط الفيديو أدناه لتحميل المقطع بنقاوته الأصلية أو تنزيل الصوت بصيغة MP3 فوراً وبدون خوادم وسيطة.
+              محرك ثنائي القناة (Dual-Engine) مدعوم بروابط سريعة لتنزيل الفيديو الأصلي أو سحب ملف الصوت MP3 فوراً.
             </p>
           </div>
 
@@ -402,7 +409,7 @@
 
           <div id="tiktokLoader" class="hidden text-center py-4 space-y-2">
             <i class="fa-solid fa-circle-notch fa-spin text-pink-400 text-2xl"></i>
-            <div class="text-[11px] tech-font text-slate-400">Bypassing TikTok CDN & Extracting HD Streams...</div>
+            <div class="text-[11px] tech-font text-slate-400">Querying Dual-Cluster Streaming Nodes...</div>
           </div>
 
           <div id="tiktokResult" class="hidden space-y-3 pt-3 border-t border-slate-800">
@@ -415,10 +422,10 @@
             </div>
 
             <div class="grid grid-cols-2 gap-2">
-              <a id="tiktokDownloadNoWatermark" target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-extrabold text-xs text-center block shadow-[0_0_15px_rgba(0,243,255,0.3)] active:scale-95 transition-all">
+              <a id="tiktokDownloadNoWatermark" onclick="triggerSmartlinkMonetization()" target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-extrabold text-xs text-center block shadow-[0_0_15px_rgba(0,243,255,0.3)] active:scale-95 transition-all cursor-pointer">
                 <i class="fa-solid fa-video mx-1"></i> تحميل HD بدون علامة
               </a>
-              <a id="tiktokDownloadAudio" target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-extrabold text-xs text-center block shadow-[0_0_15px_rgba(176,38,255,0.3)] active:scale-95 transition-all">
+              <a id="tiktokDownloadAudio" onclick="triggerSmartlinkMonetization()" target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-extrabold text-xs text-center block shadow-[0_0_15px_rgba(176,38,255,0.3)] active:scale-95 transition-all cursor-pointer">
                 <i class="fa-solid fa-music mx-1"></i> تحميل الصوت (MP3)
               </a>
             </div>
@@ -455,8 +462,72 @@
               </div>
             </div>
 
-            <a id="ytDownloadBtn" target="_blank" download="youtube_thumbnail_4k.jpg" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold text-xs text-center block shadow-[0_0_20px_rgba(239,68,68,0.4)] active:scale-95 transition-all cursor-pointer">
+            <a id="ytDownloadBtn" onclick="triggerSmartlinkMonetization()" target="_blank" download="youtube_thumbnail_4k.jpg" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-amber-500 text-white font-extrabold text-xs text-center block shadow-[0_0_20px_rgba(239,68,68,0.4)] active:scale-95 transition-all cursor-pointer">
               <i class="fa-solid fa-download mx-1.5"></i> <span data-i18n="btnYtDownload">تحميل الغلاف بدقة فائقة 4K</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ================= TOOL 5: Client-Side PDF Shrinker ================= -->
+        <div id="pdfSection" class="hidden space-y-4">
+          <div class="border border-emerald-500/30 bg-emerald-950/20 rounded-xl p-3 text-xs text-emerald-200">
+            <div class="flex items-center gap-2 font-bold mb-1 text-emerald-300">
+              <i class="fa-solid fa-file-pdf text-lg text-emerald-400"></i>
+              <span data-i18n="pdfTitle">محرك ضغط وتصغير ملفات PDF فائق الخصوصية</span>
+            </div>
+            <p class="text-[11px] text-slate-400" data-i18n="pdfDesc">
+              يتم تصغير وضغط صفحات PDF بالكامل داخل ذاكرة جهازك دون رفع أي مستند إلى أي خادم خارجي (أمان 100%).
+            </p>
+          </div>
+
+          <div id="pdfDropZone" class="border-2 border-dashed border-emerald-500/30 hover:border-emerald-400 rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:bg-emerald-500/5 active:scale-[0.99]">
+            <input type="file" id="pdfFileInput" accept="application/pdf" class="hidden">
+            <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <i class="fa-solid fa-file-arrow-up text-xl"></i>
+            </div>
+            <p id="pdfDropText" class="text-sm font-bold text-white mb-1" data-i18n="pdfDropText">اختر ملف PDF أو اسحبه إلى هنا</p>
+            <p class="text-[10px] text-slate-400 tech-font">LOCAL CLIENT-SIDE IN-MEMORY ENGINE</p>
+          </div>
+
+          <div class="space-y-1.5">
+            <div class="flex justify-between items-center text-xs tech-font font-bold">
+              <span class="text-slate-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-sliders text-emerald-400"></i> <span data-i18n="pdfSliderLabel">جودة ونقاء المستند:</span>
+              </span>
+              <span id="pdfQualityDisplay" class="text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">70%</span>
+            </div>
+            <input type="range" id="pdfQualityInput" min="20" max="95" value="70" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400">
+          </div>
+
+          <!-- PDF Progress -->
+          <div id="pdfProgressContainer" class="hidden space-y-1">
+            <div class="flex justify-between text-[10px] tech-font text-emerald-300">
+              <span id="pdfStatusText">Processing Pages In-Memory...</span>
+              <span id="pdfProgressPercent">0%</span>
+            </div>
+            <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-emerald-500/20">
+              <div id="pdfProgressBar" class="h-full bg-gradient-to-r from-emerald-400 to-teal-300 w-0 transition-all duration-200"></div>
+            </div>
+          </div>
+
+          <div id="pdfTelemetryBox" class="hidden pt-3 border-t border-slate-800/80 space-y-3">
+            <div class="grid grid-cols-3 gap-2 text-center tech-font">
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+                <div class="text-[9px] text-slate-500 uppercase">Original PDF</div>
+                <div id="pdfRawSize" class="text-xs font-bold text-slate-300">0.0 KB</div>
+              </div>
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2">
+                <div class="text-[9px] text-slate-500 uppercase">Compressed</div>
+                <div id="pdfOptSize" class="text-xs font-bold text-emerald-400">0.0 KB</div>
+              </div>
+              <div class="bg-emerald-950/40 border border-emerald-500/30 rounded-lg p-2">
+                <div class="text-[9px] text-emerald-400 uppercase">Saved</div>
+                <div id="pdfRatio" class="text-xs font-bold text-cyan-400">0%</div>
+              </div>
+            </div>
+
+            <a id="pdfDownloadBtn" onclick="triggerSmartlinkMonetization()" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-500 text-black font-extrabold text-center block transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-[0.98] text-xs sm:text-sm cursor-pointer">
+              <i class="fa-solid fa-file-arrow-down mx-1.5"></i> <span data-i18n="btnPdfDownload">تحميل ملف PDF المضغوط</span>
             </a>
           </div>
         </div>
@@ -509,18 +580,28 @@
 
   <!-- Unified Engine Scripts -->
   <script>
+    // رابط Adsterra Smartlink المباشر عالي العائد المعتمد
+    const SMARTLINK_URL = "https://www.profitableratecpmnetwork.com/ns71n37a0?key=d496ca279caa580cdfddebcb2aff24a6";
+
+    function triggerSmartlinkMonetization() {
+      if (SMARTLINK_URL) {
+        window.open(SMARTLINK_URL, '_blank', 'noopener,noreferrer');
+      }
+    }
+
     const translations = {
       ar: {
-        pageTitle: "OMEGA Ω // المنظومة الكمومية الشاملة: WebP - Veo-3 - TikTok HD - YouTube 4K",
+        pageTitle: "OMEGA Ω // المنظومة الكمومية الشاملة: WebP - Veo-3 - TikTok HD - YouTube 4K - PDF Shrink",
         core: "OMEGA_Ω // نواة الروبوت الشاملة",
         tracking: "البصريات السيبرانية: نشطة",
         installApp: "تثبيت التطبيق",
         titlePrefix: "المنظومة الكمومية الموحدة",
-        subText: "أدوات معالجة وسائط مجانية بدون قيود: ضغط WebP، سينما Veo-3، تنزيل TikTok، وأغلفة YouTube 4K",
-        tabWebp: "محرك WebP",
-        tabVeo: "فيديو Veo-3",
-        tabTikTok: "تحميل TikTok",
-        tabYt: "أغلفة 4K",
+        subText: "أدوات متقدمة فائقة السرعة بدون قيود: معالجة WebP، سينما Veo-3، تنزيل TikTok، أغلفة 4K، وضغط PDF",
+        tabWebp: "WebP",
+        tabVeo: "Veo-3",
+        tabTikTok: "TikTok HD",
+        tabYt: "YouTube 4K",
+        tabPdf: "PDF Shrink",
         dropText: "المس هنا لاختيار الصورة أو اسحبها (يدعم صوراً متعددة)",
         sliderLabel: "معيار الضغط الذكي:",
         btnDownload: "تحميل الصورة بصيغة WebP",
@@ -531,28 +612,34 @@
         btnVeoGenerate: "توليد الفيديو السينمائي عبر VEO-3 (مجاني)",
         btnVeoDownload: "تحميل الفيديو السينمائي بدقة عالية (HD)",
         tiktokTitle: "سحب وتنزيل فيديوهات TikTok بدقة HD بدون علامة مائية",
-        tiktokDesc: "الصق رابط الفيديو أدناه لتحميل المقطع بنقاوته الأصلية أو تنزيل الصوت بصيغة MP3 فوراً وبدون خوادم وسيطة.",
+        tiktokDesc: "محرك ثنائي القناة (Dual-Engine) مدعوم بروابط سريعة لتنزيل الفيديو الأصلي أو سحب ملف الصوت MP3 فوراً.",
         tiktokInputLabel: "رابط الفيديو (TikTok Video URL):",
         ytTitle: "مستخرج أغلفة YouTube بدقة 4K Ultra HD",
         ytDesc: "ضع رابط أي فيديو أو شورتس يوتيوب لاستخراج وتحميل صورة الغلاف الأصلية بأعلى دقة متوفرة فوراً وبدون خوادم.",
         ytInputLabel: "رابط يوتيوب (YouTube Video URL):",
         btnYtDownload: "تحميل الغلاف بدقة فائقة 4K",
+        pdfTitle: "محرك ضغط وتصغير ملفات PDF فائق الخصوصية",
+        pdfDesc: "يتم تصغير وضغط صفحات PDF بالكامل داخل ذاكرة جهازك دون رفع أي مستند إلى أي خادم خارجي (أمان 100%).",
+        pdfDropText: "اختر ملف PDF أو اسحبه إلى هنا",
+        pdfSliderLabel: "جودة ونقاء المستند:",
+        btnPdfDownload: "تحميل ملف PDF المضغوط",
         supportLabel: "دعم المشروع وتطوير الخادم:",
         copyBtn: "نسخ",
         copied: "تم!",
         toastText: "تم نسخ عنوان المحفظة بنجاح!"
       },
       en: {
-        pageTitle: "OMEGA Ω // Unified AI Suite: WebP - Veo-3 - TikTok HD - YouTube 4K",
+        pageTitle: "OMEGA Ω // Unified AI Suite: WebP - Veo-3 - TikTok HD - YouTube 4K - PDF Shrink",
         core: "OMEGA_Ω // QUANTUM AI HUB",
         tracking: "CYBORG_OPTICS: ACTIVE",
         installApp: "INSTALL APP",
         titlePrefix: "Unified Quantum AI",
-        subText: "Next-gen zero-limit suite: WebP Optimizer, Veo-3 AI Cinema, TikTok HD Grabber, and YouTube 4K Thumbnails",
-        tabWebp: "WebP Engine",
-        tabVeo: "Veo-3 AI Video",
+        subText: "Next-gen zero-limit suite: WebP Optimizer, Veo-3 AI Cinema, TikTok HD Grabber, YouTube 4K, and PDF Shrinker",
+        tabWebp: "WebP",
+        tabVeo: "Veo-3",
         tabTikTok: "TikTok HD",
         tabYt: "YouTube 4K",
+        tabPdf: "PDF Shrink",
         dropText: "Tap to select or drop images (Multiple supported)",
         sliderLabel: "Smart Compression Level:",
         btnDownload: "Download Optimized WebP",
@@ -562,13 +649,18 @@
         promptLabel: "Cinematic Scene Description (Prompt):",
         btnVeoGenerate: "Generate Cinematic Video via Veo-3 (Free)",
         btnVeoDownload: "Download HD Cinematic Video",
-        tiktokTitle: "TikTok HD Downloader (No Watermark)",
-        tiktokDesc: "Paste any TikTok URL to download high-definition video or extract original MP3 audio directly.",
+        tiktokTitle: "TikTok HD Downloader (Dual-Engine)",
+        tiktokDesc: "High-speed dual failover engine to download original TikTok MP4 videos without watermark and MP3 audio.",
         tiktokInputLabel: "TikTok Video URL:",
         ytTitle: "YouTube 4K Ultra HD Thumbnail Extractor",
         ytDesc: "Paste any YouTube video or Shorts link to extract and download the raw maximum-resolution thumbnail instantly.",
         ytInputLabel: "YouTube Video URL:",
         btnYtDownload: "Download 4K Ultra HD Thumbnail",
+        pdfTitle: "Client-Side In-Memory PDF Shrinker",
+        pdfDesc: "Downsample and compress PDF pages locally in browser RAM without ever uploading documents to remote servers.",
+        pdfDropText: "Click or drop PDF file here",
+        pdfSliderLabel: "Document Quality Level:",
+        btnPdfDownload: "Download Compressed PDF",
         supportLabel: "Support Project & Server:",
         copyBtn: "Copy",
         copied: "Done!",
@@ -608,19 +700,21 @@
 
     initLanguage();
 
-    // 4-Engine Switcher
+    // 5-Engine Switcher
     function switchEngine(mode) {
       const sections = {
         webp: document.getElementById('webpSection'),
         veo: document.getElementById('veoSection'),
         tiktok: document.getElementById('tiktokSection'),
-        yt: document.getElementById('ytSection')
+        yt: document.getElementById('ytSection'),
+        pdf: document.getElementById('pdfSection')
       };
       const tabs = {
         webp: document.getElementById('tabWebpBtn'),
         veo: document.getElementById('tabVeoBtn'),
         tiktok: document.getElementById('tabTikTokBtn'),
-        yt: document.getElementById('tabYtBtn')
+        yt: document.getElementById('tabYtBtn'),
+        pdf: document.getElementById('tabPdfBtn')
       };
 
       Object.keys(sections).forEach(key => {
@@ -639,7 +733,7 @@
     }
 
     // Dynamic Live Activity Counter
-    let counterValue = 142890;
+    let counterValue = 142945;
     setInterval(() => {
       counterValue += Math.floor(Math.random() * 3) + 1;
       const counterEl = document.getElementById('dynamicCounter');
@@ -762,7 +856,6 @@
       rCtx.save();
       rCtx.translate(rw / 2 + lookX * 8, rh / 2 + lookY * 6);
 
-      // Skull Armor
       rCtx.beginPath();
       rCtx.moveTo(-45, -55);
       rCtx.lineTo(45, -55);
@@ -784,7 +877,6 @@
       rCtx.strokeStyle = 'rgba(0, 243, 255, 0.8)';
       rCtx.stroke();
 
-      // Forehead Plate
       rCtx.beginPath();
       rCtx.moveTo(-20, -50);
       rCtx.lineTo(20, -50);
@@ -797,7 +889,6 @@
       rCtx.lineWidth = 1;
       rCtx.stroke();
 
-      // Scanner Core
       const scannerX = Math.sin(Date.now() * 0.005) * 12;
       rCtx.fillStyle = '#b026ff';
       rCtx.shadowColor = '#b026ff';
@@ -807,7 +898,6 @@
       rCtx.fill();
       rCtx.shadowBlur = 0;
 
-      // Cybernetic Eye Sockets & Pupils
       const eyeOffset = 24;
       const eyeY = -5;
 
@@ -839,7 +929,6 @@
         }
       });
 
-      // Jaw Acoustic Grille
       rCtx.strokeStyle = 'rgba(0, 243, 255, 0.4)';
       rCtx.lineWidth = 1;
       rCtx.beginPath();
@@ -1069,11 +1158,11 @@
       }
     }
 
-    // 5. TikTok HD No-Watermark Downloader Engine (TikWM API)
+    // 5. TikTok HD Dual-Engine Failover Downloader Engine
     async function fetchTikTokVideo() {
       const urlInput = document.getElementById('tiktokUrlInput').value.trim();
       if (!urlInput) {
-        alert("يرجى لصق رابط فيديو TikTok أولاً!");
+        alert(currentLang === 'ar' ? "يرجى لصق رابط فيديو TikTok أولاً!" : "Please paste a TikTok video URL first!");
         return;
       }
 
@@ -1085,37 +1174,65 @@
       resultBox.classList.add('hidden');
       fetchBtn.disabled = true;
 
+      // Primary Node (TikWM) with AbortController timeout
       try {
-        const response = await fetch(`https://www.tikwm.com/api/?url=${encodeURIComponent(urlInput)}`);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 4500);
+
+        const response = await fetch(`https://www.tikwm.com/api/?url=${encodeURIComponent(urlInput)}`, {
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
         const result = await response.json();
 
         if (result.code === 0 && result.data) {
-          document.getElementById('tiktokCover').src = result.data.cover;
-          document.getElementById('tiktokAuthor').textContent = `@${result.data.author.unique_id || result.data.author.nickname}`;
-          document.getElementById('tiktokVideoDesc').textContent = result.data.title || "TikTok Video Stream HD";
-
-          const videoUrl = result.data.play;
-          const audioUrl = result.data.music;
-
-          const noWatermarkBtn = document.getElementById('tiktokDownloadNoWatermark');
-          noWatermarkBtn.href = videoUrl;
-          noWatermarkBtn.setAttribute('download', `tiktok_${result.data.id || 'video'}.mp4`);
-
-          const audioBtn = document.getElementById('tiktokDownloadAudio');
-          audioBtn.href = audioUrl;
-          audioBtn.setAttribute('download', `tiktok_audio_${result.data.id || 'audio'}.mp3`);
-
-          resultBox.classList.remove('hidden');
-        } else {
-          alert("تعذر استخراج الفيديو، تأكد من أن الحساب عام وأن الرابط سليم.");
+          renderTikTokData(result.data.cover, result.data.author.nickname || result.data.author.unique_id, result.data.title, result.data.play, result.data.music, result.data.id);
+          return;
         }
-      } catch (err) {
-        console.error("TikTok Engine Error:", err);
-        alert("خطأ في الاتصال بالخادم، يرجى المحاولة مرة أخرى.");
+        throw new Error("Primary node response non-zero");
+      } catch (primaryErr) {
+        console.warn("Primary engine timeout/failure. Engaging fallback...", primaryErr);
+      }
+
+      // Secondary Fallback Node (TikMate lookup)
+      try {
+        const fallbackRes = await fetch(`https://api.tikmate.app/api/lookup?url=${encodeURIComponent(urlInput)}`);
+        const fallbackData = await fallbackRes.json();
+
+        if (fallbackData.success && fallbackData.token) {
+          const videoDirect = `https://tikmate.app/download/${fallbackData.token}/${fallbackData.id}.mp4`;
+          renderTikTokData('https://placehold.co/100x100/030712/ff007f.png?text=TIKTOK+HD', fallbackData.author_name || 'TikTok Creator', 'TikTok Video Stream HD', videoDirect, null, fallbackData.id);
+          return;
+        }
+        throw new Error("Fallback failed");
+      } catch (secErr) {
+        console.error("All TikTok engines exhausted:", secErr);
+        alert(currentLang === 'ar' ? "تعذر سحب الفيديو، تأكد من صحة الرابط وأن الحساب عام." : "Could not fetch video. Check if the URL is valid and account is public.");
       } finally {
         loader.classList.add('hidden');
         fetchBtn.disabled = false;
       }
+    }
+
+    function renderTikTokData(cover, author, desc, videoUrl, audioUrl, id) {
+      document.getElementById('tiktokCover').src = cover;
+      document.getElementById('tiktokAuthor').textContent = `@${author}`;
+      document.getElementById('tiktokVideoDesc').textContent = desc || "TikTok Video Stream HD";
+
+      const noWatermarkBtn = document.getElementById('tiktokDownloadNoWatermark');
+      noWatermarkBtn.href = videoUrl;
+      noWatermarkBtn.setAttribute('download', `tiktok_${id || 'video'}.mp4`);
+
+      const audioBtn = document.getElementById('tiktokDownloadAudio');
+      if (audioUrl) {
+        audioBtn.href = audioUrl;
+        audioBtn.setAttribute('download', `tiktok_audio_${id || 'audio'}.mp3`);
+        audioBtn.classList.remove('hidden');
+      } else {
+        audioBtn.classList.add('hidden');
+      }
+
+      document.getElementById('tiktokResult').classList.remove('hidden');
     }
 
     // 6. YouTube 4K Ultra HD Thumbnail Extractor Engine
@@ -1160,11 +1277,128 @@
       }
     }
 
-    // 7. Universal Share & Utility Functions
+    // 7. Client-Side In-Memory PDF Shrinker Engine
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    const pdfDropZone = document.getElementById('pdfDropZone');
+    const pdfFileInput = document.getElementById('pdfFileInput');
+    const pdfQualityInput = document.getElementById('pdfQualityInput');
+    const pdfQualityDisplay = document.getElementById('pdfQualityDisplay');
+    const pdfTelemetryBox = document.getElementById('pdfTelemetryBox');
+    const pdfProgressContainer = document.getElementById('pdfProgressContainer');
+    const pdfProgressBar = document.getElementById('pdfProgressBar');
+    const pdfProgressPercent = document.getElementById('pdfProgressPercent');
+    const pdfStatusText = document.getElementById('pdfStatusText');
+    const pdfRawSize = document.getElementById('pdfRawSize');
+    const pdfOptSize = document.getElementById('pdfOptSize');
+    const pdfRatio = document.getElementById('pdfRatio');
+    const pdfDownloadBtn = document.getElementById('pdfDownloadBtn');
+    let activePdfFile = null;
+
+    pdfQualityInput.addEventListener('input', (e) => {
+      pdfQualityDisplay.textContent = e.target.value + '%';
+      if (activePdfFile) processPdfShrink(activePdfFile);
+    });
+
+    pdfDropZone.addEventListener('click', () => pdfFileInput.click());
+    pdfDropZone.addEventListener('dragover', (e) => { e.preventDefault(); pdfDropZone.classList.add('border-emerald-400'); });
+    pdfDropZone.addEventListener('dragleave', () => pdfDropZone.classList.remove('border-emerald-400'));
+    pdfDropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      pdfDropZone.classList.remove('border-emerald-400');
+      if (e.dataTransfer.files.length) handlePdfUpload(e.dataTransfer.files[0]);
+    });
+
+    pdfFileInput.addEventListener('change', (e) => {
+      if (e.target.files.length) handlePdfUpload(e.target.files[0]);
+    });
+
+    function handlePdfUpload(file) {
+      if (file.type !== 'application/pdf' && !file.name.endsWith('.pdf')) {
+        alert(currentLang === 'ar' ? "يرجى اختيار ملف PDF صالح!" : "Please choose a valid PDF file!");
+        return;
+      }
+      activePdfFile = file;
+      pdfRawSize.textContent = (file.size / 1024).toFixed(1) + ' KB';
+      processPdfShrink(file);
+    }
+
+    async function processPdfShrink(file) {
+      pdfProgressContainer.classList.remove('hidden');
+      pdfTelemetryBox.classList.add('hidden');
+      pdfProgressBar.style.width = '10%';
+      pdfProgressPercent.textContent = '10%';
+      pdfStatusText.textContent = "Loading Document Pages...";
+
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        const totalPages = pdf.numPages;
+        const quality = pdfQualityInput.value / 100;
+
+        const { jsPDF } = window.jspdf;
+        let doc = null;
+
+        for (let i = 1; i <= totalPages; i++) {
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: 1.5 }); // High-DPI rasterization
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
+          // Compress to JPEG locally
+          const imgData = canvas.toDataURL('image/jpeg', quality);
+
+          const orientation = viewport.width > viewport.height ? 'l' : 'p';
+          if (i === 1) {
+            doc = new jsPDF(orientation, 'pt', [viewport.width, viewport.height]);
+            doc.addImage(imgData, 'JPEG', 0, 0, viewport.width, viewport.height);
+          } else {
+            doc.addPage([viewport.width, viewport.height], orientation);
+            doc.addImage(imgData, 'JPEG', 0, 0, viewport.width, viewport.height);
+          }
+
+          const currentPct = 10 + Math.floor((i / totalPages) * 80);
+          pdfProgressBar.style.width = currentPct + '%';
+          pdfProgressPercent.textContent = currentPct + '%';
+          pdfStatusText.textContent = `Optimizing Page ${i} of ${totalPages}...`;
+        }
+
+        pdfProgressBar.style.width = '100%';
+        pdfProgressPercent.textContent = '100%';
+        pdfStatusText.textContent = "Packaging Document...";
+
+        const outputBlob = doc.output('blob');
+        const compressedKb = outputBlob.size / 1024;
+        pdfOptSize.textContent = compressedKb.toFixed(1) + ' KB';
+
+        const saved = Math.max(0, (((file.size - outputBlob.size) / file.size) * 100)).toFixed(0);
+        pdfRatio.textContent = '-' + saved + '%';
+
+        const pdfUrl = URL.createObjectURL(outputBlob);
+        pdfDownloadBtn.href = pdfUrl;
+        pdfDownloadBtn.download = file.name.replace(/\.[^/.]+$/, "") + "_compressed.pdf";
+
+        setTimeout(() => {
+          pdfProgressContainer.classList.add('hidden');
+          pdfTelemetryBox.classList.remove('hidden');
+        }, 350);
+
+      } catch (err) {
+        console.error("PDF Processing Error:", err);
+        pdfProgressContainer.classList.add('hidden');
+        alert("حدث خطأ أثناء معالجة ملف PDF، يرجى المحاولة مرة أخرى.");
+      }
+    }
+
+    // 8. Universal Share & Utility Functions
     function shareTool() {
       const shareData = {
         title: 'OMEGA All-In-One AI Suite',
-        text: 'أداة مجانية شاملة: ضغط الصور WebP، توليد فيديوهات Veo-3، تحميل فيديوهات TikTok، ومستخرج أغلفة YouTube 4K بدقة عالية!',
+        text: 'أداة مجانية شاملة: ضغط الصور WebP، سينما Veo-3، تنزيل TikTok بدون علامة مائية، أغلفة YouTube 4K، وضغط PDF محلياً!',
         url: 'https://ultra-compressor-three.vercel.app/'
       };
       if (navigator.share) {
@@ -1199,7 +1433,7 @@
       });
     }
 
-    // 8. Service Worker & PWA Install Engine
+    // 9. Service Worker & Native PWA Install Prompt
     let deferredPrompt;
     const installBtn = document.getElementById('pwaInstallBtn');
 
